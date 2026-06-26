@@ -11,7 +11,7 @@ export function Hero({ onSignIn }) {
   };
 
   return (
-    <section style={{
+    <section className="hero-wrap" data-pad="wide" style={{
       minHeight: "100vh", background: NAVY,
       display: "flex", alignItems: "center",
       padding: "120px 80px 80px",
@@ -37,7 +37,7 @@ export function Hero({ onSignIn }) {
           DukaDesk is the Shopify for mobile apps. Build a fully branded app for your restaurant, store, school, or church — no code, no developers. Customers scan your QR code and you're live.
         </p>
 
-        <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+        <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
           <button onClick={onSignIn} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 32px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8, transition: "transform 0.2s" }}
             onMouseOver={e => e.currentTarget.style.transform = "scale(1.03)"}
             onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
@@ -60,7 +60,7 @@ export function Hero({ onSignIn }) {
         </div>
       </div>
 
-      <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 1 }}>
+      <div className="hero-phone" style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 1 }}>
         <div style={{ animation: "float 4s ease-in-out infinite", position: "relative" }}>
           <div style={{ width: 280, background: "#0D0D1A", borderRadius: 44, padding: 10, boxShadow: "0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07)" }}>
             <div style={{ background: NAVY, borderRadius: 36, overflow: "hidden", minHeight: 520, position: "relative" }}>

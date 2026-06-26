@@ -12,17 +12,17 @@ export function Team() {
   ];
 
   return (
-    <section id="team" style={{ padding: "100px 80px", background: "white" }}>
+    <section id="team" data-pad="wide" style={{ padding: "100px 80px", background: "white" }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>The people behind DukaDesk</span>
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Built by Nigerians,<br />for African businesses.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Built by Nigerians,<br />for African businesses.</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>We're not a Silicon Valley company parachuting into Africa. We grew up with these businesses. We know the problems firsthand.</p>
         </div>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+      <div data-grid="3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
         {team.map((person, i) => (
           <FadeIn key={i} delay={i * 80}>
             <div style={{ background: CREAM, borderRadius: 20, padding: "32px 28px", border: `1px solid ${BORDER}`, transition: "all 0.2s" }}
@@ -39,7 +39,7 @@ export function Team() {
       </div>
 
       <FadeIn delay={200}>
-        <div style={{ marginTop: 72, background: NAVY, borderRadius: 28, padding: "52px 60px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 48 }}>
+        <div data-grid="values" style={{ marginTop: 72, background: NAVY, borderRadius: 28, padding: "52px 60px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 48 }}>
           {[
             { title: "Built in Nigeria", body: "Our HQ is in Lagos. Every product decision starts with 'does this work for a merchant in Balogun market?'" },
             { title: "Merchant-first", body: "We don't take a cut of your sales. We don't run ads on your app. Your success is our only business model." },

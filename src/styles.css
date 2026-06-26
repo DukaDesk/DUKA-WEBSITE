@@ -10,18 +10,9 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F3F4F6;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F4A026;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F3F4F6; }
+::-webkit-scrollbar-thumb { background: #F4A026; border-radius: 3px; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -50,4 +41,205 @@ html {
 @keyframes countUp {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Responsive section padding ── */
+@media (max-width: 768px) {
+  section, footer > div:first-child,
+  [data-pad] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  nav {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  [data-pad="wide"] {
+    padding: 60px 20px !important;
+  }
+
+  [data-pad="narrow"] {
+    padding: 28px 20px !important;
+  }
+
+  /* ── Hero ── */
+  .hero-wrap {
+    flex-direction: column !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .hero-wrap h1 {
+    font-size: 40px !important;
+  }
+
+  .hero-phone {
+    margin-top: 48px;
+  }
+
+  .hero-phone > div {
+    transform: scale(0.85);
+  }
+
+  .hero-phone > div > div {
+    position: static !important;
+  }
+
+  .hero-phone > div > div:nth-child(2),
+  .hero-phone > div > div:nth-child(3) {
+    display: none !important;
+  }
+
+  /* ── Grid overrides ── */
+  [data-grid="4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  [data-grid="3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  [data-grid="2"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="how"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="features"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="features-copy"] {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  [data-grid="pricing"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="pricing"] > div {
+    transform: none !important;
+  }
+
+  [data-grid="footer"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [data-grid="footer"] > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  [data-grid="trust"] {
+    justify-content: center !important;
+  }
+
+  [data-grid="trust"] > div:last-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* ── Typography ── */
+  [data-type="h2"] {
+    font-size: 32px !important;
+  }
+
+  [data-type="h3"] {
+    font-size: 26px !important;
+  }
+
+  /* ── Hide / show ── */
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* ── Mobile menu overlay ── */
+  .mobile-menu-open .nav-links-mobile {
+    display: flex !important;
+  }
+
+  /* ── Trust bar ── */
+  [data-grid="trust"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* ── Values grid ── */
+  [data-grid="values"] {
+    grid-template-columns: 1fr !important;
+    padding: 40px 28px !important;
+  }
+
+  /* ── Auto margin for centered content ── */
+  .center-mobile {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ── Hero CTA stack ── */
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-ctas > * {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* ── Features checkmarks ── */
+  .features-badges {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* ── Integration grid ── */
+  [data-grid="integrations"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Footer CTA ── */
+  .footer-cta {
+    padding: 40px 24px !important;
+  }
+
+  .footer-cta h2 {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-grid="4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [data-grid="3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="footer"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-wrap h1 {
+    font-size: 32px !important;
+  }
+
+  [data-grid="integrations"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }

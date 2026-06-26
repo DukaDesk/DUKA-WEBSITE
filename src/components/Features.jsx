@@ -12,22 +12,22 @@ export function Features() {
   ];
 
   return (
-    <section style={{ padding: "100px 80px", background: WHITE }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+    <section data-pad="wide" style={{ padding: "100px 80px", background: WHITE }}>
+      <div data-grid="features" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
         <FadeIn>
           <div>
             <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 20 }}>
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Everything included</span>
             </div>
-            <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 20, lineHeight: 1.1 }}>The features your business actually needs</h2>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 20, lineHeight: 1.1 }}>The features your business actually needs</h2>
             <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 36 }}>We didn't strip features to make a "simple" product. We built everything a Nigerian SME needs to run a mobile business, then made it easy.</p>
-            <div style={{ display: "flex", gap: 12 }}>
+            <div className="features-badges" style={{ display: "flex", gap: 12 }}>
               <div style={{ background: "#F0FDF4", borderRadius: 12, padding: "10px 16px", fontSize: 13, color: "#065F46", fontWeight: 600 }}>✓ 0% commission on sales</div>
               <div style={{ background: "#FFF8ED", borderRadius: 12, padding: "10px 16px", fontSize: 13, color: "#92400E", fontWeight: 600 }}>✓ Your brand, not ours</div>
             </div>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <div data-grid="features-copy" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
           {features.map((f, i) => (
             <FadeIn key={i} delay={i * 80}>
               <div style={{ background: CREAM, borderRadius: 16, padding: "22px", border: `1px solid ${BORDER}`, transition: "all 0.2s" }}

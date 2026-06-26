@@ -24,14 +24,14 @@ export function Careers() {
   };
 
   return (
-    <section id="careers" style={{ padding: "100px 80px", background: CREAM }}>
+    <section id="careers" data-pad="wide" style={{ padding: "100px 80px", background: CREAM }}>
       <FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginBottom: 64, alignItems: "center" }}>
+        <div data-grid="2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginBottom: 64, alignItems: "center" }}>
           <div>
             <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>We're hiring</span>
             </div>
-            <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16, lineHeight: 1.1 }}>Help us put African businesses on mobile.</h2>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16, lineHeight: 1.1 }}>Help us put African businesses on mobile.</h2>
             <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 24 }}>We're a small team moving fast. If you care about making real tools for real Nigerian businesses — not hypothetical users — this is the right place.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {["Competitive naira salary", "Remote-friendly for most roles", "Health insurance", "Equity in an early-stage company", "Annual retreat"].map((b, i) => (
@@ -55,7 +55,7 @@ export function Careers() {
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }}>
+      <div data-grid="2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 16 }}>
         {roles.map((role, i) => {
           const color = deptColors[role.dept] || NAVY;
           return (

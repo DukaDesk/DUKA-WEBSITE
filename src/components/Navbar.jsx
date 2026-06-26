@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useScrollY } from "../hooks/useScrollY";
 import { NAVY, AMBER, WHITE, sora } from "../constants";
 
 export function Navbar({ onSignIn }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const y = useScrollY();
   const scrolled = y > 40;
 
@@ -30,7 +32,7 @@ export function Navbar({ onSignIn }) {
         <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: WHITE }}>DukaDesk</span>
       </a>
 
-      <div style={{ display: "flex", gap: 36, alignItems: "center" }}>
+      <div className="nav-links" style={{ display: "flex", gap: 36, alignItems: "center" }}>
         {links.map(l => (
           <a key={l.label} href={l.href} style={{ color: "rgba(255,255,255,0.75)", fontSize: 14, fontWeight: 500, textDecoration: "none", transition: "color 0.2s" }}
             onMouseOver={e => e.target.style.color = WHITE}
@@ -39,7 +41,7 @@ export function Navbar({ onSignIn }) {
         ))}
       </div>
 
-      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+      <div className="nav-cta" style={{ display: "flex", gap: 12, alignItems: "center" }}>
         <button onClick={onSignIn} style={{ background: "none", border: "1px solid rgba(255,255,255,0.25)", color: WHITE, borderRadius: 24, padding: "9px 20px", fontSize: 14, fontWeight: 500, cursor: "pointer", transition: "all 0.2s" }}
           onMouseOver={e => { e.target.style.background = "rgba(255,255,255,0.1)"; }}
           onMouseOut={e => { e.target.style.background = "none"; }}
@@ -49,6 +51,21 @@ export function Navbar({ onSignIn }) {
           onMouseOut={e => e.target.style.transform = "scale(1)"}
         >Get Started Free →</button>
       </div>
+
+      <button className="hamburger" onClick={() => setMobileOpen(!mobileOpen)}
+        style={{ display: "none", background: "none", border: "none", color: WHITE, fontSize: 28, cursor: "pointer", padding: 4 }}>
+        {mobileOpen ? "✕" : "☰"}
+      </button>
+
+      {mobileOpen && (
+        <div style={{ position: "fixed", top: 68, left: 0, right: 0, background: NAVY, padding: "20px 24px", display: "flex", flexDirection: "column", gap: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", zIndex: 499 }}>
+          {links.map(l => (
+            <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "8px 0" }}>{l.label}</a>
+          ))}
+          <hr style={{ border: "none", borderTop: "1px solid rgba(255,255,255,0.08)", margin: "4px 0" }} />
+          <button onClick={() => { setMobileOpen(false); onSignIn(); }} style={{ background: AMBER, border: "none", color: NAVY, borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Get Started Free →</button>
+        </div>
+      )}
     </nav>
   );
 }

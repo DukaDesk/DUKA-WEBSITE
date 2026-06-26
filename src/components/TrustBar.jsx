@@ -9,8 +9,8 @@ export function TrustBar() {
     { value: "₦0", label: "Transaction cut" },
   ];
   return (
-    <div style={{ background: CREAM, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: "28px 80px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
+    <div data-pad="narrow" style={{ background: CREAM, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: "28px 80px" }}>
+      <div data-grid="trust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
         {stats.map((s, i) => (
           <div key={i} style={{ textAlign: "center" }}>
             <div style={{ fontFamily: sora, fontWeight: 800, fontSize: 28, color: NAVY }}>{s.value}</div>

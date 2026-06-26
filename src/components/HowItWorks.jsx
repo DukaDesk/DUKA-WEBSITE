@@ -16,18 +16,18 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how" style={{ padding: "100px 80px", background: WHITE }}>
+    <section id="how" data-pad="wide" style={{ padding: "100px 80px", background: WHITE }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 72 }}>
           <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>How it works</span>
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>One platform. Two journeys.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>One platform. Two journeys.</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 540, margin: "0 auto" }}>Whether you're a business owner or a customer — DukaDesk makes the mobile experience effortless.</p>
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+      <div data-grid="how" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
         <FadeIn delay={100}>
           <div style={{ background: NAVY, borderRadius: 24, padding: "40px 36px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 36 }}>

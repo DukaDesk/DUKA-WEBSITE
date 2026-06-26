@@ -3,8 +3,8 @@ import { NAVY, AMBER, GREEN, sora } from "../constants";
 export function Footer({ onSignIn }) {
   return (
     <footer style={{ background: NAVY, padding: "80px 80px 40px" }}>
-      <div style={{ background: `linear-gradient(135deg, ${AMBER}18, ${AMBER}08)`, border: `1px solid ${AMBER}33`, borderRadius: 24, padding: "56px 64px", textAlign: "center", marginBottom: 72 }}>
-        <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Your app is 10 minutes away.</h2>
+      <div className="footer-cta" style={{ background: `linear-gradient(135deg, ${AMBER}18, ${AMBER}08)`, border: `1px solid ${AMBER}33`, borderRadius: 24, padding: "56px 64px", textAlign: "center", marginBottom: 72 }}>
+        <h2 data-type="h3" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Your app is 10 minutes away.</h2>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", marginBottom: 32 }}>Free to start. No developers. Your QR code ready on day one.</p>
         <button onClick={onSignIn} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 40px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "transform 0.2s" }}
           onMouseOver={e => e.target.style.transform = "scale(1.04)"}
@@ -12,7 +12,7 @@ export function Footer({ onSignIn }) {
         >🚀 Launch Your App Free</button>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: 48, marginBottom: 56 }}>
+      <div data-grid="footer" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: 48, marginBottom: 56 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
             <div style={{ width: 36, height: 36, background: AMBER, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>

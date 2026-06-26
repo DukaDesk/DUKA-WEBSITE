@@ -12,13 +12,13 @@ export function Pricing({ onSignIn }) {
   ];
 
   return (
-    <section id="pricing" style={{ padding: "100px 80px", background: CREAM }}>
+    <section id="pricing" data-pad="wide" style={{ padding: "100px 80px", background: CREAM }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Simple pricing</span>
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 12 }}>No surprises. No commissions.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 12 }}>No surprises. No commissions.</h2>
           <p style={{ fontSize: 17, color: LGREY, marginBottom: 28 }}>You keep 100% of what you earn. We make money on subscriptions, not your sales.</p>
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 12, background: WHITE, borderRadius: 32, padding: "6px 20px", border: `1px solid ${BORDER}` }}>
@@ -31,7 +31,7 @@ export function Pricing({ onSignIn }) {
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, maxWidth: 1000, margin: "0 auto" }}>
+      <div data-grid="pricing" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, maxWidth: 1000, margin: "0 auto" }}>
         {plans.map((plan, i) => (
           <FadeIn key={i} delay={i * 100}>
             <div style={{ background: plan.highlight ? NAVY : WHITE, borderRadius: 24, padding: "36px 32px", border: plan.highlight ? "none" : `1.5px solid ${BORDER}`, position: "relative", transform: plan.highlight ? "scale(1.04)" : "none", boxShadow: plan.highlight ? "0 24px 64px rgba(26,26,46,0.35)" : "none" }}>

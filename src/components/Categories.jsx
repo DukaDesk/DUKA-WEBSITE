@@ -14,17 +14,17 @@ export function Categories() {
   ];
 
   return (
-    <section id="categories" style={{ padding: "100px 80px", background: CREAM }}>
+    <section id="categories" data-pad="wide" style={{ padding: "100px 80px", background: CREAM }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Built for your industry</span>
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>A template for every business type</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>A template for every business type</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 500, margin: "0 auto" }}>Every category comes with the features, integrations, and layout that business type actually needs.</p>
         </div>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+      <div data-grid="4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
         {cats.map((c, i) => (
           <FadeIn key={i} delay={i * 60}>
             <div style={{ background: c.color, borderRadius: 18, padding: "28px 24px", border: `1.5px solid ${c.accent}22`, cursor: "pointer", transition: "all 0.2s" }}
