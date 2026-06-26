@@ -11,7 +11,7 @@ import { Careers } from "./components/Careers";
 import { Footer } from "./components/Footer";
 import { CHAR, WHITE, inter } from "./constants";
 
-const SIGN_IN_URL = "https://app.dukadesk.com";
+const SIGN_IN_URL = import.meta.env.VITE_MERCHANT_URL || "https://app.dukadesk.com";
 
 export default function App() {
   const handleSignIn = () => {
