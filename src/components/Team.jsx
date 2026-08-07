@@ -1,14 +1,15 @@
 import { FadeIn } from "./ui/FadeIn";
+import { MonogramAvatar } from "./ui/MonogramAvatar";
 import { NAVY, AMBER, CREAM, BORDER, LGREY, sora } from "../constants";
 
 export function Team() {
   const team = [
-    { name: "Adaeze Nwachukwu", role: "Co-Founder & CEO", bio: "Former fintech product lead at Flutterwave. 8 years building products for African markets.", emoji: "👩🏾‍💼", color: "#7C3AED" },
-    { name: "Emeka Eze",        role: "Co-Founder & CTO", bio: "Ex-senior engineer at Andela. Built scalable infrastructure for 3 funded Nigerian startups.", emoji: "👨🏾‍💻", color: NAVY },
-    { name: "Fatima Bello",     role: "Head of Design",   bio: "UX designer with 6 years crafting mobile experiences for SMEs across West Africa.", emoji: "👩🏽‍🎨", color: AMBER },
-    { name: "Chukwuemeka Obi",  role: "Head of Growth",   bio: "Grew two Lagos-based SaaS products from zero to 50,000 users. Obsessed with Nigerian SME distribution.", emoji: "👨🏾‍📈", color: "#2ECC71" },
-    { name: "Ngozi Adichie",    role: "Head of Operations", bio: "Ran operations across 3 African markets for a global logistics company. Keeps DukaDesk running at 99.9%.", emoji: "👩🏿‍🔧", color: "#E74C3C" },
-    { name: "Ibrahim Sani",     role: "Head of Customer Success", bio: "Former community manager who turned 1,000 unhappy merchants into DukaDesk's loudest ambassadors.", emoji: "👨🏽‍🤝", color: "#0D9488" },
+    { name: "Adaeze Nwachukwu", role: "Co-Founder & CEO", bio: "Former fintech product lead at Flutterwave. 8 years building products for African markets.", color: "#7C3AED" },
+    { name: "Emeka Eze",        role: "Co-Founder & CTO", bio: "Ex-senior engineer at Andela. Built scalable infrastructure for 3 funded Nigerian startups.", color: NAVY },
+    { name: "Fatima Bello",     role: "Head of Design",   bio: "UX designer with 6 years crafting mobile experiences for SMEs across West Africa.", color: AMBER },
+    { name: "Chukwuemeka Obi",  role: "Head of Growth",   bio: "Grew two Lagos-based SaaS products from zero to 50,000 users. Obsessed with Nigerian SME distribution.", color: "#2ECC71" },
+    { name: "Ngozi Aliyu",    role: "Head of Operations", bio: "Ran operations across 3 African markets for a global logistics company. Keeps DukaDesk running at 99.9%.", color: "#E74C3C" },
+    { name: "Ibrahim Sani",     role: "Head of Customer Success", bio: "Former community manager who turned 1,000 unhappy merchants into DukaDesk's loudest ambassadors.", color: "#0D9488" },
   ];
 
   return (
@@ -29,8 +30,8 @@ export function Team() {
               onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,0.08)"; }}
               onMouseOut={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ width: 64, height: 64, background: `${person.color}22`, borderRadius: 18, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, marginBottom: 16 }}>{person.emoji}</div>
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: NAVY, marginBottom: 4 }}>{person.name}</div>
+              <MonogramAvatar name={person.name} size={64} color={person.color} radius={18} fontSize={24} />
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: NAVY, marginBottom: 4, marginTop: 16 }}>{person.name}</div>
               <div style={{ display: "inline-block", background: `${person.color}18`, borderRadius: 20, padding: "3px 12px", fontSize: 12, fontWeight: 600, color: person.color, marginBottom: 12 }}>{person.role}</div>
               <div style={{ fontSize: 14, color: LGREY, lineHeight: 1.7 }}>{person.bio}</div>
             </div>

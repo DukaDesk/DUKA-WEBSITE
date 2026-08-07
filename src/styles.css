@@ -43,12 +43,30 @@ html {
   to { opacity: 1; transform: scale(1); }
 }
 
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* ── Responsive section padding ── */
 @media (max-width: 768px) {
   section, footer > div:first-child,
   [data-pad] {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+
+  .hero-video {
+    display: none !important;
+  }
+
+  .hero-video-overlay {
+    display: none !important;
   }
 
   nav {
@@ -152,6 +170,11 @@ html {
     font-size: 26px !important;
   }
 
+  /* ── 3-col grid ── */
+  [data-grid="3-col"] {
+    grid-template-columns: 1fr !important;
+  }
+
   /* ── Hide / show ── */
   .nav-links {
     display: none !important;
@@ -174,6 +197,16 @@ html {
   [data-grid="trust"] {
     flex-direction: column !important;
     gap: 16px !important;
+  }
+
+  [data-grid="trust"] > div:last-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* ── Testimonials grid ── */
+  [data-grid="testimonials"] {
+    grid-template-columns: 1fr !important;
   }
 
   /* ── Values grid ── */
@@ -222,6 +255,25 @@ html {
   }
 }
 
+/* ── Anchor targets clear the fixed navbar ── */
+[id] {
+  scroll-margin-top: 90px;
+}
+
+/* ── Hero 3D middle column (space guard) ── */
+@media (max-width: 1023px) {
+  .hero-3d {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-3d {
+    flex-basis: 190px !important;
+    height: 480px !important;
+  }
+}
+
 @media (max-width: 480px) {
   [data-grid="4"] {
     grid-template-columns: 1fr 1fr !important;
@@ -243,3 +295,76 @@ html {
     grid-template-columns: 1fr 1fr !important;
   }
 }
+
+/* ── Legal pages responsive ── */
+@media (max-width: 768px) {
+  .legal-page article h1 {
+    font-size: 28px !important;
+  }
+  .legal-page article h2 {
+    font-size: 20px !important;
+  }
+  .legal-page article h3 {
+    font-size: 16px !important;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-video,
+  .hero-video-overlay {
+    display: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* ── Focus visibility ── */
+:focus-visible {
+  outline: 2px solid #F4A026;
+  outline-offset: 2px;
+}
+
+/* ── Liveliness keyframes ── */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowBurst {
+  0% { opacity: 0.9; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(1.15); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes driftUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  25% { opacity: 0.6; }
+  75% { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-140px); }
+}
+
+/* ── Hide ambient particles on small screens ── */
+@media (max-width: 768px) {
+  [style*="driftUp"] {
+    display: none;
+  }
+}
+
+
+

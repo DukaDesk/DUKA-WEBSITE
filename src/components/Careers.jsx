@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Mail, MessageCircle, Globe, ArrowRight, Check, PartyPopper } from "lucide-react";
 import { FadeIn } from "./ui/FadeIn";
 import { NAVY, AMBER, WHITE, CREAM, BORDER, CHAR, LGREY, GREEN, sora, inter } from "../constants";
 
@@ -36,7 +37,7 @@ export function Careers() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {["Competitive naira salary", "Remote-friendly for most roles", "Health insurance", "Equity in an early-stage company", "Annual retreat"].map((b, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: CHAR }}>
-                  <span style={{ color: GREEN, fontWeight: 700 }}>✓</span>{b}
+                  <Check size={14} color={GREEN} style={{ flexShrink: 0 }} aria-hidden="true" />{b}
                 </div>
               ))}
             </div>
@@ -45,9 +46,9 @@ export function Careers() {
             <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: WHITE, marginBottom: 8 }}>Don't see the right role?</div>
             <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: 20 }}>We always want to hear from people who care about what we're building. Send us your story.</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {[["📧", "careers@dukadesk.com"], ["💬", "WhatsApp: +234 800 DukaDesk"], ["🌍", "dukadesk.com/careers"]].map(([icon, val]) => (
+              {[[Mail, "careers@dukadesk.com"], [MessageCircle, "WhatsApp: +234 800 DukaDesk"], [Globe, "dukadesk.com/careers"]].map(([Icon, val]) => (
                 <div key={val} style={{ display: "flex", alignItems: "center", gap: 10, color: WHITE, fontSize: 14 }}>
-                  <span>{icon}</span><span style={{ color: AMBER }}>{val}</span>
+                  <Icon size={16} color={AMBER} aria-hidden="true" /><span style={{ color: AMBER }}>{val}</span>
                 </div>
               ))}
             </div>
@@ -80,7 +81,7 @@ export function Careers() {
                     <span key={si} style={{ background: CREAM, color: CHAR, fontSize: 11, padding: "3px 10px", borderRadius: 10, border: `1px solid ${BORDER}` }}>{s}</span>
                   ))}
                 </div>
-                <button onClick={() => setOpenRole(role)} style={{ background: color, color: WHITE, border: "none", borderRadius: 20, padding: "9px 20px", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: sora }}>Apply Now →</button>
+                <button onClick={() => setOpenRole(role)} style={{ background: color, color: WHITE, border: "none", borderRadius: 20, padding: "9px 20px", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: sora }}>Apply Now <ArrowRight size={13} color={WHITE} style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /></button>
               </div>
             </FadeIn>
           );
@@ -93,7 +94,7 @@ export function Careers() {
           <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", background: WHITE, borderRadius: 24, padding: 40, width: 520, zIndex: 601, boxShadow: "0 32px 80px rgba(0,0,0,0.25)", maxHeight: "90vh", overflowY: "auto" }}>
             {applied ? (
               <div style={{ textAlign: "center", padding: "32px 0" }}>
-                <div style={{ fontSize: 56, marginBottom: 16 }}>🎉</div>
+                <PartyPopper size={56} color={AMBER} style={{ marginBottom: 16 }} aria-hidden="true" />
                 <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 24, color: NAVY, marginBottom: 8 }}>Application sent!</div>
                 <div style={{ fontSize: 15, color: LGREY }}>We'll be in touch within 3 business days.</div>
               </div>
@@ -114,7 +115,7 @@ export function Careers() {
                   <textarea value={form.why} onChange={e => setForm(f => ({ ...f, why: e.target.value }))} placeholder="Tell us why this role and why now..." style={{ width: "100%", height: 100, border: `1px solid ${BORDER}`, borderRadius: 8, padding: "12px 14px", fontSize: 14, fontFamily: inter, outline: "none", resize: "none", boxSizing: "border-box" }} onFocus={e => e.target.style.borderColor = AMBER} onBlur={e => e.target.style.borderColor = BORDER} />
                 </div>
                 <div style={{ display: "flex", gap: 10 }}>
-                  <button onClick={apply} style={{ flex: 1, background: AMBER, color: NAVY, border: "none", borderRadius: 24, height: 50, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora }}>Submit Application →</button>
+                  <button onClick={apply} style={{ flex: 1, background: AMBER, color: NAVY, border: "none", borderRadius: 24, height: 50, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora }}>Submit Application <ArrowRight size={15} color={NAVY} style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /></button>
                   <button onClick={() => setOpenRole(null)} style={{ background: "none", border: `1px solid ${BORDER}`, borderRadius: 24, height: 50, padding: "0 20px", fontSize: 14, cursor: "pointer", color: LGREY }}>Cancel</button>
                 </div>
               </>

@@ -1,20 +1,38 @@
 import { FadeIn } from "./ui/FadeIn";
+import {
+  CreditCard, Landmark, MonitorSmartphone, ShoppingCart, Tags, CalendarCheck,
+  Star, Bell, MessageCircle, MessageSquare, Mail, Smartphone, Camera,
+  CalendarDays, Truck, Ticket,
+} from "lucide-react";
 import { NAVY, AMBER, LGREY, sora } from "../constants";
+
+const ICONS = [
+  CreditCard, CreditCard, Landmark, MonitorSmartphone,
+  ShoppingCart, Tags, CalendarCheck, Star,
+  Bell, MessageCircle, MessageSquare, Mail,
+  Smartphone, Camera, CalendarDays, Truck,
+  Ticket,
+];
 
 export function Integrations() {
   const integrations = [
-    { icon: "💳", name: "Paystack",    cat: "Payments" },
-    { icon: "💳", name: "Flutterwave", cat: "Payments" },
-    { icon: "🛒", name: "Product Cart",cat: "Commerce" },
-    { icon: "📅", name: "Booking Calendar", cat: "Scheduling" },
-    { icon: "⭐", name: "Loyalty Points",   cat: "Engagement" },
-    { icon: "💬", name: "Messaging",   cat: "Communication" },
-    { icon: "🔔", name: "Push Notifications", cat: "Engagement" },
-    { icon: "📱", name: "WhatsApp",    cat: "Communication" },
-    { icon: "📧", name: "Email Capture", cat: "Marketing" },
-    { icon: "🏷️", name: "Discount Codes", cat: "Commerce" },
-    { icon: "🚚", name: "Delivery Zones", cat: "Logistics" },
-    { icon: "🎫", name: "Event Tickets", cat: "Events" },
+    { icon: 0, name: "Paystack",    cat: "Payments" },
+    { icon: 1, name: "Flutterwave", cat: "Payments" },
+    { icon: 2, name: "Bank Transfer", cat: "Payments" },
+    { icon: 3, name: "POS Terminal", cat: "Payments" },
+    { icon: 4, name: "Product Cart",cat: "Commerce" },
+    { icon: 5, name: "Discount Codes", cat: "Commerce" },
+    { icon: 6, name: "Booking Calendar", cat: "Scheduling" },
+    { icon: 7, name: "Loyalty Points",   cat: "Engagement" },
+    { icon: 8, name: "Push Notifications", cat: "Engagement" },
+    { icon: 9, name: "Messaging",   cat: "Communication" },
+    { icon: 10, name: "WhatsApp",    cat: "Communication" },
+    { icon: 11, name: "Email Campaigns", cat: "Marketing" },
+    { icon: 12, name: "SMS Marketing", cat: "Marketing" },
+    { icon: 13, name: "Instagram",   cat: "Marketing" },
+    { icon: 14, name: "Google Calendar", cat: "Scheduling" },
+    { icon: 15, name: "Delivery Zones", cat: "Logistics" },
+    { icon: 16, name: "Event Tickets", cat: "Events" },
   ];
 
   return (
@@ -29,18 +47,21 @@ export function Integrations() {
         </div>
       </FadeIn>
       <div data-grid="integrations" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, maxWidth: 900, margin: "0 auto" }}>
-        {integrations.map((int, i) => (
+        {integrations.map((int, i) => {
+          const IntIcon = ICONS[int.icon];
+          return (
           <FadeIn key={i} delay={i * 50}>
             <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, padding: "18px 16px", transition: "all 0.2s", cursor: "default" }}
               onMouseOver={e => { e.currentTarget.style.background = "rgba(244,160,38,0.1)"; e.currentTarget.style.borderColor = `${AMBER}44`; }}
               onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
             >
-              <span style={{ fontSize: 28, display: "block", marginBottom: 8 }}>{int.icon}</span>
+              <IntIcon size={24} color={AMBER} style={{ display: "block", marginBottom: 8 }} aria-hidden="true" />
               <div style={{ fontWeight: 600, fontSize: 13, color: "white", marginBottom: 2 }}>{int.name}</div>
               <div style={{ fontSize: 11, color: LGREY }}>{int.cat}</div>
             </div>
           </FadeIn>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
