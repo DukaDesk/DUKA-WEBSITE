@@ -9,6 +9,7 @@ const ROUTES = {
   "Help Centre": "/resources",
   Documentation: "/resources",
   Changelog: "/resources",
+  "Contact Us": "/contact",
   "Privacy Policy": "/privacy",
   "Terms of Service": "/terms",
 };

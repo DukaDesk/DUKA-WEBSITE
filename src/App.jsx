@@ -20,6 +20,7 @@ const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: 
 const Team = lazy(() => import("./components/Team").then(m => ({ default: m.Team })));
 const Careers = lazy(() => import("./components/Careers").then(m => ({ default: m.Careers })));
 const Resources = lazy(() => import("./components/Resources").then(m => ({ default: m.Resources })));
+const Contact = lazy(() => import("./components/Contact").then(m => ({ default: m.Contact })));
 const CtaSection = lazy(() => import("./components/CtaSection").then(m => ({ default: m.CtaSection })));
 const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })));
 
@@ -114,6 +115,18 @@ function ResourcesPage({ onSignIn, onWaitlist }) {
   );
 }
 
+function ContactPage({ onSignIn, onWaitlist }) {
+  return (
+    <>
+      <Suspense fallback={<SectionFallback />}>
+        <Contact />
+      </Suspense>
+      <CtaSection onWaitlist={onWaitlist} />
+      <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
+    </>
+  );
+}
+
 export default function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -137,6 +150,7 @@ export default function App() {
         <Route path="/solutions" element={<SolutionsPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/company" element={<CompanyPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/resources" element={<ResourcesPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
+        <Route path="/contact" element={<ContactPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/privacy" element={<LegalLayout><Privacy /></LegalLayout>} />
         <Route path="/terms" element={<LegalLayout><Terms /></LegalLayout>} />
       </Routes>
