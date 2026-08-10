@@ -5,7 +5,7 @@ import { NAVY, AMBER, CREAM, BORDER, LGREY, WHITE, sora, inter } from "../consta
 const SOCIALS = [
   { label: "ig", href: "https://www.instagram.com/getdukadesk", aria: "DukaDesk on Instagram" },
   { label: "fb", href: "https://www.facebook.com/share/17wTfvgC7W/", aria: "DukaDesk on Facebook" },
-  { label: "tt", href: "https://www.tiktok.com/@getdukadesk6", aria: "DukaDesk on TikTok" },
+  { label: "tt", href: "https://www.tiktok.com/@get.dukadesk", aria: "DukaDesk on TikTok" },
   { label: "𝕏", href: "https://x.com/getdukadesk", aria: "DukaDesk on X" },
   { label: "in", href: "https://www.linkedin.com/company/137513985/", aria: "DukaDesk on LinkedIn" },
 ];
