@@ -64,10 +64,7 @@ export function Pricing({ onSignIn, onWaitlist }) {
                   </div>
                 ))}
               </div>
-              <button onClick={onWaitlist} style={{ width: "100%", height: 48, background: plan.highlight ? AMBER : "transparent", color: plan.highlight ? NAVY : NAVY, border: plan.highlight ? "none" : `2px solid ${NAVY}`, borderRadius: 24, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "all 0.2s" }}
-                onMouseOver={e => { if (!plan.highlight) { e.target.style.background = NAVY; e.target.style.color = WHITE; }}}
-                onMouseOut={e => { if (!plan.highlight) { e.target.style.background = "transparent"; e.target.style.color = NAVY; }}}
-              >{plan.cta}</button>
+              <button onClick={onWaitlist} className="btn-waitlist" style={{ width: "100%", height: 48, border: "none", borderRadius: 24, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "all 0.2s" }}>{plan.cta}</button>
             </div>
             </Tilt>
           </FadeIn>
@@ -81,7 +78,7 @@ export function Pricing({ onSignIn, onWaitlist }) {
 
         <div style={{ maxWidth: 800, margin: "0 auto", background: WHITE, borderRadius: 24, padding: "32px 36px", border: `1px solid ${BORDER}` }}>
           <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: NAVY, marginBottom: 20, textAlign: "center" }}>Compare plans side by side</div>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 8 }}>
+          <div data-grid="compare" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 8 }}>
             <div style={{ fontSize: 12, fontWeight: 600, color: LGREY, padding: "8px 8px" }}>Feature</div>
             <div style={{ fontSize: 12, fontWeight: 600, color: LGREY, textAlign: "center", padding: "8px 8px" }}>Starter</div>
             <div style={{ fontSize: 12, fontWeight: 600, color: AMBER, textAlign: "center", padding: "8px 8px" }}>Growth</div>

@@ -44,9 +44,9 @@ function HomePage({ onSignIn, onWaitlist }) {
       <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} />
       <Ticker />
       <ProcessCarousel />
-      <WhyChoose />
-      <ProductShowcase />
-      <FAQ />
+      <WhyChoose onWaitlist={onWaitlist} />
+      <ProductShowcase onWaitlist={onWaitlist} />
+      <FAQ onWaitlist={onWaitlist} />
       <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
@@ -60,6 +60,7 @@ function FeaturesPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Integrations />
       </Suspense>
+      <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -80,6 +81,7 @@ function SolutionsPage({ onSignIn, onWaitlist }) {
   return (
     <>
       <Categories />
+      <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -94,6 +96,7 @@ function CompanyPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Careers />
       </Suspense>
+      <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -105,6 +108,7 @@ function ResourcesPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Resources />
       </Suspense>
+      <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );

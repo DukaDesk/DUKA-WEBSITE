@@ -31,9 +31,7 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
   const links = [
     { label: "Solutions", dropdown: solutions, openState: solutionsOpen, setOpenState: setSolutionsOpen },
     { label: "Features", href: "/features" },
-    { label: "Pricing", href: "/pricing" },
     { label: "Resources", dropdown: resources, openState: resourcesOpen, setOpenState: setResourcesOpen },
-    { label: "Company", href: "/company" },
   ];
 
   const closeMobile = useCallback(() => { setMobileOpen(false); setMobileSolutionsOpen(false); setMobileResourcesOpen(false); }, []);
@@ -99,9 +97,9 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
           onMouseOver={e => { e.target.style.background = "rgba(255,255,255,0.1)"; }}
           onMouseOut={e => { e.target.style.background = "none"; }}
         >Sign In</button>
-        <button aria-label="Join the DukaDesk waitlist" onClick={onWaitlist} style={{ background: AMBER, border: "none", color: NAVY, borderRadius: 24, padding: "9px 22px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "all 0.2s" }}
-          onMouseOver={e => e.target.style.transform = "scale(1.03)"}
-          onMouseOut={e => e.target.style.transform = "scale(1)"}
+        <button aria-label="Join the DukaDesk waitlist" onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "9px 22px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: sora }}
+          onMouseOver={e => e.currentTarget.style.transform = "scale(1.03)"}
+          onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
         >Join Waitlist</button>
       </div>
 
@@ -128,7 +126,6 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
             )}
           </div>
           <Link to="/features" onClick={closeMobile} style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "12px 0" }}>Features</Link>
-          <Link to="/pricing" onClick={closeMobile} style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "12px 0" }}>Pricing</Link>
           <div>
             <button onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)} aria-expanded={mobileResourcesOpen}
               style={{ background: "none", border: "none", color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, cursor: "pointer", padding: "12px 0", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", textAlign: "left", fontFamily: sora }}>
@@ -142,9 +139,8 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
               </div>
             )}
           </div>
-          <Link to="/company" onClick={closeMobile} style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "12px 0" }}>Company</Link>
           <hr style={{ border: "none", borderTop: "1px solid rgba(255,255,255,0.08)", margin: "8px 0" }} />
-          <button onClick={() => { closeMobile(); onWaitlist(); }} style={{ background: AMBER, border: "none", color: NAVY, borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Join Waitlist</button>
+          <button onClick={() => { closeMobile(); onWaitlist(); }} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Join Waitlist</button>
         </div>
       )}
     </nav>

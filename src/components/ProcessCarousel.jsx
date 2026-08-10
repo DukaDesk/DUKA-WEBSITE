@@ -71,11 +71,12 @@ export function ProcessCarousel() {
   return (
     <section
       id="how"
+      data-pad="wide"
       style={{ background: WHITE, padding: "104px 56px", overflow: "hidden" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(280px, 480px) minmax(320px, 460px)", gap: 72, maxWidth: 1040, margin: "0 auto", alignItems: "center" }}>
+      <div data-grid="how" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 480px) minmax(320px, 460px)", gap: 72, maxWidth: 1040, margin: "0 auto", alignItems: "center" }}>
         <Reveal>
           <div style={{ position: "relative" }}>
             <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>
@@ -185,6 +186,7 @@ export function ProcessCarousel() {
               </motion.div>
             </AnimatePresence>
             <div
+              className="step-badge"
               style={{
                 position: "absolute",
                 bottom: -24,

@@ -3,7 +3,7 @@ import { NAVY, AMBER, sora, inter } from "../constants";
 
 export function CtaSection({ onWaitlist }) {
   return (
-    <section style={{ background: AMBER, color: NAVY, padding: "96px 56px" }}>
+    <section data-pad="wide" style={{ background: AMBER, color: NAVY, padding: "96px 56px" }}>
       <Reveal>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 40, flexWrap: "wrap", maxWidth: 1080, margin: "0 auto" }}>
           <div>
@@ -13,7 +13,7 @@ export function CtaSection({ onWaitlist }) {
             <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(34px,4.6vw,64px)", lineHeight: 0.98, letterSpacing: "-0.03em", margin: "16px 0 0" }}>
               Your desk
               <br />
-              live within 48 hours.
+              live within 24 hours.
             </h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
@@ -22,9 +22,8 @@ export function CtaSection({ onWaitlist }) {
             </p>
             <button
               onClick={onWaitlist}
-              style={{ fontFamily: sora, background: NAVY, color: "#FAF8F5", border: "none", borderRadius: 999, padding: "18px 30px", fontSize: 14, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", transition: "transform 0.2s" }}
-              onMouseOver={e => e.currentTarget.style.transform = "scale(1.03)"}
-              onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
+              className="btn-waitlist"
+              style={{ fontFamily: sora, border: "none", borderRadius: 999, padding: "18px 30px", fontSize: 14, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer" }}
             >
               Create my app
             </button>

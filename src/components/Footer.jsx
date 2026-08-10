@@ -5,9 +5,6 @@ import { NAVY, AMBER, GREEN, WHITE, sora } from "../constants";
 const ROUTES = {
   "How it works": "/features",
   Integrations: "/features",
-  Pricing: "/pricing",
-  "About Us": "/company",
-  Team: "/company",
   Blog: "/resources",
   "Help Centre": "/resources",
   Documentation: "/resources",
@@ -22,10 +19,7 @@ export function Footer({ onSignIn, onWaitlist }) {
       <div className="footer-cta" style={{ background: `linear-gradient(135deg, ${AMBER}18, ${AMBER}08)`, border: `1px solid ${AMBER}33`, borderRadius: 24, padding: "56px 64px", textAlign: "center", marginBottom: 48 }}>
         <h2 data-type="h3" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Ready to grow your desk with DukaDesk?</h2>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", marginBottom: 32 }}>Join thousands of desks preparing for a smarter way to sell, manage and grow.</p>
-        <button onClick={onWaitlist} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 40px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "transform 0.2s" }}
-          onMouseOver={e => e.target.style.transform = "scale(1.04)"}
-          onMouseOut={e => e.target.style.transform = "scale(1)"}
-        >Join Waitlist Free <ArrowRight size={16} color={NAVY} style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /></button>
+        <button onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 28, padding: "16px 40px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora }}>Join Waitlist Free <ArrowRight size={16} style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /></button>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", gap: 24, marginBottom: 48, flexWrap: "wrap" }}>
@@ -55,17 +49,23 @@ export function Footer({ onSignIn, onWaitlist }) {
           <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240 }}>The all-in-one platform for independent desks.</p>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 12 }}>Follow us for product updates, desk tips and launch announcements.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
-            {["𝕏", "in", "ig", "wa"].map((s, i) => (
-              <div key={i} style={{ width: 34, height: 34, background: "rgba(255,255,255,0.06)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "rgba(255,255,255,0.5)", cursor: "pointer", transition: "all 0.2s" }}
-                onMouseOver={e => { e.target.style.background = `${AMBER}22`; e.target.style.color = AMBER; }}
-                onMouseOut={e => { e.target.style.background = "rgba(255,255,255,0.06)"; e.target.style.color = "rgba(255,255,255,0.5)"; }}
-              >{s}</div>
+            {[
+              { label: "ig", href: "https://www.instagram.com/getdukadesk", aria: "DukaDesk on Instagram" },
+              { label: "fb", href: "https://www.facebook.com/share/17wTfvgC7W/", aria: "DukaDesk on Facebook" },
+              { label: "tt", href: "https://www.tiktok.com/@getdukadesk6", aria: "DukaDesk on TikTok" },
+              { label: "𝕏", href: "https://x.com/getdukadesk", aria: "DukaDesk on X" },
+              { label: "in", href: "https://www.linkedin.com/company/137513985/", aria: "DukaDesk on LinkedIn" },
+            ].map((s, i) => (
+              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.aria} style={{ width: 34, height: 34, background: "rgba(255,255,255,0.06)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "rgba(255,255,255,0.5)", cursor: "pointer", transition: "all 0.2s", textDecoration: "none" }}
+                onMouseOver={e => { e.currentTarget.style.background = `${AMBER}22`; e.currentTarget.style.color = AMBER; }}
+                onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}
+              >{s.label}</a>
             ))}
           </div>
         </div>
         {[
-          { title: "Product", links: ["How it works", "Templates", "Integrations", "Pricing", "Changelog"] },
-          { title: "Company",  links: ["About Us", "Team", "Blog", "Press Kit", "Contact Us"] },
+          { title: "Product", links: ["How it works", "Templates", "Integrations", "Changelog"] },
+          { title: "Company",  links: ["Blog", "Press Kit", "Contact Us"] },
           { title: "Support",  links: ["Help Centre", "Documentation", "Status Page", "Report an Issue", "careers@dukadesk.com"] },
           { title: "Legal",    links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] },
         ].map((col, i) => (
@@ -91,7 +91,7 @@ export function Footer({ onSignIn, onWaitlist }) {
         ))}
       </div>
 
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div className="footer-bar" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span style={{ fontSize: 13, color: "rgba(255,255,255,0.3)" }}>© 2025 DukaDesk Technologies Ltd. RC 123456. Lagos, Nigeria.</span>
         <div style={{ display: "flex", gap: 8 }}>
           <span style={{ background: `${GREEN}18`, color: GREEN, fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 12 }}><span style={{ display: "inline-block", width: 7, height: 7, background: GREEN, borderRadius: "50%", marginRight: 6, verticalAlign: "middle" }} />All systems operational</span>

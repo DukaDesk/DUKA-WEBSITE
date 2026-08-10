@@ -137,10 +137,7 @@ export function Hero({ onWaitlist }) {
         </p>
 
         <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-          <button onClick={onWaitlist} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 36px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8, transition: "transform 0.2s" }}
-            onMouseOver={e => e.currentTarget.style.transform = "scale(1.03)"}
-            onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
-          >Start building — free</button>
+          <button onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 28, padding: "16px 36px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8 }}>Start building — free</button>
           <a href="#how" style={{ background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.15)", borderRadius: 28, padding: "16px 28px", fontSize: 16, fontWeight: 500, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
             <Play size={16} aria-hidden="true" /> See how it works
           </a>

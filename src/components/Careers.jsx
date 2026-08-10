@@ -91,7 +91,7 @@ export function Careers() {
       {openRole && (
         <>
           <div onClick={() => setOpenRole(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 600 }} />
-          <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", background: WHITE, borderRadius: 24, padding: 40, width: 520, zIndex: 601, boxShadow: "0 32px 80px rgba(0,0,0,0.25)", maxHeight: "90vh", overflowY: "auto" }}>
+          <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", background: WHITE, borderRadius: 24, padding: 40, width: "min(520px, calc(100vw - 32px))", zIndex: 601, boxShadow: "0 32px 80px rgba(0,0,0,0.25)", maxHeight: "90vh", overflowY: "auto" }}>
             {applied ? (
               <div style={{ textAlign: "center", padding: "32px 0" }}>
                 <PartyPopper size={56} color={AMBER} style={{ marginBottom: 16 }} aria-hidden="true" />

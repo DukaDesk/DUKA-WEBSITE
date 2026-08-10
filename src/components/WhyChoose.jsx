@@ -25,10 +25,10 @@ const ROWS = [
   },
 ];
 
-export function WhyChoose() {
+export function WhyChoose({ onWaitlist }) {
   return (
-    <section id="why" style={{ background: CREAM, padding: "104px 56px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
+    <section id="why" data-pad="wide" style={{ background: CREAM, padding: "104px 56px" }}>
+      <div data-grid="why" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
         <div style={{ position: "sticky", top: 96 }}>
           <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>
             Why DukaDesk
@@ -39,6 +39,13 @@ export function WhyChoose() {
             merchants stay.
           </h2>
           <div style={{ width: 64, height: 3, background: AMBER, marginTop: 26 }} />
+          <button
+            onClick={onWaitlist}
+            className="btn-waitlist"
+            style={{ fontFamily: sora, border: "none", borderRadius: 999, padding: "14px 28px", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", marginTop: 28 }}
+          >
+            Join the waitlist
+          </button>
         </div>
 
         <div>
