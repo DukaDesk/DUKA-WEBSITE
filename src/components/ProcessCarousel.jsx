@@ -179,7 +179,7 @@ export function ProcessCarousel() {
                     alt={slide.alt}
                     width={720}
                     height={1280}
-                    loading={idx === 0 ? "eager" : "lazy"}
+                    loading="eager"
                     decoding="async"
                     fetchPriority={idx === 0 ? "high" : "auto"}
                     style={{ height: 500, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
