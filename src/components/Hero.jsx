@@ -4,6 +4,7 @@ import { Star, ScanLine, Bell, Play, Utensils, Drumstick, Fish, CreditCard, BarC
 import { NAVY, AMBER, GREEN, LGREY, WHITE, sora } from "../constants";
 
 const WORDS = ["restaurant", "fashion store", "grocery store", "food vendor", "retail store", "church", "school", "fitness studio", "clinic", "practice"];
+const LOOP_WORDS = [...WORDS, WORDS[0]];
 const FLOAT_DUR = 800;
 const HERO_VIDEO = "/videos/hero-bg.mp4";
 
@@ -40,6 +41,7 @@ const Hero3D = lazy(() => import("./Hero3D").then(m => ({ default: m.Hero3D })))
 
 export function Hero({ onWaitlist }) {
   const [wordIdx, setWordIdx] = useState(0);
+  const [noTransition, setNoTransition] = useState(false);
   const [scanned, setScanned] = useState(false);
   const [scanning, setScanning] = useState(false);
   const [glow, setGlow] = useState(false);
@@ -72,9 +74,19 @@ export function Hero({ onWaitlist }) {
   };
 
   useEffect(() => {
-    const t = setInterval(() => setWordIdx(i => (i + 1) % WORDS.length), FLOAT_DUR);
+    const t = setInterval(() => setWordIdx(i => (i + 1) % LOOP_WORDS.length), FLOAT_DUR);
     return () => clearInterval(t);
   }, []);
+
+  useEffect(() => {
+    if (wordIdx !== LOOP_WORDS.length - 1) return;
+    const t = setTimeout(() => {
+      setNoTransition(true);
+      setWordIdx(0);
+      requestAnimationFrame(() => requestAnimationFrame(() => setNoTransition(false)));
+    }, 350);
+    return () => clearTimeout(t);
+  }, [wordIdx]);
 
   useEffect(() => {
     const t = setInterval(() => setNotifIdx(i => (i + 1) % NOTIFS.length), 3000);
@@ -122,12 +134,14 @@ export function Hero({ onWaitlist }) {
           An app for your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
             <span style={{
-              transform: `translateY(${-wordIdx * 100}%)`,
-              transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+              transform: `translateY(${-wordIdx * 1.05}em)`,
+              transition: noTransition ? "none" : "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+              willChange: "transform",
             }}>
               {WORDS.map((w, i) => (
                 <span key={i} style={{ display: "block", height: "1.05em", textAlign: "left" }}>{w}</span>
               ))}
+              <span key="loop" style={{ display: "block", height: "1.05em", textAlign: "left" }}>{WORDS[0]}</span>
             </span>
           </span>
         </h1>
