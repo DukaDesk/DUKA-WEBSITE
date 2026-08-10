@@ -46,7 +46,7 @@ export function Careers() {
             <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: WHITE, marginBottom: 8 }}>Don't see the right role?</div>
             <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: 20 }}>We always want to hear from people who care about what we're building. Send us your story.</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {[[Mail, "careers@dukadesk.com"], [MessageCircle, "WhatsApp: +234 800 DukaDesk"], [Globe, "dukadesk.com/careers"]].map(([Icon, val]) => (
+              {[[Mail, "getdukadesk@gmail.com"], [MessageCircle, "WhatsApp: +234 805 889 9248"], [Globe, "dukadesk.com/careers"]].map(([Icon, val]) => (
                 <div key={val} style={{ display: "flex", alignItems: "center", gap: 10, color: WHITE, fontSize: 14 }}>
                   <Icon size={16} color={AMBER} aria-hidden="true" /><span style={{ color: AMBER }}>{val}</span>
                 </div>

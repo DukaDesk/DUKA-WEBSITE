@@ -136,7 +136,8 @@ export function Terms() {
 
       <div style={{ background: CREAM, borderRadius: 16, padding: "32px", marginTop: 48 }}>
         <h2 style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: NAVY, marginBottom: 12 }}>Contact Us</h2>
-        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Email: <strong style={{color: AMBER}}>legal@dukadesk.com</strong></p>
+        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Email: <strong style={{color: AMBER}}>getdukadesk@gmail.com</strong></p>
+        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Phone / WhatsApp: <strong style={{color: AMBER}}>+234 805 889 9248</strong></p>
         <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>DukaDesk Technologies Ltd</p>
         <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8 }}>Lagos, Nigeria</p>
       </div>

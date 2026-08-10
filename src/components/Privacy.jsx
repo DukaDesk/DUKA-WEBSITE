@@ -85,7 +85,7 @@ export function Privacy() {
           <li><strong>Right to Object:</strong> Object to processing based on legitimate interests</li>
           <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time without affecting service legality</li>
         </ul>
-        <p style={p}>To exercise any of these rights, contact us at <strong style={{color:AMBER}}>privacy@dukadesk.com</strong>. We will respond within 30 days.</p>
+        <p style={p}>To exercise any of these rights, contact us at <strong style={{color:AMBER}}>getdukadesk@gmail.com</strong> or <strong style={{color:AMBER}}>+234 805 889 9248</strong>. We will respond within 30 days.</p>
       </div>
 
       <div style={section}>
@@ -139,7 +139,8 @@ export function Privacy() {
 
       <div style={{ ...section, background: CREAM, borderRadius: 16, padding: "32px", marginTop: 48 }}>
         <h2 style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: NAVY, marginBottom: 12 }}>Contact Us</h2>
-        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Data Protection Officer: <strong style={{color:AMBER}}>privacy@dukadesk.com</strong></p>
+        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Data Protection Officer: <strong style={{color:AMBER}}>getdukadesk@gmail.com</strong></p>
+        <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>Phone / WhatsApp: <strong style={{color:AMBER}}>+234 805 889 9248</strong></p>
         <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 4 }}>DukaDesk Technologies Ltd</p>
         <p style={{ fontSize: 15, color: CHAR, lineHeight: 1.8 }}>Lagos, Nigeria</p>
       </div>

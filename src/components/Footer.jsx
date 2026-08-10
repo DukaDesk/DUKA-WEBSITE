@@ -67,7 +67,7 @@ export function Footer({ onSignIn, onWaitlist }) {
         {[
           { title: "Product", links: ["How it works", "Templates", "Integrations", "Changelog"] },
           { title: "Company",  links: ["Blog", "Press Kit", "Contact Us"] },
-          { title: "Support",  links: ["Help Centre", "Documentation", "Status Page", "Report an Issue", "careers@dukadesk.com"] },
+          { title: "Support",  links: ["Help Centre", "Documentation", "Status Page", "Report an Issue", "getdukadesk@gmail.com"] },
           { title: "Legal",    links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] },
         ].map((col, i) => (
           <div key={i}>
