@@ -6,10 +6,10 @@ const ICONS = [QrCode, Smartphone, Plug, BarChart3, MessageCircle];
 
 export function Features() {
   const features = [
-    { title: "Get discovered with a unique QR code",     desc: "Every business gets a custom QR code on launch. Share it on social media, print it on receipts, stick it on your counter.", badge: null },
+    { title: "Get discovered with a unique QR code",     desc: "Every desk gets a custom QR code on launch. Share it on social media, print it on receipts, stick it on your counter.", badge: null },
     { title: "Customers access you with one scan",        desc: "No app store download needed. Customers scan your QR and instantly see your menu, products, or services.", badge: null },
-    { title: "Connect the tools you actually use",        desc: "Paystack, WhatsApp, booking calendar, loyalty points — add the integrations that matter to your business.", badge: "Popular" },
-    { title: "See what's working with real-time insights",desc: "Track sales, monitor traffic, understand customer behaviour — and make smarter business decisions.", badge: null },
+    { title: "Connect the tools you actually use",        desc: "Paystack, WhatsApp, booking calendar, loyalty points — add the integrations that matter to your desk.", badge: "Popular" },
+    { title: "See what's working with real-time insights",desc: "Track sales, monitor traffic, understand customer behaviour — and make smarter decisions.", badge: null },
     { title: "Manage customer conversations from one inbox", desc: "Customers message you directly from your app. Respond from your dashboard. No more switching between tools.", badge: null },
   ];
 
@@ -22,7 +22,7 @@ export function Features() {
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Everything included</span>
             </div>
             <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 20, lineHeight: 1.1 }}>Sell more, save time, and grow faster</h2>
-            <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 36 }}>DukaDesk gives you everything you need to run a successful business — payments, messaging, analytics — all in one place. No juggling multiple apps.</p>
+            <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 36 }}>DukaDesk gives you everything you need to run a successful desk — payments, messaging, analytics — all in one place. No juggling multiple apps.</p>
             <div className="features-badges" style={{ display: "flex", gap: 12 }}>
               <div style={{ background: "#F0FDF4", borderRadius: 12, padding: "10px 16px", fontSize: 13, color: "#065F46", fontWeight: 600 }}><Check size={13} color="#065F46" style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /> 0% commission on sales</div>
               <div style={{ background: "#FFF8ED", borderRadius: 12, padding: "10px 16px", fontSize: 13, color: "#92400E", fontWeight: 600 }}><Check size={13} color="#92400E" style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /> Your brand, not ours</div>

@@ -20,8 +20,8 @@ export function Footer({ onSignIn, onWaitlist }) {
   return (
     <footer style={{ background: NAVY, padding: "80px 80px 40px" }}>
       <div className="footer-cta" style={{ background: `linear-gradient(135deg, ${AMBER}18, ${AMBER}08)`, border: `1px solid ${AMBER}33`, borderRadius: 24, padding: "56px 64px", textAlign: "center", marginBottom: 48 }}>
-        <h2 data-type="h3" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Ready to grow your business with DukaDesk?</h2>
-        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", marginBottom: 32 }}>Join thousands of businesses preparing for a smarter way to sell, manage and grow.</p>
+        <h2 data-type="h3" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Ready to grow your desk with DukaDesk?</h2>
+        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", marginBottom: 32 }}>Join thousands of desks preparing for a smarter way to sell, manage and grow.</p>
         <button onClick={onWaitlist} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 40px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, transition: "transform 0.2s" }}
           onMouseOver={e => e.target.style.transform = "scale(1.04)"}
           onMouseOut={e => e.target.style.transform = "scale(1)"}
@@ -32,7 +32,7 @@ export function Footer({ onSignIn, onWaitlist }) {
         {[
           { icon: ShieldCheck, label: "Secure Payments", desc: "All transactions encrypted" },
           { icon: EyeOff, label: "Privacy First", desc: "Your data stays yours" },
-          { icon: Globe, label: "Built for Africa", desc: "Designed for local businesses" },
+          { icon: Globe, label: "Built for Africa", desc: "Designed for local desks" },
           { icon: Headset, label: "24/7 Support", desc: "We're here to help" },
         ].map((t, i) => {
           const BadgeIcon = t.icon;
@@ -52,8 +52,8 @@ export function Footer({ onSignIn, onWaitlist }) {
             <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} style={{ objectFit: "contain" }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: "white" }}>DukaDesk</span>
           </div>
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240 }}>The all-in-one business platform built for independent businesses. Made in Lagos.</p>
-          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 12 }}>Follow us for product updates, business tips and launch announcements.</p>
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240 }}>The all-in-one platform for independent desks.</p>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 12 }}>Follow us for product updates, desk tips and launch announcements.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
             {["𝕏", "in", "ig", "wa"].map((s, i) => (
               <div key={i} style={{ width: 34, height: 34, background: "rgba(255,255,255,0.06)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "rgba(255,255,255,0.5)", cursor: "pointer", transition: "all 0.2s" }}

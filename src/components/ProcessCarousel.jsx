@@ -26,9 +26,9 @@ const SLIDES = [
   {
     n: "03",
     t: "Print the code",
-    d: "Publish and get a scannable code for your shop front, flyers and WhatsApp status.",
+    d: "Publish and get a scannable code for your desk, flyers and WhatsApp status.",
     img: mob1Img,
-    alt: "DukaDesk mobile app storefront",
+    alt: "DukaDesk mobile app desk",
   },
   {
     n: "04",

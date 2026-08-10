@@ -12,7 +12,7 @@ import mob3Img from "../assets/dukamob3.jpeg";
 const DECK = [
   { src: editorImg, label: "Design", sub: "Build your template in the editor", alt: "DukaDesk editor for building a template" },
   { src: dashboardImg, label: "Manage", sub: "Your merchant dashboard", alt: "DukaDesk merchant dashboard" },
-  { src: mob1Img, label: "Shop", sub: "Customer's mobile storefront", alt: "DukaDesk mobile app storefront" },
+  { src: mob1Img, label: "Desk", sub: "Customer's mobile desk", alt: "DukaDesk mobile app desk" },
   { src: mob2Img, label: "Order", sub: "Browse and add to cart", alt: "DukaDesk mobile app ordering screen" },
   { src: mob3Img, label: "Track", sub: "Follow orders in real time", alt: "DukaDesk mobile app tracking screen" },
 ];
@@ -46,13 +46,13 @@ export function ProductShowcase() {
               Inside the app
             </span>
             <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: NAVY, margin: "18px 0 0" }}>
-              Your shop,
+              Your desk,
               <br />
               in a pocket.
             </h2>
             <div style={{ width: 64, height: 3, background: AMBER, margin: "24px 0 0" }} />
             <p style={{ fontFamily: inter, fontSize: 15.5, lineHeight: 1.75, color: CHAR, marginTop: 20, maxWidth: 340 }}>
-              The same storefront your customers scan is the dashboard you run the business from.
+              The same desk your customers scan is the dashboard you run it from.
             </p>
           </Reveal>
         </div>

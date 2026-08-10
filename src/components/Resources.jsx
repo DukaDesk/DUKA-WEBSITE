@@ -5,8 +5,8 @@ import { NAVY, AMBER, CREAM, LGREY, WHITE, sora } from "../constants";
 const ICONS = [PenSquare, LifeBuoy, BookOpen, Map, Rocket, CheckCircle2];
 
 const CARDS = [
-  { id: "blog", icon: 0, title: "Blog", desc: "Product updates, business tips and growth stories from African merchants.", },
-  { id: "help-centre", icon: 1, title: "Help Centre", desc: "Guides and answers to common questions about running your business on DukaDesk.", },
+  { id: "blog", icon: 0, title: "Blog", desc: "Product updates, desk tips and growth stories from African merchants.", },
+  { id: "help-centre", icon: 1, title: "Help Centre", desc: "Guides and answers to common questions about running your desk on DukaDesk.", },
   { id: "documentation", icon: 2, title: "Documentation", desc: "Developer docs and API reference for building and integrating with DukaDesk.", },
   { id: "roadmap", icon: 3, title: "Roadmap", desc: "See what we're building next and vote on the features you want most.", },
   { id: "changelog", icon: 4, title: "Changelog", desc: "Every release, bug fix and improvement — in one place.", },

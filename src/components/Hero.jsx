@@ -133,7 +133,7 @@ export function Hero({ onWaitlist }) {
         </h1>
 
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 40, maxWidth: 480 }}>
-          Choose a template on the web, drop in your products, publish. Your customers scan one code and your storefront opens inside the DukaDesk app.
+          Choose a template on the web, drop in your products, publish. Your customers scan one code and your desk opens inside the DukaDesk app.
         </p>
 
         <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
@@ -206,7 +206,7 @@ export function Hero({ onWaitlist }) {
                   </button>
 
                   <div style={{ fontSize: 12, color: LGREY, marginBottom: 16, textAlign: "center" }}>OR</div>
-                  <button onClick={doScan} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 12, padding: "10px 20px", fontSize: 12, color: LGREY, textAlign: "center", cursor: "pointer", border: "none" }}>Browse Businesses</button>
+                  <button onClick={doScan} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 12, padding: "10px 20px", fontSize: 12, color: LGREY, textAlign: "center", cursor: "pointer", border: "none" }}>Browse Desks</button>
 
                   {!scanning && <div style={{ marginTop: 24, fontSize: 11, color: `${AMBER}99`, fontWeight: 500 }}>Tap the scanner to demo</div>}
                 </div>

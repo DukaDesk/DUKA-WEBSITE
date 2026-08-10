@@ -10,7 +10,7 @@ export function Careers() {
     { title: "Product Designer",            dept: "Design",     location: "Lagos · Hybrid",  type: "Full-time", desc: "Own the end-to-end design of merchant-facing features — from the app builder wizard to analytics dashboards.", skills: ["Strong Figma skills", "Mobile-first design thinking", "Experience with B2B SaaS products", "User research background"] },
     { title: "Growth & Community Manager",  dept: "Growth",     location: "Lagos",           type: "Full-time", desc: "Grow the DukaDesk merchant community, run acquisition campaigns, and turn happy merchants into our best evangelists.", skills: ["Digital marketing experience", "Community building skills", "Experience in Nigerian SME market", "Data-driven mindset"] },
     { title: "Backend Engineer (Node.js)",  dept: "Engineering", location: "Remote",         type: "Full-time", desc: "Build the services that power merchant apps, QR systems, integrations, and the analytics pipeline.", skills: ["3+ years Node.js / TypeScript", "PostgreSQL & Redis experience", "REST API design", "Familiarity with microservices"] },
-    { title: "Merchant Onboarding Specialist", dept: "Operations", location: "Lagos",       type: "Full-time", desc: "Guide new merchants through setup, help them launch their first app, and make sure they see value in the first 7 days.", skills: ["Consultative communication", "Patience with non-technical users", "Experience with SaaS onboarding", "Knowledge of Nigerian business landscape"] },
+    { title: "Merchant Onboarding Specialist", dept: "Operations", location: "Lagos",       type: "Full-time", desc: "Guide new merchants through setup, help them launch their first app, and make sure they see value in the first 7 days.", skills: ["Consultative communication", "Patience with non-technical users", "Experience with SaaS onboarding", "Knowledge of the Nigerian market"] },
   ];
 
   const deptColors = { Support: "#2ECC71", Engineering: "#7C3AED", Design: AMBER, Growth: "#E74C3C", Operations: "#0D9488" };
@@ -32,8 +32,8 @@ export function Careers() {
             <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>We're hiring</span>
             </div>
-            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16, lineHeight: 1.1 }}>Help us put African businesses on mobile.</h2>
-            <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 24 }}>We're a small team moving fast. If you care about making real tools for real Nigerian businesses — not hypothetical users — this is the right place.</p>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16, lineHeight: 1.1 }}>Help us put African desks on mobile.</h2>
+            <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 24 }}>We're a small team moving fast. If you care about making real tools for real Nigerian desks — not hypothetical users — this is the right place.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {["Competitive naira salary", "Remote-friendly for most roles", "Health insurance", "Equity in an early-stage company", "Annual retreat"].map((b, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: CHAR }}>

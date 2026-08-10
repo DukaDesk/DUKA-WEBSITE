@@ -2,7 +2,7 @@ import { NAVY, AMBER, sora } from "../constants";
 
 const ITEMS = [
   "Zero commission",
-  "QR storefronts",
+  "QR desks",
   "Paystack & Flutterwave",
   "Offline-friendly",
   "NDPR compliant",

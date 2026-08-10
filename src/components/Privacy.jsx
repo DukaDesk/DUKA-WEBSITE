@@ -26,7 +26,7 @@ export function Privacy() {
           <li>Contact our support team</li>
           <li>Sign up for newsletters or marketing communications</li>
         </ul>
-        <p style={p}><strong>This may include:</strong> your full name, email address, phone number, business name, business address, bank account details, payment information, and any other information you choose to provide.</p>
+        <p style={p}><strong>This may include:</strong> your full name, email address, phone number, desk name, desk address, bank account details, payment information, and any other information you choose to provide.</p>
 
         <h3 style={h3}>1.2 Information Collected Automatically</h3>
         <p style={p}>When you access our platform, we automatically collect:</p>

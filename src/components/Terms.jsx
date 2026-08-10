@@ -18,7 +18,7 @@ export function Terms() {
         <h2 style={h2}>1. Definitions</h2>
         <ul style={list}>
           <li><strong>"Platform"</strong> means the DukaDesk operating system, website, mobile app, and all related services.</li>
-          <li><strong>"Merchant"</strong> means a business or organisation that creates a tenant app on DukaDesk.</li>
+          <li><strong>"Merchant"</strong> means the individual, business or organisation that owns a desk (their tenant app) on DukaDesk.</li>
           <li><strong>"Consumer"</strong> means an individual who uses a Merchant's tenant app on DukaDesk.</li>
           <li><strong>"Tenant App"</strong> means the custom application created by a Merchant using the Platform.</li>
           <li><strong>"Content"</strong> means all text, images, data, information, and materials submitted by Merchants.</li>
@@ -36,7 +36,7 @@ export function Terms() {
           <li>Notify us immediately of any unauthorised access</li>
           <li>Be responsible for all activity under your account</li>
         </ul>
-        <p style={p}>You must be at least 18 years old to create an account. Businesses must be duly registered in Nigeria or their country of operation.</p>
+        <p style={p}>You must be at least 18 years old to create an account. Desk owners must be duly registered in Nigeria or their country of operation.</p>
       </div>
 
       <div>
@@ -47,7 +47,7 @@ export function Terms() {
           <li>Payment processing integration</li>
           <li>Customer management and engagement tools</li>
           <li>Analytics and reporting</li>
-          <li>Smart business insights</li>
+          <li>Smart insights</li>
           <li>Integration marketplace</li>
         </ul>
         <p style={p}>We reserve the right to modify, suspend, or discontinue any feature with reasonable notice.</p>

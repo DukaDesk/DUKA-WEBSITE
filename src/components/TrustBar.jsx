@@ -47,10 +47,10 @@ export function TrustBar() {
     <>
       <div data-pad="narrow" style={{ background: NAVY, padding: "40px 80px" }}>
         <div style={{ textAlign: "center", marginBottom: 16 }}>
-          <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Replace multiple business tools with one platform</span>
+          <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Replace multiple desk tools with one platform</span>
         </div>
         <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, textAlign: "center", maxWidth: 600, margin: "0 auto" }}>
-          DukaDesk is the all-in-one platform built specifically for independent businesses. Sell more, save time, and grow faster — without switching between multiple tools.
+          DukaDesk is the all-in-one platform built specifically for independent desks. Sell more, save time, and grow faster — without switching between multiple tools.
         </p>
       </div>
       <div data-pad="narrow" style={{ background: WHITE, padding: "36px 80px", borderBottom: `1px solid ${BORDER}` }}>

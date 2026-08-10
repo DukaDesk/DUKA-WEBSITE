@@ -11,7 +11,7 @@ export function CtaSection({ onWaitlist }) {
               Free to start
             </span>
             <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(34px,4.6vw,64px)", lineHeight: 0.98, letterSpacing: "-0.03em", margin: "16px 0 0" }}>
-              Your storefront
+              Your desk
               <br />
               live within 48 hours.
             </h2>
