@@ -6,7 +6,7 @@ const ITEMS = [
   "Paystack & Flutterwave",
   "Offline-friendly",
   "NDPR compliant",
-  "Live in 10 minutes",
+  "Live within 48 hours",
 ];
 
 export function Ticker() {

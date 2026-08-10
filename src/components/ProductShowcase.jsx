@@ -3,13 +3,18 @@ import { motion } from "framer-motion";
 import { Reveal } from "./ui/Reveal";
 import { ArrowRight, Layers } from "lucide-react";
 import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, sora, inter } from "../constants";
+import editorImg from "../assets/app_editor_merchant.jpeg";
+import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
+import mob1Img from "../assets/dukamob1.jpeg";
+import mob2Img from "../assets/dukamob2.jpeg";
+import mob3Img from "../assets/dukamob3.jpeg";
 
 const DECK = [
-  { src: "/assets/images/app_editor_merchant.jpeg", label: "Design", sub: "Build your template in the editor", alt: "DukaDesk editor for building a template" },
-  { src: "/assets/images/Screenshot%202026-08-10%20155647.png", label: "Manage", sub: "Your merchant dashboard", alt: "DukaDesk merchant dashboard" },
-  { src: "/assets/images/dukamob1.jpeg", label: "Shop", sub: "Customer's mobile storefront", alt: "DukaDesk mobile app storefront" },
-  { src: "/assets/images/dukamob2.jpeg", label: "Order", sub: "Browse and add to cart", alt: "DukaDesk mobile app ordering screen" },
-  { src: "/assets/images/dukamob3.jpeg", label: "Track", sub: "Follow orders in real time", alt: "DukaDesk mobile app tracking screen" },
+  { src: editorImg, label: "Design", sub: "Build your template in the editor", alt: "DukaDesk editor for building a template" },
+  { src: dashboardImg, label: "Manage", sub: "Your merchant dashboard", alt: "DukaDesk merchant dashboard" },
+  { src: mob1Img, label: "Shop", sub: "Customer's mobile storefront", alt: "DukaDesk mobile app storefront" },
+  { src: mob2Img, label: "Order", sub: "Browse and add to cart", alt: "DukaDesk mobile app ordering screen" },
+  { src: mob3Img, label: "Track", sub: "Follow orders in real time", alt: "DukaDesk mobile app tracking screen" },
 ];
 
 const CARD_W = 252;
@@ -104,7 +109,8 @@ export function ProductShowcase() {
                         alt={card.alt}
                         width={720}
                         height={1280}
-                        loading="lazy"
+                        loading={isFront ? "eager" : "lazy"}
+                        decoding="async"
                         style={{ width: "100%", height: IMG_H, objectFit: "cover", objectPosition: "top", display: "block" }}
                       />
                       {!isFront && (

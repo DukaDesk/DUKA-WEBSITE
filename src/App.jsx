@@ -17,7 +17,6 @@ import { CHAR, WHITE, inter } from "./constants";
 
 const Integrations = lazy(() => import("./components/Integrations").then(m => ({ default: m.Integrations })));
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })));
-const Testimonials = lazy(() => import("./components/Testimonials").then(m => ({ default: m.Testimonials })));
 const Team = lazy(() => import("./components/Team").then(m => ({ default: m.Team })));
 const Careers = lazy(() => import("./components/Careers").then(m => ({ default: m.Careers })));
 const Resources = lazy(() => import("./components/Resources").then(m => ({ default: m.Resources })));
@@ -47,9 +46,6 @@ function HomePage({ onSignIn, onWaitlist }) {
       <ProcessCarousel />
       <WhyChoose />
       <ProductShowcase />
-      <Suspense fallback={<SectionFallback />}>
-        <Testimonials />
-      </Suspense>
       <FAQ />
       <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />

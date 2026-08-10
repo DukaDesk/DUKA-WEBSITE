@@ -3,34 +3,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./ui/Reveal";
 import { NAVY, AMBER, WHITE, CREAM, CHAR, LGREY, BORDER, sora, inter } from "../constants";
+import editorImg from "../assets/app_editor_merchant.jpeg";
+import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
+import mob1Img from "../assets/dukamob1.jpeg";
+import mob2Img from "../assets/dukamob2.jpeg";
 
 const SLIDES = [
   {
     n: "01",
     t: "Pick a template",
     d: "Twelve industry layouts — a food kitchen, fashion rack, grocery stall and more. Preview each one before you commit.",
-    img: "/assets/images/app_editor_merchant.jpeg",
+    img: editorImg,
     alt: "DukaDesk editor for building a template",
   },
   {
     n: "02",
     t: "Make it yours",
     d: "Logo, colours, products, prices, opening hours. Everything editable straight from your browser.",
-    img: "/assets/images/Screenshot%202026-08-10%20155647.png",
+    img: dashboardImg,
     alt: "DukaDesk merchant dashboard",
   },
   {
     n: "03",
     t: "Print the code",
     d: "Publish and get a scannable code for your shop front, flyers and WhatsApp status.",
-    img: "/assets/images/dukamob1.jpeg",
+    img: mob1Img,
     alt: "DukaDesk mobile app storefront",
   },
   {
     n: "04",
     t: "Sell and track",
     d: "Orders, payments and analytics land in one dashboard the minute the first scan happens.",
-    img: "/assets/images/dukamob2.jpeg",
+    img: mob2Img,
     alt: "DukaDesk mobile app orders screen",
   },
 ];
@@ -53,6 +57,14 @@ export function ProcessCarousel() {
     timer.current = setInterval(() => go(idx + 1, 1), DUR);
     return () => clearInterval(timer.current);
   }, [paused, idx]);
+
+  useEffect(() => {
+    SLIDES.forEach((s, i) => {
+      if (i === idx) return;
+      const pre = new Image();
+      pre.src = s.img;
+    });
+  }, [idx]);
 
   const slide = SLIDES[idx];
 
@@ -164,7 +176,9 @@ export function ProcessCarousel() {
                     alt={slide.alt}
                     width={720}
                     height={1280}
-                    loading="lazy"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={idx === 0 ? "high" : "auto"}
                     style={{ width: "100%", height: 500, objectFit: "cover", objectPosition: "top", display: "block", borderRadius: 22 }}
                   />
                 </div>

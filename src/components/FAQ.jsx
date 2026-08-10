@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NAVY, AMBER, sora, inter } from "../constants";
 
 const FAQS = [
-  { q: "How fast can I go live?", a: "Most businesses publish in under ten minutes: pick a template, add your products, print the code." },
+  { q: "How fast can I go live?", a: "Most businesses go live within 48 hours: pick a template, add your products, print the code." },
   { q: "Do I need any tech skills?", a: "None. Everything happens in a visual builder in your browser — no code, no app store submission." },
   { q: "Which payments are supported?", a: "Paystack and Flutterwave, covering card, bank transfer, USSD and mobile money." },
   { q: "Do you take a cut of my sales?", a: "Never. You keep 100% of revenue. We only charge a flat subscription." },
