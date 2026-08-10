@@ -118,13 +118,6 @@ export function Hero({ onWaitlist }) {
       ))}
 
       <div style={{ flex: 1, maxWidth: 600, position: "relative", zIndex: 1 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 30 }}>
-          <span style={{ width: 7, height: 7, background: GREEN, borderRadius: 0 }} />
-          <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
-            Lagos · Abuja · Port Harcourt
-          </span>
-        </div>
-
         <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: WHITE, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
           Build the app behind your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
@@ -161,14 +154,6 @@ export function Hero({ onWaitlist }) {
           </div>
           <div>
             <div style={{ color: WHITE, fontWeight: 600, fontSize: 14 }}>2,000+ merchants live</div>
-            <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 2 }}>
-              <div style={{ display: "flex", gap: 1 }}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={13} fill={AMBER} color={AMBER} aria-hidden="true" />
-                ))}
-              </div>
-              <span style={{ color: AMBER, fontSize: 13 }}>across Lagos, Abuja & PH</span>
-            </div>
           </div>
         </div>
       </div>

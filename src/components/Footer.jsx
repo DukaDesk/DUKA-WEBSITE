@@ -52,7 +52,7 @@ export function Footer({ onSignIn, onWaitlist }) {
             <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} style={{ objectFit: "contain" }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: "white" }}>DukaDesk</span>
           </div>
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240 }}>The all-in-one business platform built for African businesses. Made in Lagos.</p>
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240 }}>The all-in-one business platform built for independent businesses. Made in Lagos.</p>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 12 }}>Follow us for product updates, business tips and launch announcements.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
             {["𝕏", "in", "ig", "wa"].map((s, i) => (

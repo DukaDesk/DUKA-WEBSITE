@@ -19,7 +19,7 @@ export function Team() {
           <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>The people behind DukaDesk</span>
           </div>
-          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Built by Nigerians,<br />for African businesses.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Built by Nigerians,<br />for independent businesses.</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>We're not a Silicon Valley company parachuting into Africa. We grew up with these businesses. We know the problems firsthand.</p>
         </div>
       </FadeIn>
