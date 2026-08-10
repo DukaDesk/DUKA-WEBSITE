@@ -42,7 +42,8 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
   }, []);
 
   return (
-    <nav aria-label="Main navigation" style={{
+    <>
+      <nav aria-label="Main navigation" style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 500,
       background: scrolled ? "rgba(26,26,46,0.97)" : "transparent",
       backdropFilter: scrolled ? "blur(16px)" : "none",
@@ -109,6 +110,7 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
         style={{ display: "none", background: "none", border: "none", color: WHITE, cursor: "pointer", padding: 4 }}>
         {mobileOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
       </button>
+      </nav>
 
       {mobileOpen && (
         <div role="dialog" aria-label="Mobile navigation" style={{ position: "fixed", top: 68, left: 0, right: 0, bottom: 0, background: NAVY, padding: "20px 24px", display: "flex", flexDirection: "column", gap: 4, borderBottom: "1px solid rgba(255,255,255,0.06)", zIndex: 499, overflowY: "auto" }}>
@@ -143,6 +145,6 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
           <button onClick={() => { closeMobile(); onWaitlist(); }} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Join Waitlist</button>
         </div>
       )}
-    </nav>
+    </>
   );
 }

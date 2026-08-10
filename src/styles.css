@@ -74,7 +74,7 @@ html {
 
 /* ── Responsive section padding ── */
 @media (max-width: 768px) {
-  section, footer > div:first-child,
+  section, footer, footer > div:first-child,
   [data-pad] {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -207,7 +207,11 @@ html {
   }
 
   [data-grid="how"] img {
-    height: min(380px, 60vw) !important;
+    height: min(420px, 68vw) !important;
+  }
+
+  .how-stage {
+    height: calc(min(420px, 68vw) + 20px) !important;
   }
 
   .step-badge {
@@ -286,6 +290,12 @@ html {
     padding: 40px 24px !important;
   }
 
+  .footer-cta button {
+    padding: 14px 24px !important;
+    font-size: 14px !important;
+    max-width: 100% !important;
+  }
+
   .footer-cta h2 {
     font-size: 28px !important;
   }
@@ -294,6 +304,11 @@ html {
 /* ── Anchor targets clear the fixed navbar ── */
 [id] {
   scroll-margin-top: 90px;
+}
+
+/* ── Carousel image stage keeps a stable height ── */
+.how-stage {
+  height: 520px;
 }
 
 /* ── Hero 3D middle column (space guard) ── */

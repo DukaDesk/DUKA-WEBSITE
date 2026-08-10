@@ -73,8 +73,8 @@ export function ProcessCarousel() {
       id="how"
       data-pad="wide"
       style={{ background: WHITE, padding: "104px 56px", overflow: "hidden" }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onPointerEnter={() => setPaused(true)}
+      onPointerLeave={() => setPaused(false)}
     >
       <div data-grid="how" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 480px) minmax(320px, 460px)", gap: 72, maxWidth: 1040, margin: "0 auto", alignItems: "center" }}>
         <Reveal>
@@ -153,7 +153,7 @@ export function ProcessCarousel() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div style={{ position: "relative" }}>
+          <div className="how-stage" style={{ position: "relative" }}>
             <div aria-hidden="true" style={{ position: "absolute", top: -40, right: -20, width: 260, height: 260, background: `${AMBER}14`, borderRadius: "50%", filter: "blur(70px)" }} />
             <AnimatePresence mode="wait" custom={dir}>
               <motion.div
@@ -170,6 +170,8 @@ export function ProcessCarousel() {
                     background: "#0D0D1A",
                     padding: 10,
                     boxShadow: "0 32px 80px rgba(26,26,46,0.18)",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
                   <img
@@ -180,7 +182,7 @@ export function ProcessCarousel() {
                     loading={idx === 0 ? "eager" : "lazy"}
                     decoding="async"
                     fetchPriority={idx === 0 ? "high" : "auto"}
-                    style={{ width: "100%", height: 500, objectFit: "cover", objectPosition: "top", display: "block", borderRadius: 22 }}
+                    style={{ height: 500, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
                   />
                 </div>
               </motion.div>

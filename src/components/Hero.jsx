@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, ScanLine, Bell, Play, Utensils, Drumstick, Fish, CreditCard, BarChart3, CheckCircle2, Plus, ArrowLeft, QrCode, Users, PenTool } from "lucide-react";
 import { NAVY, AMBER, GREEN, LGREY, WHITE, sora } from "../constants";
 
-const WORDS = ["fashion rack", "food kitchen", "grocery stall", "beauty studio", "church desk"];
-const FLOAT_DUR = 2200;
+const WORDS = ["restaurant", "fashion store", "grocery store", "food vendor", "retail store", "church", "school", "fitness studio", "clinic", "practice"];
+const FLOAT_DUR = 800;
 const HERO_VIDEO = "/videos/hero-bg.mp4";
 
 const MENU = [
@@ -119,11 +119,11 @@ export function Hero({ onWaitlist }) {
 
       <div style={{ flex: 1, maxWidth: 600, position: "relative", zIndex: 1 }}>
         <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: WHITE, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
-          Build the app behind your{' '}
+          An app for your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
             <span style={{
               transform: `translateY(${-wordIdx * 100}%)`,
-              transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+              transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
             }}>
               {WORDS.map((w, i) => (
                 <span key={i} style={{ display: "block", height: "1.05em", textAlign: "left" }}>{w}</span>

@@ -25,6 +25,7 @@ const LIFT = 30;
 const ROT = 5;
 
 const spring = { type: "spring", stiffness: 260, damping: 24 };
+const CAN_HOVER = typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
 
 export function ProductShowcase({ onWaitlist }) {
   const [deck, setDeck] = useState(DECK);
@@ -70,8 +71,8 @@ export function ProductShowcase({ onWaitlist }) {
                   key={`${card.src}-${i}`}
                   type="button"
                   aria-label={`Bring ${card.label} forward`}
-                  onHoverStart={() => setHovered(i)}
-                  onHoverEnd={() => setHovered(null)}
+                  onHoverStart={() => CAN_HOVER && setHovered(i)}
+                  onHoverEnd={() => CAN_HOVER && setHovered(null)}
                   onClick={() => bringToFront(i)}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: isHovered ? -12 : -depth * LIFT }}
@@ -81,6 +82,7 @@ export function ProductShowcase({ onWaitlist }) {
                   style={{
                     position: "absolute",
                     left: "50%",
+                    marginLeft: -CARD_W / 2,
                     top: 0,
                     width: CARD_W,
                     zIndex: isHovered ? 99 : i + 1,
