@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, ScanLine, Bell, Play, Utensils, Drumstick, Fish, CreditCard, BarChart3, CheckCircle2, Plus, ArrowLeft, QrCode, Users, PenTool } from "lucide-react";
 import { NAVY, AMBER, GREEN, LGREY, WHITE, sora } from "../constants";
 
-const WORDS = ["In your own app", "Your way", "From anywhere", "Your brand"];
-const FLOAT_DUR = 4000;
+const WORDS = ["fashion rack", "food kitchen", "grocery stall", "beauty studio", "church desk"];
+const FLOAT_DUR = 2200;
 const HERO_VIDEO = "/videos/hero-bg.mp4";
 
 const MENU = [
@@ -118,13 +118,15 @@ export function Hero({ onWaitlist }) {
       ))}
 
       <div style={{ flex: 1, maxWidth: 600, position: "relative", zIndex: 1 }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: `${AMBER}18`, border: `1px solid ${AMBER}44`, borderRadius: 24, padding: "7px 16px", marginBottom: 28 }}>
-          <div style={{ width: 7, height: 7, background: GREEN, borderRadius: "50%", animation: "pulse 2s infinite" }} />
-          <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Now live in Nigeria</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 30 }}>
+          <span style={{ width: 7, height: 7, background: GREEN, borderRadius: 0 }} />
+          <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
+            Lagos · Abuja · Port Harcourt
+          </span>
         </div>
 
         <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: WHITE, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
-          Run your business.{' '}
+          Build the app behind your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
             <span style={{
               transform: `translateY(${-wordIdx * 100}%)`,
@@ -138,14 +140,14 @@ export function Hero({ onWaitlist }) {
         </h1>
 
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 40, maxWidth: 480 }}>
-          Design your own business app with the Builder Studio, then run payments, customer management and commerce from one platform — no engineers needed. Stop juggling tools. Start growing.
+          Choose a template on the web, drop in your products, publish. Your customers scan one code and your storefront opens inside the DukaDesk app.
         </p>
 
         <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
           <button onClick={onWaitlist} style={{ background: AMBER, color: NAVY, border: "none", borderRadius: 28, padding: "16px 36px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8, transition: "transform 0.2s" }}
             onMouseOver={e => e.currentTarget.style.transform = "scale(1.03)"}
             onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
-          >Join Waitlist — 2-minute setup</button>
+          >Start building — free</button>
           <a href="#how" style={{ background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.15)", borderRadius: 28, padding: "16px 28px", fontSize: 16, fontWeight: 500, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
             <Play size={16} aria-hidden="true" /> See how it works
           </a>

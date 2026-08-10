@@ -2,9 +2,9 @@ import { useState, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { TrustBar } from "./components/TrustBar";
+import { Ticker } from "./components/Ticker";
 import { WhyChoose } from "./components/WhyChoose";
-import { HowItWorks } from "./components/HowItWorks";
+import { ProcessCarousel } from "./components/ProcessCarousel";
 import { ProductShowcase } from "./components/ProductShowcase";
 import { Categories } from "./components/Categories";
 import { Features } from "./components/Features";
@@ -21,6 +21,7 @@ const Testimonials = lazy(() => import("./components/Testimonials").then(m => ({
 const Team = lazy(() => import("./components/Team").then(m => ({ default: m.Team })));
 const Careers = lazy(() => import("./components/Careers").then(m => ({ default: m.Careers })));
 const Resources = lazy(() => import("./components/Resources").then(m => ({ default: m.Resources })));
+const CtaSection = lazy(() => import("./components/CtaSection").then(m => ({ default: m.CtaSection })));
 const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })));
 
 const SIGN_IN_URL = import.meta.env.VITE_MERCHANT_URL || "https://app.dukadesk.com";
@@ -42,14 +43,15 @@ function HomePage({ onSignIn, onWaitlist }) {
   return (
     <>
       <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} />
-      <TrustBar />
+      <Ticker />
+      <ProcessCarousel />
       <WhyChoose />
-      <HowItWorks />
       <ProductShowcase />
       <Suspense fallback={<SectionFallback />}>
         <Testimonials />
       </Suspense>
       <FAQ />
+      <CtaSection onWaitlist={onWaitlist} />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
