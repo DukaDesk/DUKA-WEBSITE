@@ -76,7 +76,7 @@ export function ProcessCarousel() {
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
     >
-      <div data-grid="how" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 480px) minmax(320px, 460px)", gap: 72, maxWidth: 1040, margin: "0 auto", alignItems: "center" }}>
+      <div data-grid="how" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 480px) minmax(320px, 560px)", gap: 72, maxWidth: 1120, margin: "0 auto", alignItems: "center" }}>
         <Reveal>
           <div style={{ position: "relative" }}>
             <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>
@@ -182,7 +182,7 @@ export function ProcessCarousel() {
                     loading="eager"
                     decoding="async"
                     fetchPriority={idx === 0 ? "high" : "auto"}
-                    style={{ height: 500, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
+                    style={{ height: 560, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
                   />
                 </div>
               </motion.div>

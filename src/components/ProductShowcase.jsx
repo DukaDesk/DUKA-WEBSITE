@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./ui/Reveal";
-import { ArrowRight, Layers } from "lucide-react";
+import { ArrowRight, Layers, ChevronLeft, ChevronRight } from "lucide-react";
 import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, sora, inter } from "../constants";
 import editorImg from "../assets/app_editor_merchant.jpeg";
 import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
@@ -22,7 +22,6 @@ const IMG_H = 420;
 const LABEL_H = 62;
 const CARD_H = IMG_H + LABEL_H;
 const LIFT = 30;
-const ROT = 5;
 
 const spring = { type: "spring", stiffness: 260, damping: 24 };
 const CAN_HOVER = typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
@@ -38,6 +37,16 @@ export function ProductShowcase({ onWaitlist }) {
     });
   };
 
+  const go = (d) => {
+    setDeck((prev) => {
+      if (d > 0) return [prev[prev.length - 1], ...prev.slice(0, -1)];
+      return [...prev.slice(1), prev[0]];
+    });
+  };
+
+  const frontSrc = deck[deck.length - 1].src;
+  const activeIdx = DECK.findIndex(d => d.src === frontSrc);
+
   return (
     <section id="showcase" data-pad="wide" style={{ padding: "104px 56px", background: WHITE, overflow: "hidden" }}>
       <div data-grid="showcase" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
@@ -47,9 +56,9 @@ export function ProductShowcase({ onWaitlist }) {
               Inside the app
             </span>
             <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: NAVY, margin: "18px 0 0" }}>
-              Your desk,
+              Everything
               <br />
-              in a pocket.
+              in one app.
             </h2>
             <div style={{ width: 64, height: 3, background: AMBER, margin: "24px 0 0" }} />
             <p style={{ fontFamily: inter, fontSize: 15.5, lineHeight: 1.75, color: CHAR, marginTop: 20, maxWidth: 340 }}>
@@ -64,7 +73,6 @@ export function ProductShowcase({ onWaitlist }) {
               const depth = deck.length - 1 - i;
               const isFront = depth === 0;
               const isHovered = hovered === i;
-              const shuffle = (i % 2 === 0 ? -1 : 1) * (ROT + depth * 2);
 
               return (
                 <motion.button
@@ -91,7 +99,6 @@ export function ProductShowcase({ onWaitlist }) {
                     background: "none",
                     padding: 0,
                     transformOrigin: "50% 50%",
-                    rotate: isHovered ? 0 : shuffle,
                     scale: isHovered ? 1.06 : 1,
                   }}
                 >
@@ -171,6 +178,49 @@ export function ProductShowcase({ onWaitlist }) {
                 </button>
               </div>
             </div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginTop: 28 }}>
+            <button
+              onClick={() => go(-1)}
+              aria-label="Previous card"
+              style={{ width: 42, height: 42, borderRadius: "50%", border: `1px solid ${BORDER}`, background: CREAM, color: NAVY, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              onMouseOver={e => { e.currentTarget.style.borderColor = AMBER; e.currentTarget.style.color = AMBER; }}
+              onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = NAVY; }}
+            >
+              <ChevronLeft size={18} aria-hidden="true" />
+            </button>
+            <div style={{ display: "flex", gap: 6 }}>
+              {DECK.map((c, i) => (
+                <button
+                  key={c.src}
+                  onClick={() => {
+                    const i = deck.findIndex(card => card.src === c.src);
+                    if (i !== -1) bringToFront(i);
+                  }}
+                  aria-label={`Show card ${i + 1}: ${c.label}`}
+                  style={{
+                    width: i === activeIdx ? 26 : 10,
+                    height: 10,
+                    borderRadius: 999,
+                    border: "none",
+                    background: i === activeIdx ? AMBER : BORDER,
+                    cursor: "pointer",
+                    transition: "width 0.25s",
+                    padding: 0,
+                  }}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => go(1)}
+              aria-label="Next card"
+              style={{ width: 42, height: 42, borderRadius: "50%", border: "none", background: NAVY, color: WHITE, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              onMouseOver={e => { e.currentTarget.style.background = "#232340"; }}
+              onMouseOut={e => { e.currentTarget.style.background = NAVY; }}
+            >
+              <ChevronRight size={18} aria-hidden="true" />
+            </button>
           </div>
         </Reveal>
       </div>

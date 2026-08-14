@@ -208,11 +208,11 @@ html {
   }
 
   [data-grid="how"] img {
-    height: min(420px, 68vw) !important;
+    height: min(460px, 72vw) !important;
   }
 
   .how-stage {
-    height: calc(min(420px, 68vw) + 20px) !important;
+    height: calc(min(460px, 72vw) + 20px) !important;
   }
 
   .step-badge {
@@ -309,7 +309,7 @@ html {
 
 /* ── Carousel image stage keeps a stable height ── */
 .how-stage {
-  height: 520px;
+  height: 580px;
 }
 
 /* ── Hero 3D middle column (space guard) ── */
