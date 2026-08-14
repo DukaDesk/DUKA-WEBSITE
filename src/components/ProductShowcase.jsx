@@ -118,7 +118,7 @@ export function ProductShowcase({ onWaitlist }) {
                         alt={card.alt}
                         width={720}
                         height={1280}
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
                         style={{ width: "100%", height: IMG_H, objectFit: "cover", objectPosition: "top", display: "block" }}
                       />
