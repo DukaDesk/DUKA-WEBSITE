@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./ui/Reveal";
 import { ArrowRight, Layers, ChevronLeft, ChevronRight } from "lucide-react";
-import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, sora, inter } from "../constants";
+import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, CREAM, sora, inter } from "../constants";
 import editorImg from "../assets/app_editor_merchant.jpeg";
 import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
 import mob1Img from "../assets/dukamob1.jpeg";
