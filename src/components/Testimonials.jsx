@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { FadeIn } from "./ui/FadeIn";
 import { MonogramAvatar } from "./ui/MonogramAvatar";
-import { NAVY, AMBER, WHITE, CREAM, BORDER, LGREY, sora } from "../constants";
+import { NAVY, AMBER, SURFACE, CREAM, BORDER, LGREY, INK, sora, tint } from "../constants";
 
 const testimonials = [
   {
@@ -65,13 +65,13 @@ export function Testimonials() {
   const [active, setActive] = useState(0);
 
   return (
-    <section data-pad="wide" style={{ padding: "100px 80px", background: WHITE }}>
+    <section data-pad="wide" style={{ padding: "100px 80px", background: SURFACE }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
+          <div style={{ display: "inline-block", background: tint(AMBER, 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Trusted by business owners</span>
           </div>
-          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Real businesses. Real results.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 16 }}>Real businesses. Real results.</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>See how Nigerian businesses are using DukaDesk to sell more, save time, and grow faster.</p>
         </div>
       </FadeIn>
@@ -79,19 +79,19 @@ export function Testimonials() {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <FadeIn delay={100}>
           <div style={{ background: CREAM, borderRadius: 24, padding: "48px 56px", border: `1px solid ${BORDER}`, position: "relative" }}>
-            <div style={{ fontSize: 48, color: `${AMBER}22`, position: "absolute", top: 20, left: 24, fontFamily: "serif", lineHeight: 1 }}>""</div>
+            <div style={{ fontSize: 48, color: tint(AMBER, 22), position: "absolute", top: 20, left: 24, fontFamily: "serif", lineHeight: 1 }}>""</div>
             <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
               <div style={{ flexShrink: 0 }}>
                 <MonogramAvatar name={testimonials[active].name} size={72} color={testimonials[active].color} radius={20} fontSize={28} />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontSize: 18, color: NAVY, lineHeight: 1.8, marginBottom: 24, fontStyle: "italic" }}>"{testimonials[active].text}"</p>
+                <p style={{ fontSize: 18, color: INK, lineHeight: 1.8, marginBottom: 24, fontStyle: "italic" }}>"{testimonials[active].text}"</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
                   <div>
-                    <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: NAVY }}>{testimonials[active].name}</div>
+                    <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: INK }}>{testimonials[active].name}</div>
                     <div style={{ fontSize: 14, color: LGREY }}>{testimonials[active].business} — {testimonials[active].role}</div>
                   </div>
-                  <div style={{ background: `${testimonials[active].color}18`, borderRadius: 20, padding: "6px 16px" }}>
+                  <div style={{ background: tint(testimonials[active].color, 18), borderRadius: 20, padding: "6px 16px" }}>
                     <span style={{ fontSize: 13, color: testimonials[active].color, fontWeight: 700 }}><Check size={13} color={testimonials[active].color} style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /> {testimonials[active].result}</span>
                   </div>
                 </div>
@@ -109,14 +109,14 @@ export function Testimonials() {
         <div data-grid="testimonials" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginTop: 48 }}>
           {testimonials.map((t, i) => (
             <FadeIn key={i} delay={i * 50}>
-              <div onClick={() => setActive(i)} style={{ background: active === i ? `${AMBER}10` : CREAM, borderRadius: 16, padding: "20px", border: active === i ? `1.5px solid ${AMBER}44` : `1px solid ${BORDER}`, cursor: "pointer", transition: "all 0.2s" }}
+              <div onClick={() => setActive(i)} style={{ background: active === i ? tint(AMBER, 10) : CREAM, borderRadius: 16, padding: "20px", border: active === i ? `1.5px solid ${tint(AMBER, 44)}` : `1px solid ${BORDER}`, cursor: "pointer", transition: "all 0.2s" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-2px)"; }}
                 onMouseOut={e => { e.currentTarget.style.transform = "none"; }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
                   <MonogramAvatar name={t.name} size={36} color={t.color} radius={10} fontSize={15} />
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{t.name}</div>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: INK }}>{t.name}</div>
                     <div style={{ fontSize: 11, color: LGREY }}>{t.industry}</div>
                   </div>
                 </div>

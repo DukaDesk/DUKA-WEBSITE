@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, ScanLine, Bell, Play, Utensils, Drumstick, Fish, CreditCard, BarChart3, CheckCircle2, Plus, ArrowLeft, QrCode, Users, PenTool } from "lucide-react";
-import { NAVY, AMBER, GREEN, LGREY, WHITE, sora } from "../constants";
+import { NAVY, AMBER, GREEN, LGREY, WHITE, INK, SURFACE, BORDER, ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, sora, mix } from "../constants";
 
 const WORDS = ["restaurant", "fashion store", "grocery store", "food vendor", "retail store", "church", "school", "fitness studio", "clinic", "practice"];
 const LOOP_WORDS = [...WORDS, WORDS[0]];
@@ -108,7 +108,7 @@ export function Hero({ onWaitlist }) {
 
   return (
     <section className="hero-wrap" data-pad="wide" style={{
-      minHeight: "100vh", background: NAVY,
+      minHeight: "100vh", background: ISLAND,
       display: "flex", alignItems: "center",
       padding: "120px 80px 80px",
       position: "relative", overflow: "hidden",
@@ -118,7 +118,7 @@ export function Hero({ onWaitlist }) {
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
       <div className="hero-video-overlay" style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
-        background: `linear-gradient(180deg, ${NAVY}F2 0%, ${NAVY}B3 45%, ${NAVY}E6 100%)` }} />
+        background: `linear-gradient(180deg, ${mix("island", 95)} 0%, ${mix("island", 70)} 45%, ${mix("island", 90)} 100%)` }} />
 
       {PARTICLES.map((p, i) => (
         <span key={i} aria-hidden="true" style={{
@@ -130,7 +130,7 @@ export function Hero({ onWaitlist }) {
       ))}
 
       <div style={{ flex: 1, maxWidth: 600, position: "relative", zIndex: 1 }}>
-        <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: WHITE, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
+        <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: ISLAND_INK, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
           An app for your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
             <span style={{
@@ -146,13 +146,13 @@ export function Hero({ onWaitlist }) {
           </span>
         </h1>
 
-        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 40, maxWidth: 480 }}>
+        <p style={{ fontSize: 18, color: ISLAND_MUTE, lineHeight: 1.75, marginBottom: 40, maxWidth: 480 }}>
           Choose a template on the web, drop in your products, publish. Your customers scan one code and your desk opens inside the DukaDesk app.
         </p>
 
         <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
           <button onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 28, padding: "16px 36px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8 }}>Start building — free</button>
-          <a href="#how" style={{ background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.15)", borderRadius: 28, padding: "16px 28px", fontSize: 16, fontWeight: 500, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
+          <a href="#how" style={{ background: ISLAND_SOFT, color: ISLAND_INK, border: `1px solid ${ISLAND_BORDER}`, borderRadius: 28, padding: "16px 28px", fontSize: 16, fontWeight: 500, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
             <Play size={16} aria-hidden="true" /> See how it works
           </a>
         </div>
@@ -160,11 +160,11 @@ export function Hero({ onWaitlist }) {
         <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 48 }}>
           <div style={{ display: "flex" }}>
             {["A","I","G","F","T"].map((l, i) => (
-              <div key={i} style={{ width: 34, height: 34, borderRadius: "50%", background: [AMBER, "#2ECC71", "#7C3AED", "#E74C3C", "#0D9488"][i], border: `2px solid ${NAVY}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: WHITE, marginLeft: i > 0 ? -10 : 0 }}>{l}</div>
+              <div key={i} style={{ width: 34, height: 34, borderRadius: "50%", background: [AMBER, "#2ECC71", "#7C3AED", "#E74C3C", "#0D9488"][i], border: `2px solid ${ISLAND}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: WHITE, marginLeft: i > 0 ? -10 : 0 }}>{l}</div>
             ))}
           </div>
           <div>
-            <div style={{ color: WHITE, fontWeight: 600, fontSize: 14 }}>2,000+ merchants live</div>
+            <div style={{ color: ISLAND_INK, fontWeight: 600, fontSize: 14 }}>2,000+ merchants live</div>
           </div>
         </div>
       </div>
@@ -175,17 +175,16 @@ export function Hero({ onWaitlist }) {
         </Suspense>
       </div>
 
-      <motion.div style={{ position: "absolute", top: "10%", right: "8%", width: 480, height: 480, background: `${AMBER}12`, borderRadius: "50%", filter: "blur(80px)", pointerEvents: "none", y: yBlob }} />
-      <div style={{ position: "absolute", bottom: "5%", left: "5%", width: 360, height: 360, background: `${AMBER}08`, borderRadius: "50%", filter: "blur(60px)", pointerEvents: "none" }} />
+      <motion.div style={{ position: "absolute", top: "10%", right: "8%", width: 480, height: 480, background: mix("amber", 12), borderRadius: "50%", filter: "blur(80px)", pointerEvents: "none", y: yBlob }} />
+      <div style={{ position: "absolute", bottom: "5%", left: "5%", width: 360, height: 360, background: mix("amber", 8), borderRadius: "50%", filter: "blur(60px)", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, backgroundImage: `linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)`, backgroundSize: "48px 48px", pointerEvents: "none" }} />
 
       <motion.div className="hero-phone" style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 1, flexDirection: "column", y: yPhone }}>
         <div style={{ animation: "float 4s ease-in-out infinite", position: "relative" }}>
-          <div style={{ width: 280, background: "#0D0D1A", borderRadius: 44, padding: 10, boxShadow: "0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07)" }}>
-            <div style={{ background: NAVY, borderRadius: 36, overflow: "hidden", minHeight: 520, position: "relative" }}>
+          <div style={{ width: 280, background: "#0D0D1A", borderRadius: 44, padding: 10, boxShadow: "0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07)" }}>            <div style={{ background: NAVY, borderRadius: 36, overflow: "hidden", minHeight: 520, position: "relative" }}>
 
               {glow && (
-                <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 9, pointerEvents: "none", background: `radial-gradient(circle at 50% 40%, ${AMBER}55, transparent 60%)`, animation: "glowBurst 0.9s ease-out forwards" }} />
+                <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 9, pointerEvents: "none", background: `radial-gradient(circle at 50% 40%, ${mix("amber", 55)}, transparent 60%)`, animation: "glowBurst 0.9s ease-out forwards" }} />
               )}
 
               {!scanned ? (
@@ -219,7 +218,7 @@ export function Hero({ onWaitlist }) {
                   <div style={{ fontSize: 12, color: LGREY, marginBottom: 16, textAlign: "center" }}>OR</div>
                   <button onClick={doScan} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 12, padding: "10px 20px", fontSize: 12, color: LGREY, textAlign: "center", cursor: "pointer", border: "none" }}>Browse Desks</button>
 
-                  {!scanning && <div style={{ marginTop: 24, fontSize: 11, color: `${AMBER}99`, fontWeight: 500 }}>Tap the scanner to demo</div>}
+                  {!scanning && <div style={{ marginTop: 24, fontSize: 11, color: mix("amber", 99), fontWeight: 500 }}>Tap the scanner to demo</div>}
                 </div>
               ) : (
                 <div style={{ minHeight: 520, display: "flex", flexDirection: "column" }}>
@@ -267,18 +266,18 @@ export function Hero({ onWaitlist }) {
             </div>
           </div>
 
-          <div key={notifIdx} style={{ position: "absolute", left: -80, top: "20%", background: WHITE, borderRadius: 14, padding: "12px 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", minWidth: 140, animation: "fadeSlide 0.4s ease both" }}>
+          <div key={notifIdx} style={{ position: "absolute", left: -80, top: "20%", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 14, padding: "12px 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", minWidth: 140, animation: "fadeSlide 0.4s ease both" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: LGREY, marginBottom: 2 }}>
               <Bell size={12} color={AMBER} aria-hidden="true" /> New order
             </div>
-            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: NAVY }}>{NOTIFS[notifIdx].amt}</div>
+            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: INK }}>{NOTIFS[notifIdx].amt}</div>
             <div style={{ fontSize: 10, color: GREEN, fontWeight: 600 }}>{NOTIFS[notifIdx].sub}</div>
           </div>
-          <div style={{ position: "absolute", right: -90, bottom: "28%", background: WHITE, borderRadius: 14, padding: "12px 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", minWidth: 150, animation: "float 4s ease-in-out infinite 1s" }}>
+          <div style={{ position: "absolute", right: -90, bottom: "28%", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 14, padding: "12px 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", minWidth: 150, animation: "float 4s ease-in-out infinite 1s" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: LGREY, marginBottom: 2 }}>
               <QrCode size={12} color={AMBER} aria-hidden="true" /> QR scanned
             </div>
-            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 14, color: NAVY }}>Mama's Kitchen</div>
+            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 14, color: INK }}>Mama's Kitchen</div>
             <div style={{ fontSize: 10, color: AMBER, fontWeight: 600 }}>43 scans today</div>
           </div>
         </div>
@@ -291,9 +290,9 @@ export function Hero({ onWaitlist }) {
           ].map((c, i) => {
             const ChipIcon = c.icon;
             return (
-              <div key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8 }}>
+              <div key={i} style={{ background: ISLAND_SOFT, border: `1px solid ${ISLAND_BORDER}`, borderRadius: 12, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <ChipIcon size={16} color={AMBER} aria-hidden="true" />
-                <span style={{ fontSize: 12, color: WHITE, fontWeight: 500 }}>{c.label}</span>
+                <span style={{ fontSize: 12, color: ISLAND_INK, fontWeight: 500 }}>{c.label}</span>
               </div>
             );
           })}

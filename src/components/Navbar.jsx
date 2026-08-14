@@ -1,8 +1,30 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Sun, Sparkles, Moon } from "lucide-react";
 import { useScrollY } from "../hooks/useScrollY";
-import { NAVY, AMBER, WHITE, sora } from "../constants";
+import { NAVY, AMBER, ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, sora, mix } from "../constants";
+import { THEMES, useTheme } from "../theme";
+
+const THEME_ICONS = [Sun, Sparkles, Moon];
+const THEME_LABELS = ["Light", "White", "Dark"];
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  return (
+    <div role="group" aria-label="Theme" style={{ display: "flex", gap: 2, background: ISLAND_SOFT, borderRadius: 999, padding: 4, border: `1px solid ${ISLAND_BORDER}` }}>
+      {THEMES.map((t, i) => {
+        const Icon = THEME_ICONS[i];
+        const active = theme === t;
+        return (
+          <button key={t} aria-label={`${THEME_LABELS[i]} theme`} aria-pressed={active} title={`${THEME_LABELS[i]} theme`} onClick={() => setTheme(t)}
+            style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: active ? AMBER : "transparent", color: active ? NAVY : ISLAND_MUTE, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}>
+            <Icon size={14} aria-hidden="true" />
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,16 +67,16 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
     <>
       <nav aria-label="Main navigation" style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 500,
-      background: scrolled ? "rgba(26,26,46,0.97)" : "transparent",
+      background: scrolled ? mix("island", 97) : "transparent",
       backdropFilter: scrolled ? "blur(16px)" : "none",
-      borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+      borderBottom: scrolled ? `1px solid ${ISLAND_BORDER}` : "none",
       transition: "all 0.35s ease",
       padding: "0 40px", height: 68,
       display: "flex", alignItems: "center", justifyContent: "space-between",
     }}>
       <Link to="/" aria-label="DukaDesk home" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
         <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} style={{ objectFit: "contain" }} />
-        <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: WHITE }}>DukaDesk</span>
+        <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: ISLAND_INK }}>DukaDesk</span>
       </Link>
 
       <div className="nav-links" role="menubar" style={{ display: "flex", gap: 36, alignItems: "center" }}>
@@ -68,25 +90,25 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
                 <span role="menuitem" aria-haspopup="true" aria-expanded={l.openState}
                   tabIndex={0}
                   onKeyDown={e => handleKeyDown(e, () => l.setOpenState(!l.openState))}
-                  style={{ color: "rgba(255,255,255,0.75)", fontSize: 14, fontWeight: 500, cursor: "pointer", display: "flex", alignItems: "center", gap: 4, transition: "color 0.2s" }}
-                  onMouseOver={e => e.target.style.color = WHITE}
-                  onMouseOut={e => e.target.style.color = "rgba(255,255,255,0.75)"}
+                  style={{ color: ISLAND_MUTE, fontSize: 14, fontWeight: 500, cursor: "pointer", display: "flex", alignItems: "center", gap: 4, transition: "color 0.2s" }}
+                  onMouseOver={e => e.target.style.color = ISLAND_INK}
+                  onMouseOut={e => e.target.style.color = ISLAND_MUTE}
                 >{l.label}<ChevronDown aria-hidden="true" size={14} style={{ transition: "transform 0.2s", transform: l.openState ? "rotate(180deg)" : "none" }} /></span>
                 {l.openState && (
-                  <div role="menu" aria-label={`${l.label} submenu`} style={{ position: "absolute", top: 28, left: -16, background: NAVY, border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: "12px 0", minWidth: 170, boxShadow: "0 16px 48px rgba(0,0,0,0.4)", zIndex: 600 }}>
+                  <div role="menu" aria-label={`${l.label} submenu`} style={{ position: "absolute", top: 28, left: -16, background: ISLAND, border: `1px solid ${ISLAND_BORDER}`, borderRadius: 14, padding: "12px 0", minWidth: 170, boxShadow: "0 16px 48px rgba(0,0,0,0.4)", zIndex: 600 }}>
                     {l.dropdown.map(d => (
-                      <Link key={d.label} role="menuitem" to={d.href} style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: 13, padding: "8px 20px", textDecoration: "none", transition: "all 0.15s" }}
-                        onMouseOver={e => { e.target.style.color = AMBER; e.target.style.background = `${AMBER}12`; }}
-                        onMouseOut={e => { e.target.style.color = "rgba(255,255,255,0.7)"; e.target.style.background = "transparent"; }}
+                      <Link key={d.label} role="menuitem" to={d.href} style={{ display: "block", color: ISLAND_MUTE, fontSize: 13, padding: "8px 20px", textDecoration: "none", transition: "all 0.15s" }}
+                        onMouseOver={e => { e.target.style.color = AMBER; e.target.style.background = mix("amber", 12); }}
+                        onMouseOut={e => { e.target.style.color = ISLAND_MUTE; e.target.style.background = "transparent"; }}
                       >{d.label}</Link>
                     ))}
                   </div>
                 )}
               </>
             ) : (
-              <Link role="menuitem" to={l.href} style={{ color: "rgba(255,255,255,0.75)", fontSize: 14, fontWeight: 500, textDecoration: "none", transition: "color 0.2s" }}
-                onMouseOver={e => e.target.style.color = WHITE}
-                onMouseOut={e => e.target.style.color = "rgba(255,255,255,0.75)"}
+              <Link role="menuitem" to={l.href} style={{ color: ISLAND_MUTE, fontSize: 14, fontWeight: 500, textDecoration: "none", transition: "color 0.2s" }}
+                onMouseOver={e => e.target.style.color = ISLAND_INK}
+                onMouseOut={e => e.target.style.color = ISLAND_MUTE}
               >{l.label}</Link>
             )}
           </div>
@@ -94,8 +116,9 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
       </div>
 
       <div className="nav-cta" style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        <button aria-label="Sign in to your account" onClick={onSignIn} style={{ background: "none", border: "1px solid rgba(255,255,255,0.25)", color: WHITE, borderRadius: 24, padding: "9px 20px", fontSize: 14, fontWeight: 500, cursor: "pointer", transition: "all 0.2s" }}
-          onMouseOver={e => { e.target.style.background = "rgba(255,255,255,0.1)"; }}
+        <ThemeToggle />
+        <button aria-label="Sign in to your account" onClick={onSignIn} style={{ background: "none", border: `1px solid ${ISLAND_BORDER}`, color: ISLAND_INK, borderRadius: 24, padding: "9px 20px", fontSize: 14, fontWeight: 500, cursor: "pointer", transition: "all 0.2s" }}
+          onMouseOver={e => { e.target.style.background = ISLAND_SOFT; }}
           onMouseOut={e => { e.target.style.background = "none"; }}
         >Sign In</button>
         <button aria-label="Join the DukaDesk waitlist" onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "9px 22px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: sora }}
@@ -107,41 +130,44 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
       <button className="hamburger" aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}
         onClick={() => setMobileOpen(!mobileOpen)}
         onKeyDown={e => handleKeyDown(e, () => setMobileOpen(!mobileOpen))}
-        style={{ display: "none", background: "none", border: "none", color: WHITE, cursor: "pointer", padding: 4 }}>
+        style={{ display: "none", background: "none", border: "none", color: ISLAND_INK, cursor: "pointer", padding: 4 }}>
         {mobileOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
       </button>
       </nav>
 
       {mobileOpen && (
-        <div role="dialog" aria-label="Mobile navigation" style={{ position: "fixed", top: 68, left: 0, right: 0, bottom: 0, background: NAVY, padding: "20px 24px", display: "flex", flexDirection: "column", gap: 4, borderBottom: "1px solid rgba(255,255,255,0.06)", zIndex: 499, overflowY: "auto" }}>
+        <div role="dialog" aria-label="Mobile navigation" style={{ position: "fixed", top: 68, left: 0, right: 0, bottom: 0, background: ISLAND, padding: "20px 24px", display: "flex", flexDirection: "column", gap: 4, borderBottom: `1px solid ${ISLAND_BORDER}`, zIndex: 499, overflowY: "auto" }}>
           <div>
             <button onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)} aria-expanded={mobileSolutionsOpen}
-              style={{ background: "none", border: "none", color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, cursor: "pointer", padding: "12px 0", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", textAlign: "left", fontFamily: sora }}>
+              style={{ background: "none", border: "none", color: ISLAND_MUTE, fontSize: 16, fontWeight: 500, cursor: "pointer", padding: "12px 0", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", textAlign: "left", fontFamily: sora }}>
               Solutions <ChevronDown size={16} aria-hidden="true" style={{ transform: mobileSolutionsOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
             </button>
             {mobileSolutionsOpen && (
               <div style={{ display: "flex", flexDirection: "column", gap: 2, paddingLeft: 12 }}>
                 {solutions.map(s => (
-                  <Link key={s.label} to={s.href} onClick={closeMobile} style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none", padding: "8px 8px", borderRadius: 8 }}>{s.label}</Link>
+                  <Link key={s.label} to={s.href} onClick={closeMobile} style={{ color: ISLAND_MUTE, fontSize: 14, textDecoration: "none", padding: "8px 8px", borderRadius: 8 }}>{s.label}</Link>
                 ))}
               </div>
             )}
           </div>
-          <Link to="/features" onClick={closeMobile} style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "12px 0" }}>Features</Link>
+          <Link to="/features" onClick={closeMobile} style={{ color: ISLAND_MUTE, fontSize: 16, fontWeight: 500, textDecoration: "none", padding: "12px 0" }}>Features</Link>
           <div>
             <button onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)} aria-expanded={mobileResourcesOpen}
-              style={{ background: "none", border: "none", color: "rgba(255,255,255,0.75)", fontSize: 16, fontWeight: 500, cursor: "pointer", padding: "12px 0", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", textAlign: "left", fontFamily: sora }}>
+              style={{ background: "none", border: "none", color: ISLAND_MUTE, fontSize: 16, fontWeight: 500, cursor: "pointer", padding: "12px 0", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", textAlign: "left", fontFamily: sora }}>
               Resources <ChevronDown size={16} aria-hidden="true" style={{ transform: mobileResourcesOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
             </button>
             {mobileResourcesOpen && (
               <div style={{ display: "flex", flexDirection: "column", gap: 2, paddingLeft: 12 }}>
                 {resources.map(r => (
-                  <Link key={r.label} to={r.href} onClick={closeMobile} style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none", padding: "8px 8px", borderRadius: 8 }}>{r.label}</Link>
+                  <Link key={r.label} to={r.href} onClick={closeMobile} style={{ color: ISLAND_MUTE, fontSize: 14, textDecoration: "none", padding: "8px 8px", borderRadius: 8 }}>{r.label}</Link>
                 ))}
               </div>
             )}
           </div>
-          <hr style={{ border: "none", borderTop: "1px solid rgba(255,255,255,0.08)", margin: "8px 0" }} />
+          <hr style={{ border: "none", borderTop: `1px solid ${ISLAND_BORDER}`, margin: "8px 0" }} />
+          <div style={{ padding: "12px 0" }}>
+            <ThemeToggle />
+          </div>
           <button onClick={() => { closeMobile(); onWaitlist(); }} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Join Waitlist</button>
         </div>
       )}

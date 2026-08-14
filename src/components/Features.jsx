@@ -1,6 +1,6 @@
 import { FadeIn } from "./ui/FadeIn";
 import { QrCode, Smartphone, Plug, BarChart3, MessageCircle, Check } from "lucide-react";
-import { NAVY, AMBER, WHITE, CREAM, BORDER, LGREY, sora } from "../constants";
+import { NAVY, AMBER, SURFACE, CREAM, BORDER, LGREY, INK, sora, mix } from "../constants";
 
 const ICONS = [QrCode, Smartphone, Plug, BarChart3, MessageCircle];
 
@@ -14,14 +14,14 @@ export function Features() {
   ];
 
   return (
-    <section id="features" data-pad="wide" style={{ padding: "100px 80px", background: WHITE }}>
+    <section id="features" data-pad="wide" style={{ padding: "100px 80px", background: SURFACE }}>
       <div data-grid="features" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
         <FadeIn>
           <div>
-            <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 20 }}>
+            <div style={{ display: "inline-block", background: mix("amber", 18), borderRadius: 24, padding: "6px 16px", marginBottom: 20 }}>
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Everything included</span>
             </div>
-            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 20, lineHeight: 1.1 }}>Sell more, save time, and grow faster</h2>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 20, lineHeight: 1.1 }}>Sell more, save time, and grow faster</h2>
             <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 36 }}>DukaDesk gives you everything you need to run a successful desk — payments, messaging, analytics — all in one place. No juggling multiple apps.</p>
             <div className="features-badges" style={{ display: "flex", gap: 12 }}>
               <div style={{ background: "#F0FDF4", borderRadius: 12, padding: "10px 16px", fontSize: 13, color: "#065F46", fontWeight: 600 }}><Check size={13} color="#065F46" style={{ display: "inline", verticalAlign: "middle" }} aria-hidden="true" /> 0% commission on sales</div>
@@ -40,11 +40,11 @@ export function Features() {
                   <div style={{ position: "absolute", top: -8, right: 12, background: AMBER, color: NAVY, fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 12 }}>{f.badge}</div>
                 )}
                 {(() => { const Icon = ICONS[i]; return (
-                <div style={{ width: 44, height: 44, background: `${AMBER}18`, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
+                <div style={{ width: 44, height: 44, background: mix("amber", 18), borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
                   <Icon size={22} color={AMBER} aria-hidden="true" />
                 </div>
                 ); })()}
-                <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 14, color: NAVY, marginBottom: 6 }}>{f.title}</div>
+                <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 14, color: INK, marginBottom: 6 }}>{f.title}</div>
                 <div style={{ fontSize: 13, color: LGREY, lineHeight: 1.6 }}>{f.desc}</div>
               </div>
             </FadeIn>

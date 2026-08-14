@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, MessageCircle, Globe, ArrowRight, Check, PartyPopper } from "lucide-react";
 import { FadeIn } from "./ui/FadeIn";
-import { NAVY, AMBER, WHITE, CREAM, BORDER, CHAR, LGREY, GREEN, sora, inter } from "../constants";
+import { NAVY, AMBER, WHITE, CREAM, SURFACE, BORDER, CHAR, LGREY, INK, ISLAND, ISLAND_INK, ISLAND_MUTE, GREEN, sora, inter, tint } from "../constants";
 
 export function Careers() {
   const roles = [
@@ -29,10 +29,10 @@ export function Careers() {
       <FadeIn>
         <div data-grid="2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginBottom: 64, alignItems: "center" }}>
           <div>
-            <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
+            <div style={{ display: "inline-block", background: mix("amber", 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
               <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>We're hiring</span>
             </div>
-            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16, lineHeight: 1.1 }}>Help us put African desks on mobile.</h2>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 16, lineHeight: 1.1 }}>Help us put African desks on mobile.</h2>
             <p style={{ fontSize: 17, color: LGREY, lineHeight: 1.7, marginBottom: 24 }}>We're a small team moving fast. If you care about making real tools for real Nigerian desks — not hypothetical users — this is the right place.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {["Competitive naira salary", "Remote-friendly for most roles", "Health insurance", "Equity in an early-stage company", "Annual retreat"].map((b, i) => (
@@ -42,12 +42,12 @@ export function Careers() {
               ))}
             </div>
           </div>
-          <div style={{ background: NAVY, borderRadius: 24, padding: "36px 32px" }}>
-            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: WHITE, marginBottom: 8 }}>Don't see the right role?</div>
-            <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: 20 }}>We always want to hear from people who care about what we're building. Send us your story.</div>
+          <div style={{ background: ISLAND, borderRadius: 24, padding: "36px 32px" }}>
+            <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: ISLAND_INK, marginBottom: 8 }}>Don't see the right role?</div>
+            <div style={{ fontSize: 14, color: ISLAND_MUTE, lineHeight: 1.7, marginBottom: 20 }}>We always want to hear from people who care about what we're building. Send us your story.</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[[Mail, "getdukadesk@gmail.com"], [MessageCircle, "WhatsApp: +234 805 889 9248"], [Globe, "dukadesk.com/careers"]].map(([Icon, val]) => (
-                <div key={val} style={{ display: "flex", alignItems: "center", gap: 10, color: WHITE, fontSize: 14 }}>
+                <div key={val} style={{ display: "flex", alignItems: "center", gap: 10, color: ISLAND_INK, fontSize: 14 }}>
                   <Icon size={16} color={AMBER} aria-hidden="true" /><span style={{ color: AMBER }}>{val}</span>
                 </div>
               ))}
@@ -61,14 +61,14 @@ export function Careers() {
           const color = deptColors[role.dept] || NAVY;
           return (
             <FadeIn key={i} delay={i * 60}>
-              <div style={{ background: WHITE, borderRadius: 18, padding: "28px 28px", border: `1.5px solid ${BORDER}`, transition: "all 0.2s" }}
+              <div style={{ background: SURFACE, borderRadius: 18, padding: "28px 28px", border: `1.5px solid ${BORDER}`, transition: "all 0.2s" }}
                 onMouseOver={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.transform = "translateY(-2px)"; }}
                 onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.transform = "none"; }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
                   <div>
-                    <span style={{ background: `${color}18`, color, fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 12, marginBottom: 10, display: "inline-block" }}>{role.dept}</span>
-                    <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: NAVY }}>{role.title}</div>
+                    <span style={{ background: tint(color, 18), color, fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 12, marginBottom: 10, display: "inline-block" }}>{role.dept}</span>
+                    <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: INK }}>{role.title}</div>
                   </div>
                   <div style={{ textAlign: "right", flexShrink: 0, marginLeft: 12 }}>
                     <div style={{ fontSize: 12, color: LGREY }}>{role.location}</div>
@@ -91,27 +91,27 @@ export function Careers() {
       {openRole && (
         <>
           <div onClick={() => setOpenRole(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 600 }} />
-          <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", background: WHITE, borderRadius: 24, padding: 40, width: "min(520px, calc(100vw - 32px))", zIndex: 601, boxShadow: "0 32px 80px rgba(0,0,0,0.25)", maxHeight: "90vh", overflowY: "auto" }}>
+          <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)", background: SURFACE, borderRadius: 24, padding: 40, width: "min(520px, calc(100vw - 32px))", zIndex: 601, boxShadow: "0 32px 80px rgba(0,0,0,0.25)", maxHeight: "90vh", overflowY: "auto" }}>
             {applied ? (
               <div style={{ textAlign: "center", padding: "32px 0" }}>
                 <PartyPopper size={56} color={AMBER} style={{ marginBottom: 16 }} aria-hidden="true" />
-                <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 24, color: NAVY, marginBottom: 8 }}>Application sent!</div>
+                <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 24, color: INK, marginBottom: 8 }}>Application sent!</div>
                 <div style={{ fontSize: 15, color: LGREY }}>We'll be in touch within 3 business days.</div>
               </div>
             ) : (
               <>
                 <div style={{ marginBottom: 24 }}>
-                  <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 22, color: NAVY, marginBottom: 4 }}>Apply: {openRole.title}</div>
+                  <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 22, color: INK, marginBottom: 4 }}>Apply: {openRole.title}</div>
                   <div style={{ fontSize: 14, color: LGREY }}>{openRole.location} · {openRole.type}</div>
                 </div>
                 {[["Full Name *", "name", "Ada Okafor"], ["Email Address *", "email", "ada@email.com"], ["LinkedIn Profile", "linkedin", "linkedin.com/in/adaokafor"]].map(([label, key, ph]) => (
                   <div key={key} style={{ marginBottom: 14 }}>
-                    <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: NAVY, marginBottom: 6 }}>{label}</label>
+                    <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: INK, marginBottom: 6 }}>{label}</label>
                     <input value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} placeholder={ph} style={{ width: "100%", height: 48, border: `1px solid ${BORDER}`, borderRadius: 8, padding: "0 14px", fontSize: 14, fontFamily: inter, outline: "none", boxSizing: "border-box" }} onFocus={e => e.target.style.borderColor = AMBER} onBlur={e => e.target.style.borderColor = BORDER} />
                   </div>
                 ))}
                 <div style={{ marginBottom: 24 }}>
-                  <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: NAVY, marginBottom: 6 }}>Why DukaDesk? *</label>
+                  <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: INK, marginBottom: 6 }}>Why DukaDesk? *</label>
                   <textarea value={form.why} onChange={e => setForm(f => ({ ...f, why: e.target.value }))} placeholder="Tell us why this role and why now..." style={{ width: "100%", height: 100, border: `1px solid ${BORDER}`, borderRadius: 8, padding: "12px 14px", fontSize: 14, fontFamily: inter, outline: "none", resize: "none", boxSizing: "border-box" }} onFocus={e => e.target.style.borderColor = AMBER} onBlur={e => e.target.style.borderColor = BORDER} />
                 </div>
                 <div style={{ display: "flex", gap: 10 }}>

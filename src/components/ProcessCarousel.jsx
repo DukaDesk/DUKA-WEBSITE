@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./ui/Reveal";
-import { NAVY, AMBER, WHITE, CREAM, CHAR, LGREY, BORDER, sora, inter } from "../constants";
+import { NAVY, AMBER, WHITE, CREAM, SURFACE, CHAR, LGREY, BORDER, INK, sora, inter, mix } from "../constants";
 import editorImg from "../assets/app_editor_merchant.jpeg";
 import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
 import mob1Img from "../assets/dukamob1.jpeg";
@@ -72,7 +72,7 @@ export function ProcessCarousel() {
     <section
       id="how"
       data-pad="wide"
-      style={{ background: WHITE, padding: "104px 56px", overflow: "hidden" }}
+      style={{ background: SURFACE, padding: "104px 56px", overflow: "hidden" }}
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
     >
@@ -82,7 +82,7 @@ export function ProcessCarousel() {
             <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>
               How it works
             </span>
-            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: NAVY, margin: "18px 0 28px" }}>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: INK, margin: "18px 0 28px" }}>
               From nothing
               <br />
               to open for business.
@@ -97,10 +97,10 @@ export function ProcessCarousel() {
                   exit={{ opacity: 0, x: dir * -32 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                 >
-                  <div style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(64px,7vw,96px)", lineHeight: 1, letterSpacing: "-0.05em", color: `${AMBER}20`, userSelect: "none" }}>
+                  <div style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(64px,7vw,96px)", lineHeight: 1, letterSpacing: "-0.05em", color: mix("amber", 20), userSelect: "none" }}>
                     {slide.n}
                   </div>
-                  <h3 style={{ fontFamily: sora, fontWeight: 700, fontSize: "clamp(22px,2.2vw,30px)", letterSpacing: "-0.02em", color: NAVY, margin: "10px 0 12px" }}>
+                  <h3 style={{ fontFamily: sora, fontWeight: 700, fontSize: "clamp(22px,2.2vw,30px)", letterSpacing: "-0.02em", color: INK, margin: "10px 0 12px" }}>
                     {slide.t}
                   </h3>
                   <p style={{ fontFamily: inter, fontSize: 16, lineHeight: 1.75, color: CHAR, margin: 0, maxWidth: 400 }}>{slide.d}</p>
@@ -132,9 +132,9 @@ export function ProcessCarousel() {
                 <button
                   onClick={() => go(idx - 1, -1)}
                   aria-label="Previous step"
-                  style={{ width: 42, height: 42, borderRadius: "50%", border: `1px solid ${BORDER}`, background: CREAM, color: NAVY, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+                  style={{ width: 42, height: 42, borderRadius: "50%", border: `1px solid ${BORDER}`, background: CREAM, color: INK, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
                   onMouseOver={e => { e.currentTarget.style.borderColor = AMBER; e.currentTarget.style.color = AMBER; }}
-                  onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = NAVY; }}
+                  onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = INK; }}
                 >
                   <ChevronLeft size={18} aria-hidden="true" />
                 </button>
@@ -154,7 +154,7 @@ export function ProcessCarousel() {
 
         <Reveal delay={120}>
           <div className="how-stage" style={{ position: "relative" }}>
-            <div aria-hidden="true" style={{ position: "absolute", top: -40, right: -20, width: 260, height: 260, background: `${AMBER}14`, borderRadius: "50%", filter: "blur(70px)" }} />
+            <div aria-hidden="true" style={{ position: "absolute", top: -40, right: -20, width: 260, height: 260, background: mix("amber", 14), borderRadius: "50%", filter: "blur(70px)" }} />
             <AnimatePresence mode="wait" custom={dir}>
               <motion.div
                 key={idx}

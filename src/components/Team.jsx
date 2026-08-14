@@ -1,6 +1,6 @@
 import { FadeIn } from "./ui/FadeIn";
 import { MonogramAvatar } from "./ui/MonogramAvatar";
-import { NAVY, AMBER, CREAM, BORDER, LGREY, sora } from "../constants";
+import { NAVY, AMBER, CREAM, SURFACE, BORDER, LGREY, INK, ISLAND, ISLAND_INK, ISLAND_MUTE, sora, tint } from "../constants";
 
 export function Team() {
   const team = [
@@ -13,13 +13,13 @@ export function Team() {
   ];
 
   return (
-    <section id="team" data-pad="wide" style={{ padding: "100px 80px", background: "white" }}>
+    <section id="team" data-pad="wide" style={{ padding: "100px 80px", background: SURFACE }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
+          <div style={{ display: "inline-block", background: mix("amber", 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>The people behind DukaDesk</span>
           </div>
-          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: NAVY, marginBottom: 16 }}>Built by Nigerians,<br />for independent desks.</h2>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 16 }}>Built by Nigerians,<br />for independent desks.</h2>
           <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>We're not a Silicon Valley company parachuting into Africa. We grew up with these desks. We know the problems firsthand.</p>
         </div>
       </FadeIn>
@@ -31,8 +31,8 @@ export function Team() {
               onMouseOut={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
             >
               <MonogramAvatar name={person.name} size={64} color={person.color} radius={18} fontSize={24} />
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: NAVY, marginBottom: 4, marginTop: 16 }}>{person.name}</div>
-              <div style={{ display: "inline-block", background: `${person.color}18`, borderRadius: 20, padding: "3px 12px", fontSize: 12, fontWeight: 600, color: person.color, marginBottom: 12 }}>{person.role}</div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: INK, marginBottom: 4, marginTop: 16 }}>{person.name}</div>
+              <div style={{ display: "inline-block", background: tint(person.color, 18), borderRadius: 20, padding: "3px 12px", fontSize: 12, fontWeight: 600, color: person.color, marginBottom: 12 }}>{person.role}</div>
               <div style={{ fontSize: 14, color: LGREY, lineHeight: 1.7 }}>{person.bio}</div>
             </div>
           </FadeIn>
@@ -40,7 +40,7 @@ export function Team() {
       </div>
 
       <FadeIn delay={200}>
-        <div data-grid="values" style={{ marginTop: 72, background: NAVY, borderRadius: 28, padding: "52px 60px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 48 }}>
+        <div data-grid="values" style={{ marginTop: 72, background: ISLAND, borderRadius: 28, padding: "52px 60px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 48 }}>
           {[
             { title: "Built in Nigeria", body: "Our HQ is in Lagos. Every product decision starts with 'does this work for a merchant in Balogun market?'" },
             { title: "Merchant-first", body: "We don't take a cut of your sales. We don't run ads on your app. Your success is our only business model." },
@@ -48,8 +48,8 @@ export function Team() {
           ].map((v, i) => (
             <div key={i}>
               <div style={{ width: 8, height: 8, background: AMBER, borderRadius: "50%", marginBottom: 16 }} />
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: "white", marginBottom: 10 }}>{v.title}</div>
-              <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{v.body}</div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: ISLAND_INK, marginBottom: 10 }}>{v.title}</div>
+              <div style={{ fontSize: 14, color: ISLAND_MUTE, lineHeight: 1.7 }}>{v.body}</div>
             </div>
           ))}
         </div>

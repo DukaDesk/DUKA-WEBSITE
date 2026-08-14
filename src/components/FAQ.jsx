@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NAVY, AMBER, sora, inter } from "../constants";
+import { ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_BORDER, AMBER, sora, inter } from "../constants";
 
 const FAQS = [
   { q: "What is DukaDesk?", a: "DukaDesk is an all-in-one platform that helps you launch, manage and grow your desk online. From creating your desk to managing customers, orders, bookings and insights — everything you need is in one place." },
@@ -24,7 +24,7 @@ export function FAQ({ onWaitlist }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" data-pad="wide" style={{ background: NAVY, color: "#FAF8F5", padding: "104px 56px" }}>
+    <section id="faq" data-pad="wide" style={{ background: ISLAND, color: ISLAND_INK, padding: "104px 56px" }}>
       <div data-grid="faq" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
         <div style={{ position: "sticky", top: 96 }}>
           <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: AMBER }}>
@@ -47,11 +47,11 @@ export function FAQ({ onWaitlist }) {
 
         <div>
           {FAQS.map((f, i) => (
-            <div key={f.q} style={{ borderTop: i === 0 ? "1px solid rgba(250,248,245,0.16)" : "none", borderBottom: "1px solid rgba(250,248,245,0.16)" }}>
+            <div key={f.q} style={{ borderTop: i === 0 ? `1px solid ${ISLAND_BORDER}` : "none", borderBottom: `1px solid ${ISLAND_BORDER}` }}>
               <button
                 onClick={() => setOpen(open === i ? -1 : i)}
                 aria-expanded={open === i}
-                style={{ width: "100%", background: "none", border: "none", cursor: "pointer", padding: "24px 0", display: "grid", gridTemplateColumns: "40px 1fr 24px", gap: 14, alignItems: "baseline", textAlign: "left", color: "#FAF8F5" }}
+                style={{ width: "100%", background: "none", border: "none", cursor: "pointer", padding: "24px 0", display: "grid", gridTemplateColumns: "40px 1fr 24px", gap: 14, alignItems: "baseline", textAlign: "left", color: ISLAND_INK }}
                 aria-label={`${f.q}${open === i ? " — collapse" : ""}`}
               >
                 <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.14em", color: AMBER }}>{String(i + 1).padStart(2, "0")}</span>
@@ -59,7 +59,7 @@ export function FAQ({ onWaitlist }) {
                 <span style={{ fontFamily: sora, fontSize: 20, color: AMBER, transform: open === i ? "rotate(45deg)" : "none", transition: "transform 0.25s" }}>+</span>
               </button>
               <div style={{ maxHeight: open === i ? 320 : 0, overflow: "hidden", transition: "max-height 0.3s ease" }}>
-                <p style={{ fontFamily: inter, fontSize: 15, lineHeight: 1.75, color: "rgba(250,248,245,0.66)", margin: "0 0 24px", paddingLeft: 54, maxWidth: 620 }}>{f.a}</p>
+                <p style={{ fontFamily: inter, fontSize: 15, lineHeight: 1.75, color: ISLAND_MUTE, margin: "0 0 24px", paddingLeft: 54, maxWidth: 620 }}>{f.a}</p>
               </div>
             </div>
           ))}

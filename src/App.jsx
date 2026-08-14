@@ -13,7 +13,7 @@ import { Terms } from "./components/Terms";
 import { LegalLayout } from "./components/LegalLayout";
 import { FAQ } from "./components/FAQ";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { CHAR, WHITE, inter } from "./constants";
+import { CHAR, SURFACE, inter } from "./constants";
 
 const Integrations = lazy(() => import("./components/Integrations").then(m => ({ default: m.Integrations })));
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })));
@@ -28,7 +28,7 @@ const SIGN_IN_URL = import.meta.env.VITE_MERCHANT_URL || "https://app.dukadesk.c
 const WAITLIST_URL = import.meta.env.VITE_WAITLIST_URL || "https://forms.gle/vsQydWxXmiQAAFyV9";
 
 function SectionFallback() {
-  return <div style={{ height: 200, background: WHITE }} />;
+  return <div style={{ height: 200, background: SURFACE }} />;
 }
 
 function PageFooter({ onSignIn, onWaitlist }) {
@@ -140,7 +140,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ fontFamily: inter, color: CHAR, background: WHITE, overflowX: "hidden" }}>
+    <div style={{ fontFamily: inter, color: CHAR, background: SURFACE, overflowX: "hidden" }}>
       <ScrollToTop />
       <Navbar onSignIn={handleSignIn} onWaitlist={handleWaitlist} alwaysSolid={!isHome} />
       <Routes>

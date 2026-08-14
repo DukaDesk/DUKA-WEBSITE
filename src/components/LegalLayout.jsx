@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { NAVY, AMBER, WHITE, CHAR, LGREY, BORDER, sora, inter } from "../constants";
+import { AMBER, SURFACE, CHAR, LGREY, BORDER, sora, inter } from "../constants";
 
 export function LegalLayout({ children }) {
   return (
-    <div style={{ paddingTop: 100, background: WHITE, minHeight: "100vh" }}>
+    <div style={{ paddingTop: 100, background: SURFACE, minHeight: "100vh" }}>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px 80px" }}>
         <Link to="/" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: AMBER, fontSize: 14, fontWeight: 600, textDecoration: "none", marginBottom: 32 }}>
           ← Back to Home

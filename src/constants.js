@@ -1,11 +1,26 @@
-export const NAVY   = "#1A1A2E";
-export const AMBER  = "#F4A026";
-export const CREAM  = "#FAF8F5";
-export const CHAR   = "#374151";
-export const LGREY  = "#6B7280";
-export const BORDER = "#E5E7EB";
-export const WHITE  = "#FFFFFF";
-export const GREEN  = "#2ECC71";
+export const NAVY   = "var(--navy)";
+export const AMBER  = "var(--amber)";
+export const GREEN  = "var(--green)";
+export const INK    = "var(--ink)";
+export const CHAR   = "var(--char)";
+export const LGREY  = "var(--lgrey)";
+export const WHITE  = "var(--light)";
+export const SURFACE   = "var(--surface)";
+export const CREAM  = "var(--surface-2)";
+export const BORDER = "var(--border)";
+export const ISLAND = "var(--island)";
+export const ISLAND_INK = "var(--island-ink)";
+export const ISLAND_MUTE = "var(--island-mute)";
+export const ISLAND_SOFT = "var(--island-soft)";
+export const ISLAND_BORDER = "var(--island-border)";
+export const CARD_DARK = "#0D0D1A";
+
+export const mix = (name, pct) => `color-mix(in srgb, var(--${name}) ${pct}%, transparent)`;
+
+export const tint = (color, pct) =>
+  color && String(color).startsWith("#")
+    ? `${color}${pct}`
+    : `color-mix(in srgb, ${color} ${pct}%, transparent)`;
 
 export const sora = "'Sora', sans-serif";
 export const inter = "'Inter', sans-serif";

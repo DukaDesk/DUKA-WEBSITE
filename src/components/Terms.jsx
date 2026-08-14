@@ -1,7 +1,7 @@
-import { NAVY, AMBER, CREAM, CHAR, LGREY, sora } from "../constants";
+import { NAVY, AMBER, CREAM, CHAR, LGREY, INK, sora, tint } from "../constants";
 
-const h2 = { fontFamily: sora, fontWeight: 700, fontSize: 24, color: NAVY, marginBottom: 12, marginTop: 40 };
-const h3 = { fontFamily: sora, fontWeight: 600, fontSize: 18, color: NAVY, marginBottom: 8, marginTop: 28 };
+const h2 = { fontFamily: sora, fontWeight: 700, fontSize: 24, color: INK, marginBottom: 12, marginTop: 40 };
+const h3 = { fontFamily: sora, fontWeight: 600, fontSize: 18, color: INK, marginBottom: 8, marginTop: 28 };
 const p = { fontSize: 15, color: CHAR, lineHeight: 1.8, marginBottom: 12 };
 const list = { fontSize: 15, color: CHAR, lineHeight: 1.8, paddingLeft: 20, marginBottom: 12 };
 
@@ -9,9 +9,9 @@ export function Terms() {
   return (
     <article>
       <div style={{ marginBottom: 8 }}>
-        <span style={{ background: `${AMBER}18`, borderRadius: 24, padding: "4px 14px", fontSize: 12, fontWeight: 600, color: AMBER }}>Last updated: July 2025</span>
+        <span style={{ background: tint(AMBER, 18), borderRadius: 24, padding: "4px 14px", fontSize: 12, fontWeight: 600, color: AMBER }}>Last updated: July 2025</span>
       </div>
-      <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 36, color: NAVY, marginBottom: 16 }}>Terms of Service</h1>
+      <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 36, color: INK, marginBottom: 16 }}>Terms of Service</h1>
       <p style={p}>These Terms of Service ("Terms") govern your access to and use of the DukaDesk platform, website, and services (collectively, the "Platform"). By using the Platform, you agree to these Terms. If you do not agree, do not use the Platform.</p>
 
       <div>

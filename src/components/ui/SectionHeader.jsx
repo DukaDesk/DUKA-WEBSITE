@@ -1,10 +1,10 @@
 import { FadeIn } from "./FadeIn";
 import { Badge } from "./Badge";
-import { NAVY, sora, LGREY } from "../../constants";
+import { INK, sora, LGREY, ISLAND_INK, ISLAND_MUTE } from "../../constants";
 
 export function SectionHeader({ badge, title, subtitle, light = false, badgeVariant = "amber" }) {
-  const color = light ? "#FFFFFF" : NAVY;
-  const subColor = light ? "rgba(255,255,255,0.55)" : LGREY;
+  const color = light ? ISLAND_INK : INK;
+  const subColor = light ? ISLAND_MUTE : LGREY;
   return (
     <FadeIn>
       <div style={{ textAlign: "center", marginBottom: 64 }}>

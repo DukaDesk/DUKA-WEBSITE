@@ -1,4 +1,4 @@
-import { NAVY, AMBER, WHITE, EASE } from "../../constants";
+import { NAVY, AMBER, ISLAND_INK, ISLAND_BORDER, ISLAND_SOFT, EASE } from "../../constants";
 
 const base = {
   display: "inline-flex",
@@ -21,8 +21,8 @@ const sizes = {
 
 const variants = {
   primary: { background: AMBER, color: NAVY },
-  ghost: { background: "none", color: WHITE, border: "1px solid rgba(255,255,255,0.25)" },
-  outline: { background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.15)" },
+  ghost: { background: "none", color: ISLAND_INK, border: `1px solid ${ISLAND_BORDER}` },
+  outline: { background: ISLAND_SOFT, color: ISLAND_INK, border: `1px solid ${ISLAND_BORDER}` },
 };
 
 export function Button({ variant = "primary", size = "md", href, onClick, style = {}, children, ...rest }) {

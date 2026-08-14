@@ -1,10 +1,10 @@
-import { AMBER, GREEN } from "../../constants";
+import { AMBER, GREEN, ISLAND_SOFT, ISLAND_INK, mix } from "../../constants";
 
 const variants = {
-  amber: { bg: `${AMBER}18`, color: AMBER },
-  green: { bg: `${GREEN}18`, color: GREEN },
-  outline: { bg: "transparent", color: AMBER, border: `1px solid ${AMBER}44` },
-  dark: { bg: "rgba(255,255,255,0.1)", color: "#FFFFFF" },
+  amber: { bg: mix("amber", 18), color: AMBER },
+  green: { bg: mix("green", 18), color: GREEN },
+  outline: { bg: "transparent", color: AMBER, border: `1px solid ${mix("amber", 44)}` },
+  dark: { bg: ISLAND_SOFT, color: ISLAND_INK },
 };
 
 export function Badge({ variant = "amber", style = {}, children }) {

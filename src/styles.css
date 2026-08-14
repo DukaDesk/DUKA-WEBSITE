@@ -8,6 +8,59 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --navy: #1A1A2E;
+  --amber: #F4A026;
+  --green: #2ECC71;
+  --ink: #1A1A2E;
+  --char: #374151;
+  --lgrey: #6B7280;
+  --light: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #FAF8F5;
+  --border: #E5E7EB;
+  --island: #1A1A2E;
+  --island-ink: #FFFFFF;
+  --island-mute: rgba(255, 255, 255, 0.6);
+  --island-soft: rgba(255, 255, 255, 0.06);
+  --island-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="white"] {
+  color-scheme: light;
+  --surface-2: #FFFFFF;
+  --island: #FFFFFF;
+  --island-ink: #1A1A2E;
+  --island-mute: rgba(26, 26, 46, 0.6);
+  --island-soft: rgba(26, 26, 46, 0.06);
+  --island-border: rgba(26, 26, 46, 0.12);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #F1F1F7;
+  --char: #D3D6DE;
+  --lgrey: #98A0B0;
+  --light: #FFFFFF;
+  --surface: #17172B;
+  --surface-2: #12121F;
+  --border: rgba(255, 255, 255, 0.1);
+  --island: #12121F;
+  --island-ink: #FFFFFF;
+  --island-mute: rgba(255, 255, 255, 0.6);
+  --island-soft: rgba(255, 255, 255, 0.06);
+  --island-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::-webkit-scrollbar { width: 6px; }

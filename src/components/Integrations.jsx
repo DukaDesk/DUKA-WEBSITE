@@ -4,7 +4,7 @@ import {
   Star, Bell, MessageCircle, MessageSquare, Mail, Smartphone, Camera,
   CalendarDays, Truck, Ticket,
 } from "lucide-react";
-import { NAVY, AMBER, LGREY, sora } from "../constants";
+import { ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, AMBER, LGREY, sora, mix } from "../constants";
 
 const ICONS = [
   CreditCard, CreditCard, Landmark, MonitorSmartphone,
@@ -36,14 +36,14 @@ export function Integrations() {
   ];
 
   return (
-    <section data-pad="wide" style={{ padding: "100px 80px", background: NAVY, overflow: "hidden" }}>
+    <section data-pad="wide" style={{ padding: "100px 80px", background: ISLAND, overflow: "hidden" }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div style={{ display: "inline-block", background: `${AMBER}18`, borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
+          <div style={{ display: "inline-block", background: mix("amber", 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
             <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Integration marketplace</span>
           </div>
-          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: "white", marginBottom: 16 }}>Add what you need.<br /><span style={{ color: AMBER }}>Leave out what you don't.</span></h2>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto" }}>Every integration is one click. No developer needed, no API keys to manage.</p>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: ISLAND_INK, marginBottom: 16 }}>Add what you need.<br /><span style={{ color: AMBER }}>Leave out what you don't.</span></h2>
+          <p style={{ fontSize: 17, color: ISLAND_MUTE, maxWidth: 480, margin: "0 auto" }}>Every integration is one click. No developer needed, no API keys to manage.</p>
         </div>
       </FadeIn>
       <div data-grid="integrations" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, maxWidth: 900, margin: "0 auto" }}>
@@ -51,12 +51,12 @@ export function Integrations() {
           const IntIcon = ICONS[int.icon];
           return (
           <FadeIn key={i} delay={i * 50}>
-            <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, padding: "18px 16px", transition: "all 0.2s", cursor: "default" }}
-              onMouseOver={e => { e.currentTarget.style.background = "rgba(244,160,38,0.1)"; e.currentTarget.style.borderColor = `${AMBER}44`; }}
-              onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+            <div style={{ background: ISLAND_SOFT, border: `1px solid ${ISLAND_BORDER}`, borderRadius: 14, padding: "18px 16px", transition: "all 0.2s", cursor: "default" }}
+              onMouseOver={e => { e.currentTarget.style.background = "rgba(244,160,38,0.1)"; e.currentTarget.style.borderColor = mix("amber", 44); }}
+              onMouseOut={e => { e.currentTarget.style.background = ISLAND_SOFT; e.currentTarget.style.borderColor = ISLAND_BORDER; }}
             >
               <IntIcon size={24} color={AMBER} style={{ display: "block", marginBottom: 8 }} aria-hidden="true" />
-              <div style={{ fontWeight: 600, fontSize: 13, color: "white", marginBottom: 2 }}>{int.name}</div>
+              <div style={{ fontWeight: 600, fontSize: 13, color: ISLAND_INK, marginBottom: 2 }}>{int.name}</div>
               <div style={{ fontSize: 11, color: LGREY }}>{int.cat}</div>
             </div>
           </FadeIn>

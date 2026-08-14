@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./ui/Reveal";
 import { ArrowRight, Layers, ChevronLeft, ChevronRight } from "lucide-react";
-import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, CREAM, sora, inter } from "../constants";
+import { NAVY, AMBER, WHITE, LGREY, CHAR, BORDER, CREAM, SURFACE, INK, sora, inter } from "../constants";
 import editorImg from "../assets/app_editor_merchant.jpeg";
 import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
 import mob1Img from "../assets/dukamob1.jpeg";
@@ -48,14 +48,14 @@ export function ProductShowcase({ onWaitlist }) {
   const activeIdx = DECK.findIndex(d => d.src === frontSrc);
 
   return (
-    <section id="showcase" data-pad="wide" style={{ padding: "104px 56px", background: WHITE, overflow: "hidden" }}>
+    <section id="showcase" data-pad="wide" style={{ padding: "104px 56px", background: SURFACE, overflow: "hidden" }}>
       <div data-grid="showcase" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
         <div style={{ position: "sticky", top: 96 }}>
           <Reveal>
             <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>
               Inside the app
             </span>
-            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: NAVY, margin: "18px 0 0" }}>
+            <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: INK, margin: "18px 0 0" }}>
               Everything
               <br />
               in one app.
@@ -106,7 +106,7 @@ export function ProductShowcase({ onWaitlist }) {
                     style={{
                       borderRadius: 24,
                       border: `1px solid ${BORDER}`,
-                      background: WHITE,
+                      background: SURFACE,
                       boxShadow: isFront ? "0 24px 64px rgba(0,0,0,0.14)" : `0 16px 40px rgba(0,0,0,${0.05 + depth * 0.015})`,
                       overflow: "hidden",
                       transition: "box-shadow 0.25s",
@@ -156,7 +156,7 @@ export function ProductShowcase({ onWaitlist }) {
                     </div>
                     <div style={{ padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                       <div style={{ textAlign: "left" }}>
-                        <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 15, color: NAVY }}>{card.label}</div>
+                        <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 15, color: INK }}>{card.label}</div>
                         <div style={{ fontSize: 12, color: LGREY }}>{card.sub}</div>
                       </div>
                       <ArrowRight size={16} color={AMBER} aria-hidden="true" />
@@ -184,9 +184,9 @@ export function ProductShowcase({ onWaitlist }) {
             <button
               onClick={() => go(-1)}
               aria-label="Previous card"
-              style={{ width: 42, height: 42, borderRadius: "50%", border: `1px solid ${BORDER}`, background: CREAM, color: NAVY, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              style={{ width: 42, height: 42, borderRadius: "50%", border: `1px solid ${BORDER}`, background: CREAM, color: INK, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
               onMouseOver={e => { e.currentTarget.style.borderColor = AMBER; e.currentTarget.style.color = AMBER; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = NAVY; }}
+              onMouseOut={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = INK; }}
             >
               <ChevronLeft size={18} aria-hidden="true" />
             </button>
