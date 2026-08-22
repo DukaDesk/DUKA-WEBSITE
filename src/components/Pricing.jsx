@@ -26,7 +26,7 @@ export function Pricing({ onSignIn, onWaitlist }) {
   ];
 
   return (
-    <section id="pricing" data-pad="wide" style={{ padding: "100px 80px", background: CREAM }}>
+<section id="pricing" data-pad="wide" style={{ padding: "100px 80px", background: CREAM }}>
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <div style={{ display: "inline-block", background: mix("amber", 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
@@ -45,7 +45,7 @@ export function Pricing({ onSignIn, onWaitlist }) {
         </div>
       </FadeIn>
 
-      <div data-grid="pricing" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, maxWidth: 1000, margin: "0 auto" }}>
+      <div data-grid="pricing" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, maxWidth: 1000, margin: "0 auto" }}>
         {plans.map((plan, i) => (
           <FadeIn key={i} delay={i * 100}>
             <Tilt max={plan.highlight ? 4 : 6} style={{ height: "100%" }}>

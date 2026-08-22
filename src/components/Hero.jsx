@@ -110,7 +110,7 @@ export function Hero({ onWaitlist }) {
     <section className="hero-wrap" data-pad="wide" style={{
       minHeight: "100vh", background: ISLAND,
       display: "flex", alignItems: "center",
-      padding: "120px 80px 80px",
+      padding: `clamp(60px, 8vw, 140px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 80px)`,
       position: "relative", overflow: "hidden",
     }}>
       <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true" tabIndex={-1}
@@ -130,7 +130,7 @@ export function Hero({ onWaitlist }) {
       ))}
 
       <div style={{ flex: 1, maxWidth: 600, position: "relative", zIndex: 1 }}>
-        <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 64, color: ISLAND_INK, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
+        <h1 style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: ISLAND_INK, lineHeight: 1.05, marginBottom: 8, letterSpacing: "-1px" }}>
           An app for your{' '}
           <span style={{ color: AMBER, display: "inline-flex", flexDirection: "column", height: "1.05em", overflow: "hidden", verticalAlign: "bottom" }}>
             <span style={{
@@ -179,7 +179,7 @@ export function Hero({ onWaitlist }) {
       <div style={{ position: "absolute", bottom: "5%", left: "5%", width: 360, height: 360, background: mix("amber", 8), borderRadius: "50%", filter: "blur(60px)", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, backgroundImage: `linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)`, backgroundSize: "48px 48px", pointerEvents: "none" }} />
 
-      <motion.div className="hero-phone" style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 1, flexDirection: "column", y: yPhone }}>
+      <motion.div className="hero-phone" style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 1, flexDirection: "column", y: yPhone, marginTop: 48 }}>
         <div style={{ animation: "float 4s ease-in-out infinite", position: "relative" }}>
           <div style={{ width: 280, background: "#0D0D1A", borderRadius: 44, padding: 10, boxShadow: "0 48px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07)" }}>            <div style={{ background: NAVY, borderRadius: 36, overflow: "hidden", minHeight: 520, position: "relative" }}>
 

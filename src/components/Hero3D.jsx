@@ -124,14 +124,14 @@ function Logo() {
 
 export function Hero3D() {
   const [ready, setReady] = useState(false);
+  const mq = window.matchMedia("(min-width: 1024px)");
 
   useEffect(() => {
-    const mqDesktop = window.matchMedia("(min-width: 1024px)");
-    const ok = mqDesktop.matches && supportsWebGL();
+    const ok = mq.matches && supportsWebGL();
     setReady(ok);
   }, []);
 
-  if (!ready) return null;
+  if (!ready) return <StaticHeroLogo />;
 
   return (
     <Canvas
@@ -146,6 +146,31 @@ export function Hero3D() {
         <Logo />
       </Float>
     </Canvas>
+  );
+}
+
+function StaticHeroLogo() {
+  return (
+    <div
+      style={{
+        width: "180px",
+        height: "180px",
+        borderRadius: 44,
+        background: "#0D0D1A",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        margin: "0 auto",
+      }}
+    >
+      <img
+        src="/assets/Dukalogo-main-removebg-preview.png"
+        alt="DukaDesk logo"
+        width={44}
+        height={44}
+        style={{ objectFit: "contain" }}
+      />
+    </div>
   );
 }
 

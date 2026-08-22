@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -69,7 +69,7 @@ body {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ── Marquee ── */
+/* â”€â”€ Marquee â”€â”€ */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -79,7 +79,7 @@ body {
   animation-play-state: paused;
 }
 
-/* ── Nav collapses below 1024px (hamburger) ── */
+/* â”€â”€ Nav collapses below 1024px (hamburger) â”€â”€ */
 @media (max-width: 1024px) {
   .nav-links {
     display: none !important;
@@ -98,8 +98,383 @@ body {
   }
 }
 
-/* ── Responsive section padding ── */
+/* â”€â”€ Tablet breakpoint â”€â”€ */
+@media (max-width: 900px) {
+  /* â”€â”€ Section padding â”€â”€ */
+  section, footer, footer > div:first-child,
+  [data-pad] {
+    padding-left: clamp(20px, 4vw, 40px) !important;
+    padding-right: clamp(20px, 4vw, 40px) !important;
+  }
+
+  nav {
+    padding-left: clamp(20px, 4vw, 40px) !important;
+    padding-right: clamp(20px, 4vw, 40px) !important;
+  }
+
+  [data-pad="wide"] {
+    padding: clamp(50px, 6vw, 100px) !important;
+  }
+
+  [data-pad="narrow"] {
+    padding: clamp(20px, 4vw, 40px) !important;
+  }
+
+  /* â”€â”€ Hero â”€â”€ */
+  .hero-wrap {
+    flex-direction: column !important;
+    padding-top: clamp(80px, 10vw, 140px) !important;
+    padding-bottom: clamp(40px, 6vw, 80px) !important;
+  }
+
+  .hero-wrap h1 {
+    font-size: clamp(32px, 5vw, 48px) !important;
+  }
+
+  .hero-phone {
+    margin-top: clamp(32px, 6vw, 48px) !important;
+    width: min(280px, 90vw) !important;
+  }
+
+  .hero-phone > div {
+    transform: scale(0.85) !important;
+  }
+
+  .hero-phone > div > div {
+    position: static !important;
+  }
+
+  .hero-phone > div > div:nth-child(2),
+  .hero-phone > div > div:nth-child(3) {
+    display: none !important;
+  }
+
+  .hero-phone img {
+    height: min(520px, 65vw) !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  /* â”€â”€ Grid overrides â”€â”€ */
+  [data-grid="4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  [data-grid="3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  [data-grid="2"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="how"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="features"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="features-copy"] {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  [data-grid="pricing"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="pricing"] > div {
+    transform: none !important;
+    padding: 0 10px !important;
+  }
+
+  [data-grid="footer"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: clamp(20px, 4vw, 32px) !important;
+  }
+
+  [data-grid="footer"] > div:first-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  [data-grid="trust"] {
+    justify-content: center !important;
+    gap: clamp(12px, 3vw, 20px) !important;
+  }
+
+  [data-grid="trust"] > div:last-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* â”€â”€ Typography â”€â”€ */
+  [data-type="h2"] {
+    font-size: clamp(28px, 4vw, 36px) !important;
+  }
+
+  [data-type="h3"] {
+    font-size: clamp(22px, 3.5vw, 28px) !important;
+  }
+
+  /* â”€â”€ 3-col grid â”€â”€ */
+  [data-grid="3-col"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* â”€â”€ Hide / show â”€â”€ */
+  [data-grid="why"],
+  [data-grid="faq"],
+  [data-grid="showcase"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="why"] > div:first-child,
+  [data-grid="showcase"] > div:first-child {
+    position: static !important;
+  }
+
+  [data-grid="how"] img {
+    height: min(460px, 72vw) !important;
+  }
+
+  .how-stage {
+    height: calc(min(460px, 72vw) + 20px) !important;
+  }
+
+  .step-badge {
+    left: 16px !important;
+    bottom: 16px !important;
+  }
+
+  [data-grid="compare"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="compare"] > div {
+    font-size: 13px !important;
+    padding: 10px !important;
+  }
+
+  .footer-bar {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* â”€â”€ Trust bar â”€â”€ */
+  [data-grid="trust"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  [data-grid="trust"] > div:last-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* â”€â”€ Testimonials grid â”€â”€ */
+  [data-grid="testimonials"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* â”€â”€ Values grid â”€â”€ */
+  [data-grid="values"] {
+    grid-template-columns: 1fr !important;
+    padding: 40px clamp(20px, 4vw, 40px) !important;
+  }
+
+  /* â”€â”€ Auto margin for centered content â”€â”€ */
+  .center-mobile {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* â”€â”€ Hero CTA stack â”€â”€ */
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-ctas > * {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* â”€â”€ Features checkmarks â”€â”€ */
+  .features-badges {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* â”€â”€ Integration grid â”€â”€ */
+  [data-grid="integrations"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+  }
+
+  /* â”€â”€ 900px tablet bridge â”€â”€ */
+@media (max-width: 900px) and (min-width: 769px) {
+  [data-grid="4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="integrations"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-cta {
+    padding: 40px clamp(24px, 5vw, 48px) !important;
+  }
+
+  .footer-cta h2 {
+    font-size: clamp(32px, 4vw, 40px) !important;
+  }
+}
+
+/* â”€â”€ Carousel image stage keeps a stable height â”€â”€ */
+.how-stage {
+  height: 580px;
+}
+
+/* â”€â”€ Hero 3D middle column (space guard) â”€â”€ */
+@media (max-width: 1023px) {
+  .hero-3d {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .hero-3d {
+    flex-basis: 190px !important;
+    height: 480px !important;
+  }
+
+  nav {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .nav-links {
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-grid="4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [data-grid="3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="footer"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-wrap h1 {
+    font-size: 32px !important;
+  }
+
+  [data-grid="integrations"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* â”€â”€ Legal pages responsive â”€â”€ */
 @media (max-width: 768px) {
+  .legal-page article h1 {
+    font-size: 28px !important;
+  }
+  .legal-page article h2 {
+    font-size: 20px !important;
+  }
+  .legal-page article h3 {
+    font-size: 16px !important;
+  }
+}
+
+/* â”€â”€ Reduced motion â”€â”€ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-video,
+  .hero-video-overlay {
+    display: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* â”€â”€ Focus visibility â”€â”€ */
+:focus-visible {
+  outline: 2px solid #F4A026;
+  outline-offset: 2px;
+}
+
+/* â”€â”€ Liveliness keyframes â”€â”€ */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowBurst {
+  0% { opacity: 0.9; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(1.15); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes driftUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  25% { opacity: 0.6; }
+  75% { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-140px); }
+}
+
+/* â”€â”€ Hide ambient particles on small screens â”€â”€ */
+@media (max-width: 768px) {
+  [style*="driftUp"] {
+    display: none;
+  }
+}
+
+/* â”€â”€ Throbbing waitlist CTA â”€â”€ */
+.btn-waitlist {
+  background: #F4A026 !important;
+  color: #ffffff !important;
+  animation: throb 1.8s ease-in-out infinite;
+}
+
+.btn-waitlist:hover {
+  animation-play-state: paused;
+  transform: scale(1.05) !important;
+}
+
+@keyframes throb {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 160, 38, 0.45); }
+  50% { transform: scale(1.05); box-shadow: 0 0 18px 4px rgba(244, 160, 38, 0.55); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-waitlist {
+    animation: none !important;
+  }
+}
   section, footer, footer > div:first-child,
   [data-pad] {
     padding-left: 20px !important;
@@ -127,7 +502,7 @@ body {
     padding: 28px 20px !important;
   }
 
-  /* ── Hero ── */
+  /* â”€â”€ Hero â”€â”€ */
   .hero-wrap {
     flex-direction: column !important;
     padding-top: 100px !important;
@@ -155,7 +530,7 @@ body {
     display: none !important;
   }
 
-  /* ── Grid overrides ── */
+  /* â”€â”€ Grid overrides â”€â”€ */
   [data-grid="4"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -207,7 +582,7 @@ body {
     padding-left: 0 !important;
   }
 
-  /* ── Typography ── */
+  /* â”€â”€ Typography â”€â”€ */
   [data-type="h2"] {
     font-size: 32px !important;
   }
@@ -216,12 +591,12 @@ body {
     font-size: 26px !important;
   }
 
-  /* ── 3-col grid ── */
+  /* â”€â”€ 3-col grid â”€â”€ */
   [data-grid="3-col"] {
     grid-template-columns: 1fr !important;
   }
 
-  /* ── Hide / show ── */
+  /* â”€â”€ Hide / show â”€â”€ */
   [data-grid="why"],
   [data-grid="faq"],
   [data-grid="showcase"] {
@@ -260,7 +635,7 @@ body {
     gap: 12px !important;
   }
 
-  /* ── Trust bar ── */
+  /* â”€â”€ Trust bar â”€â”€ */
   [data-grid="trust"] {
     flex-direction: column !important;
     gap: 16px !important;
@@ -271,25 +646,25 @@ body {
     padding-left: 0 !important;
   }
 
-  /* ── Testimonials grid ── */
+  /* â”€â”€ Testimonials grid â”€â”€ */
   [data-grid="testimonials"] {
     grid-template-columns: 1fr !important;
   }
 
-  /* ── Values grid ── */
+  /* â”€â”€ Values grid â”€â”€ */
   [data-grid="values"] {
     grid-template-columns: 1fr !important;
     padding: 40px 28px !important;
   }
 
-  /* ── Auto margin for centered content ── */
+  /* â”€â”€ Auto margin for centered content â”€â”€ */
   .center-mobile {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  /* ── Hero CTA stack ── */
+  /* â”€â”€ Hero CTA stack â”€â”€ */
   .hero-ctas {
     flex-direction: column !important;
     align-items: center !important;
@@ -300,45 +675,38 @@ body {
     justify-content: center !important;
   }
 
-  /* ── Features checkmarks ── */
+  /* â”€â”€ Features checkmarks â”€â”€ */
   .features-badges {
     flex-direction: column !important;
     align-items: flex-start !important;
   }
 
-  /* ── Integration grid ── */
+  /* â”€â”€ Integration grid â”€â”€ */
   [data-grid="integrations"] {
     grid-template-columns: repeat(2, 1fr) !important;
     max-width: 100% !important;
-  }
-
-  /* ── Footer CTA ── */
-  .footer-cta {
-    padding: 40px 24px !important;
-  }
-
-  .footer-cta button {
-    padding: 14px 24px !important;
-    font-size: 14px !important;
-    max-width: 100% !important;
-  }
-
-  .footer-cta h2 {
-    font-size: 28px !important;
-  }
 }
 
-/* ── Anchor targets clear the fixed navbar ── */
+/* â”€â”€ Anchor targets clear the fixed navbar â”€â”€ */
 [id] {
   scroll-margin-top: 90px;
 }
 
-/* ── Carousel image stage keeps a stable height ── */
+/* â”€â”€ Anchor targets clear the fixed navbar â”€â”€ */
+  font-size: clamp(14px, 3vw, 16);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: sora;
+}
+
+/* â”€â”€ Carousel image stage keeps a stable height â”€â”€ */
+
+/* â”€â”€ Carousel image stage keeps a stable height â”€â”€ */
 .how-stage {
   height: 580px;
 }
 
-/* ── Hero 3D middle column (space guard) ── */
+/* â”€â”€ Hero 3D middle column (space guard) â”€â”€ */
 @media (max-width: 1023px) {
   .hero-3d {
     display: none !important;
@@ -383,7 +751,7 @@ body {
   }
 }
 
-/* ── Legal pages responsive ── */
+/* â”€â”€ Legal pages responsive â”€â”€ */
 @media (max-width: 768px) {
   .legal-page article h1 {
     font-size: 28px !important;
@@ -396,7 +764,7 @@ body {
   }
 }
 
-/* ── Reduced motion ── */
+/* â”€â”€ Reduced motion â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -416,13 +784,13 @@ body {
   }
 }
 
-/* ── Focus visibility ── */
+/* â”€â”€ Focus visibility â”€â”€ */
 :focus-visible {
   outline: 2px solid #F4A026;
   outline-offset: 2px;
 }
 
-/* ── Liveliness keyframes ── */
+/* â”€â”€ Liveliness keyframes â”€â”€ */
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -446,14 +814,14 @@ body {
   100% { opacity: 0; transform: translateY(-140px); }
 }
 
-/* ── Hide ambient particles on small screens ── */
+/* â”€â”€ Hide ambient particles on small screens â”€â”€ */
 @media (max-width: 768px) {
   [style*="driftUp"] {
     display: none;
   }
 }
 
-/* ── Throbbing waitlist CTA ── */
+/* â”€â”€ Throbbing waitlist CTA â”€â”€ */
 .btn-waitlist {
   background: #F4A026 !important;
   color: #ffffff !important;
@@ -478,3 +846,30 @@ body {
 
 
 
+
+/* ── Footer CTA (global, works across themes) ── */
+.footer-cta {
+  padding: clamp(32px, 6vw, 56px) clamp(24px, 4vw, 48px);
+  text-align: center;
+  margin-bottom: clamp(32px, 5vw, 48);
+}
+
+.footer-cta h2 {
+  font-family: sora;
+  font-weight: 800;
+  font-size: clamp(36px, 6vw, 48);
+  color: #1A1A2E;
+  margin-bottom: 16;
+}
+
+.footer-cta button {
+  border: none;
+  border-radius: 28;
+  padding: clamp(14px, 3vw, 20px) clamp(32px, 5vw, 40px);
+  font-size: clamp(14px, 3vw, 16);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: sora;
+  background: #F4A026;
+  color: #ffffff;
+}

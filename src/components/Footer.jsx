@@ -16,7 +16,7 @@ const ROUTES = {
 
 export function Footer({ onSignIn, onWaitlist }) {
   return (
-    <footer style={{ background: ISLAND, padding: "80px 80px 40px" }}>
+    <footer style={{ background: ISLAND, padding: "100px 80px 40px" }}>
       <div className="footer-cta" style={{ background: `linear-gradient(135deg, ${mix("amber", 18)}, ${mix("amber", 8)})`, border: `1px solid ${mix("amber", 33)}`, borderRadius: 24, padding: "56px 64px", textAlign: "center", marginBottom: 48 }}>
         <h2 data-type="h3" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: ISLAND_INK, marginBottom: 16 }}>Ready to grow your desk with DukaDesk?</h2>
         <p style={{ fontSize: 18, color: ISLAND_MUTE, marginBottom: 32 }}>Join thousands of desks preparing for a smarter way to sell, manage and grow.</p>
