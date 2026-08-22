@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from "react";
 
-export const THEMES = ["light", "white", "dark"];
+export const THEMES = ["white"];
 
 const STORAGE_KEY = "dukadesk-theme";
 
@@ -12,10 +12,7 @@ export function initTheme() {
     theme = null;
   }
   if (!theme || !THEMES.includes(theme)) {
-    theme =
-      typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+    theme = "white";
   }
   document.documentElement.dataset.theme = theme;
   return theme;
@@ -25,8 +22,8 @@ const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() => {
-    if (typeof document !== "undefined") return document.documentElement.dataset.theme || "light";
-    return "light";
+    if (typeof document !== "undefined") return document.documentElement.dataset.theme || "white";
+    return "white";
   });
 
   const setTheme = useCallback((next) => {

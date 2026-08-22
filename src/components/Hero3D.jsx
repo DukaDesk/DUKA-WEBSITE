@@ -4,6 +4,8 @@ import { Float } from "@react-three/drei";
 import * as THREE from "three";
 
 const AMBER = "#F4A026";
+const NAVY = "#24243E";
+const NAVY_LIGHT = "#3A3A5C";
 const LOGO_URL = "/assets/Dukalogo-main-removebg-preview.png";
 
 function supportsWebGL() {
@@ -42,8 +44,11 @@ function buildLogoGeometry() {
               (img.height / 2 - y) * scale,
               (Math.random() - 0.5) * 0.12
             );
-            const t = lum * 0.88;
-            colors.push(244 / 255 + (1 - 244 / 255) * t, 160 / 255 + (1 - 160 / 255) * t, 38 / 255 + (1 - 38 / 255) * t);
+            colors.push(
+              1,
+              0.97,
+              0.93
+            );
           }
         }
         const geometry = new THREE.BufferGeometry();
@@ -94,14 +99,23 @@ function Logo() {
       <group ref={outer} scale={1.5}>
         <mesh>
           <icosahedronGeometry args={[1, 1]} />
-          <meshBasicMaterial color={AMBER} wireframe transparent opacity={0.06} />
+          <meshBasicMaterial color={NAVY_LIGHT} wireframe transparent opacity={0.12} />
         </mesh>
       </group>
       <group ref={inner}>
         {geo ? (
-          <points geometry={geo}>
-            <pointsMaterial size={0.02} vertexColors transparent opacity={0.95} depthWrite={false} sizeAttenuation />
-          </points>
+          <>
+            <group>
+              <points geometry={geo}>
+                <pointsMaterial size={0.045} transparent opacity={1} depthWrite={false} sizeAttenuation color={NAVY} />
+              </points>
+            </group>
+            <group>
+              <points geometry={geo}>
+                <pointsMaterial size={0.08} transparent opacity={0.15} depthWrite={false} sizeAttenuation color={NAVY} />
+              </points>
+            </group>
+          </>
         ) : null}
       </group>
     </group>
@@ -126,10 +140,8 @@ export function Hero3D() {
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ width: "100%", height: "100%" }}
     >
-      <ambientLight intensity={0.45} />
-      <pointLight position={[6, 4, 6]} intensity={60} color="#FFF3D6" />
-      <pointLight position={[-6, -3, 4]} intensity={36} color={AMBER} />
-      <pointLight position={[0, -5, -4]} intensity={24} color="#3B5BDB" />
+      <ambientLight intensity={1.2} />
+      <directionalLight position={[5, 10, 7]} intensity={1.5} />
       <Float speed={1.4} rotationIntensity={0.35} floatIntensity={1.1}>
         <Logo />
       </Float>

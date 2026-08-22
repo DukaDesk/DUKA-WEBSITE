@@ -49,7 +49,7 @@ export function ProductShowcase({ onWaitlist }) {
 
   return (
     <section id="showcase" data-pad="wide" style={{ padding: "104px 56px", background: SURFACE, overflow: "hidden" }}>
-      <div data-grid="showcase" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
+      <div data-grid="showcase" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start", '--card-w': '252px', '--img-h': '420px', '--label-h': '62px', '--lift': '30px' }}>
         <div style={{ position: "sticky", top: 96 }}>
           <Reveal>
             <span style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: LGREY }}>

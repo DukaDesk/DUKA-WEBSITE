@@ -12,8 +12,7 @@ html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-:root,
-[data-theme="light"] {
+[data-theme="white"] {
   color-scheme: light;
   --navy: #1A1A2E;
   --amber: #F4A026;
@@ -23,39 +22,13 @@ html {
   --lgrey: #6B7280;
   --light: #FFFFFF;
   --surface: #FFFFFF;
-  --surface-2: #FAF8F5;
-  --border: #E5E7EB;
-  --island: #1A1A2E;
-  --island-ink: #FFFFFF;
-  --island-mute: rgba(255, 255, 255, 0.6);
-  --island-soft: rgba(255, 255, 255, 0.06);
-  --island-border: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="white"] {
-  color-scheme: light;
   --surface-2: #FFFFFF;
+  --border: #E5E7EB;
   --island: #FFFFFF;
   --island-ink: #1A1A2E;
   --island-mute: rgba(26, 26, 46, 0.6);
   --island-soft: rgba(26, 26, 46, 0.06);
   --island-border: rgba(26, 26, 46, 0.12);
-}
-
-[data-theme="dark"] {
-  color-scheme: dark;
-  --ink: #F1F1F7;
-  --char: #D3D6DE;
-  --lgrey: #98A0B0;
-  --light: #FFFFFF;
-  --surface: #17172B;
-  --surface-2: #12121F;
-  --border: rgba(255, 255, 255, 0.1);
-  --island: #12121F;
-  --island-ink: #FFFFFF;
-  --island-mute: rgba(255, 255, 255, 0.6);
-  --island-soft: rgba(255, 255, 255, 0.06);
-  --island-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -482,7 +455,7 @@ body {
 
 /* ── Throbbing waitlist CTA ── */
 .btn-waitlist {
-  background: #EF4444 !important;
+  background: #F4A026 !important;
   color: #ffffff !important;
   animation: throb 1.8s ease-in-out infinite;
 }
@@ -493,8 +466,8 @@ body {
 }
 
 @keyframes throb {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45); }
-  50% { transform: scale(1.05); box-shadow: 0 0 18px 4px rgba(239, 68, 68, 0.55); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 160, 38, 0.45); }
+  50% { transform: scale(1.05); box-shadow: 0 0 18px 4px rgba(244, 160, 38, 0.55); }
 }
 
 @media (prefers-reduced-motion: reduce) {

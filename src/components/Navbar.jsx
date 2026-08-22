@@ -1,30 +1,8 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Sun, Sparkles, Moon } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useScrollY } from "../hooks/useScrollY";
 import { NAVY, AMBER, ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, sora, mix } from "../constants";
-import { THEMES, useTheme } from "../theme";
-
-const THEME_ICONS = [Sun, Sparkles, Moon];
-const THEME_LABELS = ["Light", "White", "Dark"];
-
-function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  return (
-    <div role="group" aria-label="Theme" style={{ display: "flex", gap: 2, background: ISLAND_SOFT, borderRadius: 999, padding: 4, border: `1px solid ${ISLAND_BORDER}` }}>
-      {THEMES.map((t, i) => {
-        const Icon = THEME_ICONS[i];
-        const active = theme === t;
-        return (
-          <button key={t} aria-label={`${THEME_LABELS[i]} theme`} aria-pressed={active} title={`${THEME_LABELS[i]} theme`} onClick={() => setTheme(t)}
-            style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: active ? AMBER : "transparent", color: active ? NAVY : ISLAND_MUTE, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}>
-            <Icon size={14} aria-hidden="true" />
-          </button>
-        );
-      })}
-    </div>
-  );
-}
 
 export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -116,7 +94,6 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
       </div>
 
       <div className="nav-cta" style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        <ThemeToggle />
         <button aria-label="Sign in to your account" onClick={onSignIn} style={{ background: "none", border: `1px solid ${ISLAND_BORDER}`, color: ISLAND_INK, borderRadius: 24, padding: "9px 20px", fontSize: 14, fontWeight: 500, cursor: "pointer", transition: "all 0.2s" }}
           onMouseOver={e => { e.target.style.background = ISLAND_SOFT; }}
           onMouseOut={e => { e.target.style.background = "none"; }}
@@ -165,9 +142,6 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
             )}
           </div>
           <hr style={{ border: "none", borderTop: `1px solid ${ISLAND_BORDER}`, margin: "8px 0" }} />
-          <div style={{ padding: "12px 0" }}>
-            <ThemeToggle />
-          </div>
           <button onClick={() => { closeMobile(); onWaitlist(); }} className="btn-waitlist" style={{ border: "none", borderRadius: 24, padding: "12px 22px", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: sora, width: "100%" }}>Join Waitlist</button>
         </div>
       )}
