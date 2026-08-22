@@ -181,7 +181,6 @@ export function ProcessCarousel() {
                     height={1280}
                     loading="lazy"
                     decoding="async"
-                    fetchPriority="auto"
                     style={{ height: 560, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
                   />
                 </div>

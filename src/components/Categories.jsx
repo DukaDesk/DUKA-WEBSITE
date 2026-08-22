@@ -1,7 +1,7 @@
 import { FadeIn } from "./ui/FadeIn";
 import { Tilt } from "./ui/Tilt";
 import { UtensilsCrossed, ShoppingBag, Soup, ShoppingCart, Church, School, Dumbbell, CalendarCheck2, Briefcase, Zap, ArrowRight } from "lucide-react";
-import { NAVY, INK, AMBER, CREAM, LGREY, sora, tint } from "../constants";
+import { NAVY, INK, AMBER, CREAM, LGREY, sora, tint, mix } from "../constants";
 
 const ICONS = [UtensilsCrossed, ShoppingBag, Soup, ShoppingCart, Church, School, Dumbbell, CalendarCheck2, Briefcase, Zap];
 
