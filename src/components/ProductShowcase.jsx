@@ -68,7 +68,7 @@ export function ProductShowcase({ onWaitlist }) {
         </div>
 
         <Reveal delay={120}>
-          <div style={{ position: "relative", height: CARD_H + (deck.length - 1) * LIFT + 20, maxWidth: 540, margin: "0 auto" }}>
+          <div style={{ position: "relative", height: CARD_H + (deck.length - 1) * LIFT + 20, maxWidth: 540, margin: "0 auto", marginTop: 80, marginBottom: 48 }}>
             {deck.map((card, i) => {
               const depth = deck.length - 1 - i;
               const isFront = depth === 0;
