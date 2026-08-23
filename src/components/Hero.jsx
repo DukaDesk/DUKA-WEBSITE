@@ -113,7 +113,7 @@ export function Hero({ onWaitlist }) {
       padding: `clamp(60px, 8vw, 140px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 80px)`,
       position: "relative", overflow: "hidden",
     }}>
-      <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true" tabIndex={-1}
+      <video className="hero-video" autoPlay muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1}
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.5, zIndex: 0, pointerEvents: "none" }}>
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>

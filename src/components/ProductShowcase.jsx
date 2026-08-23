@@ -120,6 +120,7 @@ export function ProductShowcase({ onWaitlist }) {
                         height={1280}
                         loading="lazy"
                         decoding="async"
+                        fetchPriority="high"
                         style={{ width: "100%", height: 420, objectFit: "cover", objectPosition: "top", display: "block" }}
                       />
                       {!isFront && (
