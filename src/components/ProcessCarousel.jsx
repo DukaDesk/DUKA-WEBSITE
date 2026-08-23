@@ -175,13 +175,12 @@ export function ProcessCarousel() {
                   }}
                 >
                   <img
-                    src={slide.img}
+src={slide.img}
                     alt={slide.alt}
                     width={720}
                     height={1280}
                     loading="lazy"
                     decoding="async"
-                    fetchPriority="auto"
                     srcSet={`${slide.img} 720w`}
                     sizes="(max-width: 600px) 90vw, (max-width: 1024px) 700px, 500w"
                     style={{ height: 560, width: "auto", maxWidth: "100%", objectFit: "contain", display: "block", borderRadius: 22 }}
