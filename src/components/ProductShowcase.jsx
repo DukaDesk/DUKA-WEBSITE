@@ -121,6 +121,8 @@ export function ProductShowcase({ onWaitlist }) {
                         loading="lazy"
                         decoding="async"
                         fetchPriority="high"
+                        srcSet={`${card.src} 720w`}
+                        sizes="(max-width: 600px) 90vw, (max-width: 1024px) 700px, 500w"
                         style={{ width: "100%", height: 420, objectFit: "cover", objectPosition: "top", display: "block" }}
                       />
                       {!isFront && (
