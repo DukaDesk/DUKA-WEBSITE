@@ -72,7 +72,7 @@ export function ProcessCarousel() {
     <section
       id="how"
       data-pad="wide"
-      style={{ background: SURFACE, padding: "104px 56px", overflow: "hidden" }}
+      style={{ background: SURFACE, overflow: "hidden" }}
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
     >
