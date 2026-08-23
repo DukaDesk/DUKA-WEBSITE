@@ -44,7 +44,7 @@ export function Footer({ onSignIn, onWaitlist }) {
       <div data-grid="footer" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: 48, marginBottom: 56 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-            <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} style={{ objectFit: "contain" }} />
+            <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} loading="lazy" decoding="async" style={{ objectFit: "contain" }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: ISLAND_INK }}>DukaDesk</span>
           </div>
           <p style={{ fontSize: 14, color: ISLAND_MUTE, lineHeight: 1.7, maxWidth: 240 }}>The all-in-one platform for independent desks.</p>

@@ -168,6 +168,8 @@ function StaticHeroLogo() {
         alt="DukaDesk logo"
         width={44}
         height={44}
+        loading="lazy"
+        decoding="async"
         style={{ objectFit: "contain" }}
       />
     </div>

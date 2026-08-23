@@ -53,7 +53,7 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
       display: "flex", alignItems: "center", justifyContent: "space-between",
     }}>
       <Link to="/" aria-label="DukaDesk home" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-        <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} style={{ objectFit: "contain" }} />
+        <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} loading="lazy" decoding="async" style={{ objectFit: "contain" }} />
         <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 18, color: ISLAND_INK }}>DukaDesk</span>
       </Link>
 
