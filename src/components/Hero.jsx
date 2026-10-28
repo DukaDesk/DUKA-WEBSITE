@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Star, ScanLine, Bell, Play, Utensils, Drumstick, Fish, CreditCard, BarChart3, CheckCircle2, Plus, ArrowLeft, QrCode, Users, PenTool } from "lucide-react";
+import { Star, ScanLine, Bell, Utensils, Drumstick, Fish, CreditCard, BarChart3, CheckCircle2, Plus, ArrowLeft, QrCode, Users, PenTool } from "lucide-react";
 import { NAVY, AMBER, GREEN, LGREY, WHITE, INK, SURFACE, BORDER, ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, sora, mix } from "../constants";
 
 const WORDS = ["restaurant", "fashion store", "grocery store", "food vendor", "retail store", "church", "school", "fitness studio", "clinic", "practice"];
@@ -39,7 +39,7 @@ const PARTICLES = [
 
 const Hero3D = lazy(() => import("./Hero3D").then(m => ({ default: m.Hero3D })));
 
-export function Hero({ onWaitlist }) {
+export function Hero({ onWaitlist, onShowSection, activeSection }) {
   const [wordIdx, setWordIdx] = useState(0);
   const [noTransition, setNoTransition] = useState(false);
   const [scanned, setScanned] = useState(false);
@@ -106,6 +106,9 @@ export function Hero({ onWaitlist }) {
 
   const cartTotal = cart.reduce((s, i) => s + i.price, 0);
 
+  const merchantActive = activeSection === "merchant";
+  const customerActive = activeSection === "customer";
+
   return (
     <section className="hero-wrap" data-pad="wide" style={{
       minHeight: "100vh", background: ISLAND,
@@ -146,18 +149,91 @@ export function Hero({ onWaitlist }) {
           </span>
         </h1>
 
-        <p style={{ fontSize: 18, color: ISLAND_MUTE, lineHeight: 1.75, marginBottom: 40, maxWidth: 480 }}>
+        <p style={{ fontSize: 18, color: ISLAND_MUTE, lineHeight: 1.75, marginBottom: 32, maxWidth: 480 }}>
           Choose a template on the web, drop in your products, publish. Your customers scan one code and your desk opens inside the DukaDesk app.
         </p>
 
-        <div className="hero-ctas" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-          <button onClick={onWaitlist} className="btn-waitlist" style={{ border: "none", borderRadius: 28, padding: "16px 36px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: sora, display: "flex", alignItems: "center", gap: 8 }}>Start building — free</button>
-          <a href="#how" style={{ background: ISLAND_SOFT, color: ISLAND_INK, border: `1px solid ${ISLAND_BORDER}`, borderRadius: 28, padding: "16px 28px", fontSize: 16, fontWeight: 500, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
-            <Play size={16} aria-hidden="true" /> See how it works
-          </a>
+        {/* ── WHO ARE YOU selector ── */}
+        <div style={{ marginBottom: 40 }}>
+          <div style={{ fontFamily: sora, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: ISLAND_MUTE, marginBottom: 16 }}>
+            Who are you?
+          </div>
+          <div className="who-cards" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            {/* Merchant card */}
+            <div
+              onClick={() => onShowSection("merchant")}
+              style={{
+                flex: "1 1 220px",
+                padding: "20px 22px",
+                background: merchantActive ? mix("amber", 10) : ISLAND_SOFT,
+                border: `2px solid ${merchantActive ? AMBER : ISLAND_BORDER}`,
+                borderRadius: 14,
+                cursor: "pointer",
+                transition: "border-color 0.2s, background 0.2s",
+              }}
+            >
+              <div style={{ fontFamily: sora, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: AMBER, marginBottom: 6 }}>
+                For Business Owners
+              </div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>I run a business</div>
+              <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
+                Build a free mobile app for your customers. No developer needed.
+              </div>
+              <button
+                onClick={e => { e.stopPropagation(); onShowSection("merchant"); }}
+                className="btn-waitlist"
+                style={{ border: "none", borderRadius: 999, padding: "10px 22px", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: sora }}
+              >
+                Build my app free →
+              </button>
+            </div>
+
+            {/* Or divider */}
+            <div style={{ alignSelf: "center", color: ISLAND_MUTE, fontWeight: 600, fontSize: 13, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 28 }}>
+              or
+            </div>
+
+            {/* Customer card */}
+            <div
+              onClick={() => onShowSection("customer")}
+              style={{
+                flex: "1 1 220px",
+                padding: "20px 22px",
+                background: customerActive ? mix("amber", 10) : ISLAND_SOFT,
+                border: `2px solid ${customerActive ? AMBER : ISLAND_BORDER}`,
+                borderRadius: 14,
+                cursor: "pointer",
+                transition: "border-color 0.2s, background 0.2s",
+              }}
+            >
+              <div style={{ fontFamily: sora, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: ISLAND_MUTE, marginBottom: 6 }}>
+                For Shoppers
+              </div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>I want to shop</div>
+              <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
+                Discover restaurants, stores, and services near you. One app.
+              </div>
+              <button
+                onClick={e => { e.stopPropagation(); onShowSection("customer"); }}
+                style={{
+                  background: "transparent",
+                  color: ISLAND_INK,
+                  border: `1.5px solid ${ISLAND_BORDER}`,
+                  borderRadius: 999,
+                  padding: "10px 22px",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  fontFamily: sora,
+                }}
+              >
+                Download the app →
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 48 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ display: "flex" }}>
             {["A","I","G","F","T"].map((l, i) => (
               <div key={i} style={{ width: 34, height: 34, borderRadius: "50%", background: [AMBER, "#2ECC71", "#7C3AED", "#E74C3C", "#0D9488"][i], border: `2px solid ${ISLAND}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: WHITE, marginLeft: i > 0 ? -10 : 0 }}>{l}</div>

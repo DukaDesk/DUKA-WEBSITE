@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, lazy, Suspense, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -13,6 +13,8 @@ import { Terms } from "./components/Terms";
 import { LegalLayout } from "./components/LegalLayout";
 import { FAQ } from "./components/FAQ";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { MerchantSection } from "./components/MerchantSection";
+import { CustomerSection } from "./components/CustomerSection";
 import { CHAR, SURFACE, inter } from "./constants";
 
 const Integrations = lazy(() => import("./components/Integrations").then(m => ({ default: m.Integrations })));
@@ -40,15 +42,37 @@ function PageFooter({ onSignIn, onWaitlist }) {
 }
 
 function HomePage({ onSignIn, onWaitlist }) {
+  const [activeSection, setActiveSection] = useState(null);
+  const merchantRef = useRef(null);
+  const customerRef = useRef(null);
+
+  const showSection = (type) => {
+    setActiveSection(type);
+    // Smooth scroll to the revealed section on the next paint
+    setTimeout(() => {
+      const el = document.getElementById(type === "merchant" ? "section-merchant" : "section-customer");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 50);
+  };
+
   return (
     <>
-      <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} />
+      <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} onShowSection={showSection} activeSection={activeSection} />
+
+      {/* Audience-specific sections — hidden until a card is clicked */}
+      <MerchantSection active={activeSection === "merchant"} onWaitlist={onWaitlist} />
+      <CustomerSection active={activeSection === "customer"} />
+
       <Ticker />
       <ProcessCarousel />
       <WhyChoose onWaitlist={onWaitlist} />
       <ProductShowcase onWaitlist={onWaitlist} />
       <FAQ onWaitlist={onWaitlist} />
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -61,7 +85,9 @@ function FeaturesPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Integrations />
       </Suspense>
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -82,7 +108,9 @@ function SolutionsPage({ onSignIn, onWaitlist }) {
   return (
     <>
       <Categories />
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -97,7 +125,9 @@ function CompanyPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Careers />
       </Suspense>
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -109,7 +139,9 @@ function ResourcesPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Resources />
       </Suspense>
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
@@ -121,7 +153,9 @@ function ContactPage({ onSignIn, onWaitlist }) {
       <Suspense fallback={<SectionFallback />}>
         <Contact />
       </Suspense>
-      <CtaSection onWaitlist={onWaitlist} />
+      <Suspense fallback={<SectionFallback />}>
+        <CtaSection onWaitlist={onWaitlist} />
+      </Suspense>
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );
