@@ -62,8 +62,17 @@ function HomePage({ onSignIn, onWaitlist }) {
       <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} onShowSection={showSection} activeSection={activeSection} />
 
       {/* Audience-specific sections — hidden until a card is clicked */}
-      <MerchantSection active={activeSection === "merchant"} onWaitlist={onWaitlist} />
-      <CustomerSection active={activeSection === "customer"} />
+      <MerchantSection
+        active={activeSection === "merchant"}
+        onWaitlist={onWaitlist}
+        onSignIn={onSignIn}
+        onSwitch={() => showSection("customer")}
+      />
+      <CustomerSection
+        active={activeSection === "customer"}
+        onWaitlist={onWaitlist}
+        onSwitch={() => showSection("merchant")}
+      />
 
       <Ticker />
       <ProcessCarousel />
