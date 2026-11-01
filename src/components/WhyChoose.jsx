@@ -1,27 +1,27 @@
 import { Reveal } from "./ui/Reveal";
-import { PenTool, Combine, Wallet, MapPin } from "lucide-react";
+import { PenTool, LayoutDashboard, Smartphone, QrCode } from "lucide-react";
 import { AMBER, CREAM, BORDER, CHAR, LGREY, INK, sora, inter, mix } from "../constants";
 
 const ROWS = [
   {
-    icon: Combine,
-    t: "One platform, not five",
-    d: "POS, inventory, orders, payments and customer messaging live in the same place. Nothing to stitch together.",
+    icon: LayoutDashboard,
+    t: "Run the day-to-day from one dashboard",
+    d: "Manage products, orders, customers and inventory from the merchant portal, with analytics and other tools available by plan.",
   },
   {
-    icon: Wallet,
-    t: "Zero commission, ever",
-    d: "We never take a cut of a sale. A flat subscription is our entire business model.",
+    icon: Smartphone,
+    t: "A branded experience inside DukaDesk",
+    d: "Configure the pages and look of your business experience in DukaDesk's shared mobile app. Customers use one DukaDesk account across businesses.",
   },
   {
-    icon: MapPin,
-    t: "Built where you trade",
-    d: "Naira-first pricing, local payment rails, offline-tolerant browsing, and support on WhatsApp.",
+    icon: QrCode,
+    t: "Help customers find your business",
+    d: "After your app is approved, share its QR code. Customers can also explore businesses and categories in the DukaDesk app.",
   },
   {
     icon: PenTool,
-    t: "Configured, not coded",
-    d: "Design your own app in the Builder Studio — choose your pages, workflows and look. No engineers needed.",
+    t: "Build with a visual editor",
+    d: "Choose a starting template, edit your branding and pages, preview your work, then submit it for review before it goes live.",
   },
 ];
 

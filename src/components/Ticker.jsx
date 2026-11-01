@@ -1,12 +1,12 @@
 import { NAVY, AMBER, sora } from "../constants";
 
 const ITEMS = [
-  "Zero commission",
-  "QR desks",
-  "Paystack & Flutterwave",
-  "Offline-friendly",
-  "NDPR compliant",
-  "Live within 24 hours",
+  "Business-branded experiences",
+  "Product catalogues & orders",
+  "QR code sharing",
+  "Bookings & forms",
+  "Merchant dashboard",
+  "Paystack, Flutterwave & bank transfer",
 ];
 
 export function Ticker() {

@@ -12,8 +12,6 @@ import loginForm from "../assets/guide/login-form.jpg";
 import editorShot from "../assets/app_editor_merchant.jpeg";
 import tplShop from "../assets/guide/tpl-shop.jpg";
 import tplSalon from "../assets/guide/tpl-salon.jpg";
-import tplChurch from "../assets/guide/tpl-church.jpg";
-import tplSchool from "../assets/guide/tpl-school.jpg";
 
 /* ─────────────── content ─────────────── */
 
@@ -207,10 +205,10 @@ export function MerchantSection({ active, onWaitlist, onSignIn, onSwitch }) {
         {/* 3 — template */}
         <Step
           id="g-template" n={3} kicker="Setup wizard" title="Choose a template"
-          intro="Templates are ready-made app designs for different kinds of business. Pick the one closest to what you do. You can still change almost everything afterwards."
+          intro="Choose a business type and browse the available templates. Pick a starting point, then customize the branding and pages for your business."
           visual={
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 22, width: "100%", maxWidth: 440 }}>
-              {[[tplShop, "Online shop"], [tplSalon, "Salon & booking"], [tplChurch, "Church"], [tplSchool, "School"]].map(([src, label]) => (
+              {[[tplShop, "Online shop"], [tplSalon, "Salon & booking"]].map(([src, label]) => (
                 <PhoneFrame key={label} width={200} label={label}>
                   <img src={src} alt={`Example ${label} app design`} loading="lazy" style={{ display: "block", width: "100%", aspectRatio: "9 / 17", objectFit: "cover", objectPosition: "top" }} />
                 </PhoneFrame>
@@ -220,7 +218,7 @@ export function MerchantSection({ active, onWaitlist, onSignIn, onSwitch }) {
           }
         >
           <Do items={[
-            <>Pick your business type, then browse the templates made for it.</>,
+            <>Choose one of the business types offered during onboarding, then browse its available templates.</>,
             <>Preview a few to see how your customers' screens will look, then choose one.</>,
             <>Want full control? Choose <b>Create your own</b> to start with a blank canvas and build from scratch.</>,
           ]} />
@@ -246,7 +244,7 @@ export function MerchantSection({ active, onWaitlist, onSignIn, onSwitch }) {
           <Do items={[
             <><b>Brand your app:</b> your app name (required), a tagline, your logo and your brand colour.</>,
             <><b>Business info:</b> your phone number (required, so customers can contact you), address, opening hours and a short description.</>,
-            <><b>Integrations:</b> choose the payment and other tools you want. You can connect or change them later from <b>Integrations</b> in the dashboard.</>,
+            <><b>Integrations:</b> choose from the payment methods and other tools enabled for your business. You can manage the available options from <b>Integrations</b> in the dashboard.</>,
             <>Select <b>Enter editor</b> to start designing.</>,
           ]} />
         </Step>

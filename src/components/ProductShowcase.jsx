@@ -56,13 +56,13 @@ export function ProductShowcase({ onWaitlist }) {
               Inside the app
             </span>
             <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: INK, margin: "18px 0 0" }}>
-              Everything
+              Business and
               <br />
-              in one app.
+              customer views.
             </h2>
             <div style={{ width: 64, height: 3, background: AMBER, margin: "24px 0 0" }} />
             <p style={{ fontFamily: inter, fontSize: 15.5, lineHeight: 1.75, color: CHAR, marginTop: 20, maxWidth: 340 }}>
-              The same desk your customers scan is the dashboard you run it from.
+              Configure your business experience in the merchant dashboard and preview how customers see it in DukaDesk.
             </p>
           </Reveal>
         </div>

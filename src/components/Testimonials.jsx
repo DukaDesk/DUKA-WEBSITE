@@ -6,58 +6,31 @@ import { NAVY, AMBER, SURFACE, CREAM, BORDER, LGREY, INK, sora, tint } from "../
 
 const testimonials = [
   {
-    name: "Mary O.",
-    business: "FreshMart Supermarket",
-    role: "Owner",
+    name: "Commerce business",
+    business: "Products & orders",
+    role: "Merchant workflow",
     color: "#2ECC71",
-    text: "DukaDesk helped us launch our online store in less than a day. We've increased online orders by 38% and now manage inventory, payments and customer communication from one dashboard.",
-    result: "38% more online orders",
-    industry: "Retail",
+    text: "Add products to a business catalogue, keep track of inventory and follow customer orders from the merchant dashboard.",
+    result: "Products · orders · inventory",
+    industry: "Commerce",
   },
   {
-    name: "Tunde A.",
-    business: "Tunde's Kitchen",
-    role: "Chef & Owner",
+    name: "Food business",
+    business: "Branded app experience",
+    role: "Merchant workflow",
     color: AMBER,
-    text: "I used to juggle WhatsApp, a payment link, and a notebook just to run my food business. Now everything is in one place. My customers love scanning the QR code to order.",
-    result: "15+ hours saved per week",
-    industry: "Restaurant",
+    text: "Use the visual editor to configure business pages and branding. After approval, customers can open the experience in DukaDesk and use the configured ordering options.",
+    result: "Brand · catalogue · QR",
+    industry: "Food & hospitality",
   },
   {
-    name: "Chioma E.",
-    business: "Chi's Beauty Studio",
-    role: "Founder",
+    name: "Services business",
+    business: "Bookings & forms",
+    role: "Merchant workflow",
     color: "#7C3AED",
-    text: "My booking no-show rate dropped from 30% to under 5% after I started using DukaDesk. Clients book themselves, I get paid upfront, and everyone shows up on time.",
-    result: "90% fewer no-shows",
-    industry: "Beauty",
-  },
-  {
-    name: "Pastor John K.",
-    business: "Victory House Church",
-    role: "Senior Pastor",
-    color: "#3B82F6",
-    text: "We needed a simple way for our members to give offerings and register for events. DukaDesk made it possible in one afternoon. Our congregation loves the app.",
-    result: "Launched in 1 day",
-    industry: "Church",
-  },
-  {
-    name: "Fatima B.",
-    business: "Bello Fashion House",
-    role: "Creative Director",
-    color: "#E74C3C",
-    text: "I sell on Instagram and WhatsApp, but tracking orders was a nightmare. Now customers browse my catalogue and pay directly through my DukaDesk app. My sales have doubled.",
-    result: "2x sales in 3 months",
-    industry: "Fashion",
-  },
-  {
-    name: "Emeka N.",
-    business: "QuickPick Pharmacy",
-    role: "Pharmacist",
-    color: "#0D9488",
-    text: "Customers can now order prescriptions and health products from my app. It's reduced queue times and increased my repeat customer rate significantly.",
-    result: "42% repeat customer rate",
-    industry: "Health",
+    text: "Set up service pages and use booking and form tools where they are enabled for your business. Manage customer activity from the dashboard.",
+    result: "Services · bookings · forms",
+    industry: "Services",
   },
 ];
 
@@ -69,23 +42,22 @@ export function Testimonials() {
       <FadeIn>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <div style={{ display: "inline-block", background: tint(AMBER, 18), borderRadius: 24, padding: "6px 16px", marginBottom: 16 }}>
-            <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Trusted by business owners</span>
+            <span style={{ color: AMBER, fontSize: 13, fontWeight: 600 }}>Illustrative product workflows</span>
           </div>
-          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 16 }}>Real businesses. Real results.</h2>
-          <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>See how Nigerian businesses are using DukaDesk to sell more, save time, and grow faster.</p>
+          <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: 48, color: INK, marginBottom: 16 }}>See how DukaDesk fits your workflow</h2>
+          <p style={{ fontSize: 17, color: LGREY, maxWidth: 520, margin: "0 auto" }}>Examples based on documented DukaDesk features, not customer testimonials.</p>
         </div>
       </FadeIn>
 
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <FadeIn delay={100}>
           <div style={{ background: CREAM, borderRadius: 24, padding: "48px 56px", border: `1px solid ${BORDER}`, position: "relative" }}>
-            <div style={{ fontSize: 48, color: tint(AMBER, 22), position: "absolute", top: 20, left: 24, fontFamily: "serif", lineHeight: 1 }}>""</div>
             <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
               <div style={{ flexShrink: 0 }}>
                 <MonogramAvatar name={testimonials[active].name} size={72} color={testimonials[active].color} radius={20} fontSize={28} />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontSize: 18, color: INK, lineHeight: 1.8, marginBottom: 24, fontStyle: "italic" }}>"{testimonials[active].text}"</p>
+                <p style={{ fontSize: 18, color: INK, lineHeight: 1.8, marginBottom: 24 }}>{testimonials[active].text}</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
                   <div>
                     <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: INK }}>{testimonials[active].name}</div>
@@ -102,7 +74,7 @@ export function Testimonials() {
 
         <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 28 }}>
           {testimonials.map((_, i) => (
-            <button key={i} onClick={() => setActive(i)} style={{ width: active === i ? 28 : 10, height: 10, background: active === i ? AMBER : BORDER, borderRadius: 5, border: "none", cursor: "pointer", transition: "all 0.3s" }} />
+            <button key={i} onClick={() => setActive(i)} aria-label={`Show ${testimonials[i].industry} workflow`} aria-pressed={active === i} style={{ width: active === i ? 28 : 10, height: 10, background: active === i ? AMBER : BORDER, borderRadius: 5, border: "none", cursor: "pointer", transition: "all 0.3s" }} />
           ))}
         </div>
 

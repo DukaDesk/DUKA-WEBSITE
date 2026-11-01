@@ -1,23 +1,17 @@
 import { useState } from "react";
-import { ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_BORDER, AMBER, sora, inter } from "../constants";
+import { ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_BORDER, AMBER, INK, sora, inter } from "../constants";
 
 const FAQS = [
-  { q: "What is DukaDesk?", a: "DukaDesk is an all-in-one platform that helps you launch, manage and grow your desk online. From creating your desk to managing customers, orders, bookings and insights — everything you need is in one place." },
-  { q: "How fast can I go live?", a: "Most desks go live within 24 hours: pick a template, add your products, print the code." },
-  { q: "Do I need any tech skills?", a: "None. Everything happens in a visual builder in your browser — no code, no app store submission." },
-  { q: "Who is DukaDesk for?", a: "Entrepreneurs, SMEs, retailers, restaurants, schools, churches, service providers, freelancers and consultants — anyone who wants to run and grow a desk from one place." },
-  { q: "Which payments are supported?", a: "Paystack and Flutterwave, covering card, bank transfer, USSD and mobile money." },
-  { q: "Do you take a cut of my sales?", a: "Never. You keep 100% of revenue. We only charge a flat subscription." },
-  { q: "How do customers discover my desk?", a: "Through the DukaDesk marketplace, search, categories, QR codes and direct links you share." },
-  { q: "Can I run more than one location?", a: "Yes — the Business plan covers up to ten desks, each with its own code and catalogue." },
-  { q: "Can I edit my desk after publishing?", a: "Yes. Desk information, products, services, branding and settings can be updated at any time from your dashboard." },
-  { q: "Can I change my template later?", a: "Yes. Supported templates can be swapped without creating a new account; some layout adjustments may be required." },
-  { q: "Can I temporarily hide my desk?", a: "Yes. Unpublish from your dashboard any time — your data stays safe until you come back." },
-  { q: "Can my customers browse offline?", a: "Yes — the desk loads in the DukaDesk app and stays browsable without connectivity. Payments need internet." },
-  { q: "Is my data safe?", a: "Encrypted in transit and at rest, hosted with 99.9% uptime, and handled under NDPR guidelines." },
-  { q: "What kind of support do you offer?", a: "Free plans get community support. Paid plans include priority support via email and WhatsApp." },
-  { q: "Can I try DukaDesk before subscribing?", a: "Yes. Waitlist members get early access invitations before any paid plan exists — you could be among the first to use DukaDesk." },
-  { q: "How do I join the waitlist?", a: "Enter your details on the waitlist form and we'll notify you as soon as early access opens. Members get early access, launch offers and product updates." },
+  { q: "What is DukaDesk?", a: "DukaDesk helps businesses create a branded experience inside the shared DukaDesk mobile app, then manage products, orders and other business tools from a merchant dashboard." },
+  { q: "Do customers need the DukaDesk app?", a: "Yes. Customers install DukaDesk, create one account, then browse businesses or scan a business QR code in the app." },
+  { q: "How does publishing work?", a: "After you configure and preview your app, submit it for review. It becomes available to customers after it has been approved. Review times can vary." },
+  { q: "Who is DukaDesk for?", a: "DukaDesk supports businesses in commerce, food and hospitality, and services. Available workflows depend on the business setup and plan." },
+  { q: "Which payment options can businesses use?", a: "Merchant setup currently documents Paystack, Flutterwave and bank transfer. The options a customer sees depend on what the business has configured." },
+  { q: "What can I manage from the merchant dashboard?", a: "The dashboard includes tools for products, orders, customers and inventory, with features such as bookings and analytics available according to plan and setup." },
+  { q: "How do customers find a business?", a: "Customers can explore businesses in DukaDesk, browse categories, or scan a QR code after the business app is approved." },
+  { q: "Can I update my business after publishing?", a: "You can make changes from the merchant dashboard. Updates to a published experience may need to be submitted for review before customers see them." },
+  { q: "Where can I read about privacy?", a: <>Read how DukaDesk handles personal information in our <a href="/privacy" style={{ color: INK, fontWeight: 600 }}>Privacy Policy</a>.</> },
+  { q: "How do I join the waitlist?", a: "Use the waitlist form and DukaDesk can contact you with product and access updates." },
 ];
 
 export function FAQ({ onWaitlist }) {

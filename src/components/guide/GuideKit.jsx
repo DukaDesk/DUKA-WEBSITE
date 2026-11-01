@@ -38,7 +38,8 @@ export function GuideStyles() {
         .gd-pan>*{min-width:760px}
         .gd-hint{display:block}
         .gd-legend-cols{grid-template-columns:1fr !important}
-        .gd-chip{padding:8px 12px;font-size:12.5px}
+        .gd-chips{flex-direction:column;align-items:stretch;max-width:520px;margin:0 auto}
+        .gd-chip{min-height:44px;padding:9px 14px;border-radius:12px;font-size:13px}
         .gd-step{grid-template-columns:1fr;padding:44px 0}
         .gd-step.flip .gd-text{order:0}
         .gd-2,.gd-3,.gd-4{grid-template-columns:1fr}

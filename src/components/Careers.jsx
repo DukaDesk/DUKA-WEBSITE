@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, MessageCircle, Globe, ArrowRight, Check, PartyPopper } from "lucide-react";
 import { FadeIn } from "./ui/FadeIn";
-import { NAVY, AMBER, WHITE, CREAM, SURFACE, BORDER, CHAR, LGREY, INK, ISLAND, ISLAND_INK, ISLAND_MUTE, GREEN, sora, inter, tint } from "../constants";
+import { NAVY, AMBER, WHITE, CREAM, SURFACE, BORDER, CHAR, LGREY, INK, ISLAND, ISLAND_INK, ISLAND_MUTE, GREEN, sora, inter, tint, mix } from "../constants";
 
 export function Careers() {
   const roles = [
