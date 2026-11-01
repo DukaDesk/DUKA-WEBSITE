@@ -131,6 +131,11 @@ body {
     font-size: clamp(32px, 5vw, 48px) !important;
   }
 
+  .who-cards {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
   .hero-phone {
     margin-top: clamp(32px, 6vw, 48px) !important;
     width: min(280px, 90vw) !important;
