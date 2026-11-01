@@ -14,11 +14,9 @@ export function Navbar({ onSignIn, onWaitlist, alwaysSolid }) {
   const scrolled = y > 40 || alwaysSolid;
 
   const solutions = [
-    { label: "Restaurants", href: "/solutions#restaurant" },
-    { label: "Retail", href: "/solutions#retail" },
-    { label: "Food Vendor", href: "/solutions#food-vendor" },
-    { label: "Grocery", href: "/solutions#grocery" },
-    { label: "Churches", href: "/solutions#church" },
+    { label: "Commerce", href: "/solutions#commerce" },
+    { label: "Food & hospitality", href: "/solutions#restaurant" },
+    { label: "Services & bookings", href: "/solutions#services" },
   ];
 
   const resources = [

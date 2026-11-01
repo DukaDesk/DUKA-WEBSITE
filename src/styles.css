@@ -318,6 +318,7 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;
     max-width: 100% !important;
   }
+}
 
   /* â”€â”€ 900px tablet bridge â”€â”€ */
 @media (max-width: 900px) and (min-width: 769px) {
@@ -480,6 +481,8 @@ body {
     animation: none !important;
   }
 }
+
+@media (max-width: 768px) {
   section, footer, footer > div:first-child,
   [data-pad] {
     padding-left: 20px !important;
@@ -877,4 +880,99 @@ body {
   font-family: sora;
   background: #F4A026;
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  [data-pad="wide"] {
+    padding: 56px 20px !important;
+  }
+
+  [data-pad="narrow"] {
+    padding: 28px 20px !important;
+  }
+
+  h2[data-type="h2"] {
+    font-size: clamp(26px, 7vw, 32px) !important;
+    line-height: 1.15 !important;
+    text-wrap: balance;
+  }
+
+  [data-grid="features-copy"] {
+    text-align: left !important;
+  }
+
+  .category-card,
+  .feature-card,
+  .integration-card,
+  .pricing-card,
+  .platform-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+
+  .category-card {
+    padding: 22px 18px !important;
+  }
+
+  .feature-card {
+    padding: 20px !important;
+  }
+
+  .integration-card {
+    height: 100%;
+    padding: 16px 14px !important;
+  }
+
+  .pricing-card {
+    height: 100%;
+    padding: 28px 22px !important;
+    transform: none !important;
+  }
+
+  .platform-card {
+    height: 100%;
+    padding: 24px 20px !important;
+  }
+
+  [data-grid="faq"] {
+    gap: 32px !important;
+  }
+
+  [data-grid="faq"] > div:first-child {
+    position: static !important;
+  }
+
+  [data-grid="faq"] button {
+    grid-template-columns: 30px minmax(0, 1fr) 20px !important;
+    gap: 8px !important;
+    padding: 18px 0 !important;
+  }
+
+  [data-grid="faq"] p {
+    padding-left: 38px !important;
+  }
+
+  .footer-bar {
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-grid="3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-grid="4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .footer-cta {
+    padding: 32px 20px !important;
+  }
+
+  .footer-cta h2 {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
 }

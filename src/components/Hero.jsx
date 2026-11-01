@@ -175,9 +175,9 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
               <div style={{ fontFamily: sora, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: AMBER, marginBottom: 6 }}>
                 For Business Owners
               </div>
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>I run a business</div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>Create your desk</div>
               <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
-                Build a free mobile app for your customers. No developer needed.
+                Set up your branded business experience and manage it from your dashboard.
               </div>
               <button
                 onClick={e => { e.stopPropagation(); onShowSection("merchant"); }}
@@ -207,11 +207,11 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
               }}
             >
               <div style={{ fontFamily: sora, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: ISLAND_MUTE, marginBottom: 6 }}>
-                For Shoppers
+                For Customers
               </div>
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>I want to shop</div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>Desk explorers</div>
               <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
-                Discover restaurants, stores, and services near you. One app.
+                People who use the DukaDesk app to discover restaurants, stores, services and more.
               </div>
               <button
                 onClick={e => { e.stopPropagation(); onShowSection("customer"); }}
