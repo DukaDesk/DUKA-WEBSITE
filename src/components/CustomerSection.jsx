@@ -17,15 +17,10 @@ const PLAY_STORE_URL = import.meta.env.VITE_PLAY_STORE_URL;
 /* ─────────────── content ─────────────── */
 
 const STEPS = [
-  { id: "a-get",        label: "Get the app" },
-  { id: "a-register",   label: "Create your account" },
-  { id: "a-explore",    label: "Explore" },
-  { id: "a-categories", label: "Browse categories" },
-  { id: "a-scan",       label: "Scan a QR code" },
-  { id: "a-order",      label: "Order, book & pay" },
-  { id: "a-chat",       label: "Message & review" },
-  { id: "a-save",       label: "Save favourites" },
-  { id: "a-help",       label: "Help & safety" },
+  { id: "a-get",      label: "Install and sign up" },
+  { id: "a-explore",  label: "Find a business" },
+  { id: "a-scan",     label: "Scan, order or book" },
+  { id: "a-chat",     label: "Connect and get support" },
 ];
 
 const QUICK = [

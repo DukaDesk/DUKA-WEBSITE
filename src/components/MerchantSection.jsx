@@ -16,15 +16,10 @@ import tplSalon from "../assets/guide/tpl-salon.jpg";
 /* ─────────────── content ─────────────── */
 
 const STEPS = [
-  { id: "g-account",  label: "Create account" },
-  { id: "g-verify",   label: "Get verified" },
-  { id: "g-template", label: "Choose a template" },
-  { id: "g-brand",    label: "Brand your app" },
-  { id: "g-editor",   label: "Design in the editor" },
-  { id: "g-products", label: "Add products" },
-  { id: "g-publish",  label: "Preview & publish" },
-  { id: "g-qr",       label: "Share your QR code" },
-  { id: "g-run",      label: "Run your business" },
+  { id: "g-account",  label: "Create and verify your account" },
+  { id: "g-template", label: "Build and brand your app" },
+  { id: "g-products", label: "Add products and publish" },
+  { id: "g-qr",       label: "Share and manage your desk" },
 ];
 
 // Mirrors the live dashboard's left-hand menu.

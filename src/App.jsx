@@ -156,6 +156,29 @@ function ResourcesPage({ onSignIn, onWaitlist }) {
   );
 }
 
+function GuidesPage({ onSignIn, onWaitlist }) {
+  const scrollToGuide = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <>
+      <MerchantSection
+        active
+        onWaitlist={onWaitlist}
+        onSignIn={onSignIn}
+        onSwitch={() => scrollToGuide("section-customer")}
+      />
+      <CustomerSection
+        active
+        onWaitlist={onWaitlist}
+        onSwitch={() => scrollToGuide("section-merchant")}
+      />
+      <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
+    </>
+  );
+}
+
 function ContactPage({ onSignIn, onWaitlist }) {
   return (
     <>
@@ -193,6 +216,7 @@ export default function App() {
         <Route path="/solutions" element={<SolutionsPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/company" element={<CompanyPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/resources" element={<ResourcesPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
+        <Route path="/guides" element={<GuidesPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/contact" element={<ContactPage onSignIn={handleSignIn} onWaitlist={handleWaitlist} />} />
         <Route path="/privacy" element={<LegalLayout><Privacy /></LegalLayout>} />
         <Route path="/terms" element={<LegalLayout><Terms /></LegalLayout>} />
