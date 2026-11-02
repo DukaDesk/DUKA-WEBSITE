@@ -48,7 +48,7 @@ export function ProductShowcase({ onWaitlist }) {
   const activeIdx = DECK.findIndex(d => d.src === frontSrc);
 
   return (
-    <section id="showcase" data-pad="wide" style={{ padding: "104px 56px", background: SURFACE, overflow: "hidden" }}>
+    <section id="app-builder" data-pad="wide" style={{ padding: "104px 56px", background: SURFACE, overflow: "hidden" }}>
       <div data-grid="showcase" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 32, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
         <div style={{ position: "sticky", top: 96 }}>
           <Reveal>

@@ -3,16 +3,28 @@ import { ShieldCheck, EyeOff, Globe, Headset, ArrowRight } from "lucide-react";
 import { NAVY, AMBER, ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_SOFT, ISLAND_BORDER, sora, mix } from "../constants";
 
 const ROUTES = {
-  "How it works": "/features",
-  Integrations: "/features",
-  Blog: "/resources",
-  "Help Centre": "/resources",
-  Documentation: "/resources",
-  Changelog: "/resources",
+  "How DukaDesk Works": "/#how",
+  Features: "/features",
+  "App Builder": "/#app-builder",
+  "App Templates": "/#how",
+  "Duka Business": "/solutions",
+  "Online Community": "/resources#online-community",
+  Blog: "/resources#blog",
+  "Guides and Tutorials": "/guides",
+  "About Us": "/company",
   "Contact Us": "/contact",
+  Pricing: "/pricing",
   "Privacy Policy": "/privacy",
   "Terms of Service": "/terms",
 };
+
+const FOOTER_GROUPS = [
+  { title: "Product", links: ["How DukaDesk Works", "Features", "App Builder", "App Templates"] },
+  { title: "Solutions", links: ["Duka Business", { label: "Duka Education", status: "Coming soon" }, { label: "Duka Religion", status: "Coming soon" }] },
+  { title: "Resources", links: [{ label: "Online Community", status: "Coming soon" }, { label: "Blog", status: "Coming soon" }, { label: "Guides and Tutorials", status: "Video tutorials planned" }] },
+  { title: "Company", links: ["About Us", "Contact Us", "Pricing"] },
+  { title: "Legal", links: ["Privacy Policy", "Terms of Service"] },
+];
 
 export function Footer({ onSignIn, onWaitlist }) {
   return (
@@ -41,7 +53,7 @@ export function Footer({ onSignIn, onWaitlist }) {
         })}
       </div>
 
-      <div data-grid="footer" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: 48, marginBottom: 56 }}>
+      <div data-grid="footer" style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, minmax(0, 1fr))", gap: 32, marginBottom: 56 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
             <img src="/assets/Dukalogo-main-removebg-preview.png" alt="DukaDesk logo" width={36} height={36} loading="lazy" decoding="async" style={{ objectFit: "contain" }} />
@@ -64,27 +76,26 @@ export function Footer({ onSignIn, onWaitlist }) {
             ))}
           </div>
         </div>
-        {[
-          { title: "Product", links: ["How it works", "Templates", "Integrations", "Changelog"] },
-          { title: "Company",  links: ["Blog", "Press Kit", "Contact Us"] },
-          { title: "Support",  links: ["Help Centre", "Documentation", "Contact Us", "getdukadesk@gmail.com"] },
-          { title: "Legal",    links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] },
-        ].map((col, i) => (
+        {FOOTER_GROUPS.map((col, i) => (
           <div key={i}>
             <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 13, color: ISLAND_INK, marginBottom: 16, letterSpacing: 0.5 }}>{col.title}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {col.links.map(l => {
-                const to = ROUTES[l] || "#";
-                return to !== "#" ? (
-                  <Link key={l} to={to} style={{ fontSize: 14, color: ISLAND_MUTE, textDecoration: "none", transition: "color 0.2s" }}
+              {col.links.map((item) => {
+                const link = typeof item === "string" ? { label: item } : item;
+                const to = ROUTES[link.label];
+                return to ? (
+                  <Link key={link.label} to={to} style={{ fontSize: 13, color: ISLAND_MUTE, textDecoration: "none", transition: "color 0.2s" }}
                     onMouseOver={e => e.target.style.color = ISLAND_INK}
                     onMouseOut={e => e.target.style.color = ISLAND_MUTE}
-                  >{l}</Link>
+                  >
+                    {link.label}
+                    {link.status && <span style={{ display: "block", color: AMBER, fontSize: 10, marginTop: 2 }}>{link.status}</span>}
+                  </Link>
                 ) : (
-                  <a key={l} href={to} style={{ fontSize: 14, color: ISLAND_MUTE, textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseOver={e => e.target.style.color = ISLAND_INK}
-                    onMouseOut={e => e.target.style.color = ISLAND_MUTE}
-                  >{l}</a>
+                  <span key={link.label} style={{ fontSize: 13, color: ISLAND_MUTE }}>
+                    {link.label}
+                    {link.status && <span style={{ display: "block", color: AMBER, fontSize: 10, marginTop: 2 }}>{link.status}</span>}
+                  </span>
                 );
               })}
             </div>
