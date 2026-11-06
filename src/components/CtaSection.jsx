@@ -18,7 +18,7 @@ export function CtaSection({ onWaitlist }) {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
             <p style={{ fontFamily: inter, fontSize: 16, lineHeight: 1.7, margin: 0, maxWidth: 340, opacity: 0.82 }}>
-              Create a branded business experience, submit it for review, and manage your products and orders from one dashboard.
+              Build a branded app experience and run it from one dashboard.
             </p>
             <button
               onClick={onWaitlist}

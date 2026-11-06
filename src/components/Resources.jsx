@@ -6,7 +6,7 @@ import { AMBER, CREAM, SURFACE, BORDER, LGREY, INK, ISLAND, ISLAND_INK, ISLAND_M
 const CARDS = [
   { id: "online-community", icon: Users, title: "Online Community", desc: "Meet other businesses and DukaDesk users. Our online community is coming soon.", status: "Coming soon" },
   { id: "blog", icon: PenSquare, title: "Blog", desc: "Product updates, practical desk tips, and stories from businesses using DukaDesk.", status: "Coming soon" },
-  { id: "guides-and-tutorials", icon: BookOpen, title: "Guides and Tutorials", desc: "Read step-by-step guides for merchants and app users. Video tutorials are planned.", status: "Video tutorials planned", href: "/guides" },
+  { id: "guides-and-tutorials", icon: BookOpen, title: "Guides and Tutorials", desc: "Step-by-step guides for merchants and app users, hosted in DukaDesk Docs.", status: "Docs", href: "/guides" },
 ];
 
 export function Resources() {
@@ -39,9 +39,9 @@ export function Resources() {
             );
             return (
             <FadeIn key={c.id} delay={i * 60}>
-              c.href
+              {c.href
                 ? <Link to={c.href} style={{ display: "block", color: "inherit", textDecoration: "none", height: "100%" }}>{card}</Link>
-                : card
+                : card}
             </FadeIn>
             );
           })}

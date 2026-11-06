@@ -150,7 +150,7 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
         </h1>
 
         <p style={{ fontSize: 18, color: ISLAND_MUTE, lineHeight: 1.75, marginBottom: 32, maxWidth: 480 }}>
-          Choose a template on the web, drop in your products, publish. Your customers scan one code and your desk opens inside the DukaDesk app.
+          Give your business a branded app, and give customers one app for every business.
         </p>
 
         {/* ── WHO ARE YOU selector ── */}
@@ -175,16 +175,16 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
               <div style={{ fontFamily: sora, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: AMBER, marginBottom: 6 }}>
                 For Business Owners
               </div>
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>Create your desk</div>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>Build your app</div>
               <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
-                Set up your branded business experience and manage it from your dashboard.
+                Launch a branded experience without building an app.
               </div>
               <button
                 onClick={e => { e.stopPropagation(); onShowSection("merchant"); }}
                 className="btn-waitlist"
                 style={{ border: "none", borderRadius: 999, padding: "10px 22px", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: sora }}
               >
-                Build my app free →
+                See the builder story →
               </button>
             </div>
 
@@ -211,7 +211,7 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
               </div>
               <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 17, color: ISLAND_INK, marginBottom: 6 }}>Desk explorers</div>
               <div style={{ fontSize: 13, color: ISLAND_MUTE, lineHeight: 1.55, marginBottom: 14 }}>
-                People who use the DukaDesk app to discover restaurants, stores, services and more.
+                One account, every business. One app instead of dozens.
               </div>
               <button
                 onClick={e => { e.stopPropagation(); onShowSection("customer"); }}
@@ -227,7 +227,7 @@ export function Hero({ onWaitlist, onShowSection, activeSection }) {
                   fontFamily: sora,
                 }}
               >
-                Download the app →
+                See the explorer story →
               </button>
             </div>
           </div>

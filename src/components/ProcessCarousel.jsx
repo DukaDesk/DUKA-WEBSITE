@@ -6,36 +6,28 @@ import { NAVY, AMBER, WHITE, CREAM, SURFACE, CHAR, LGREY, BORDER, INK, sora, int
 import editorImg from "../assets/app_editor_merchant.jpeg";
 import dashboardImg from "../assets/Screenshot 2026-08-10 155647.png";
 import mob1Img from "../assets/dukamob1.jpeg";
-import mob2Img from "../assets/dukamob2.jpeg";
 
 const SLIDES = [
   {
     n: "01",
-    t: "Choose a starting point",
-    d: "Choose a template for your business or start with a blank canvas, then make the experience your own.",
+    t: "Design",
+    d: "Pick a template, add your brand, and shape your app in the visual editor.",
     img: editorImg,
     alt: "DukaDesk editor for building a template",
   },
   {
     n: "02",
-    t: "Customize your experience",
-    d: "Add your branding and business content in the visual editor, and preview your changes as you work.",
-    img: dashboardImg,
-    alt: "DukaDesk merchant dashboard",
-  },
-  {
-    n: "03",
-    t: "Submit for review",
-    d: "Preview your app and submit it to the DukaDesk team. It goes live after it has been approved.",
+    t: "Publish",
+    d: "Preview, submit, and go live after approval.",
     img: mob1Img,
     alt: "DukaDesk mobile app desk",
   },
   {
-    n: "04",
-    t: "Share and manage",
-    d: "After approval, share your QR code and manage products, orders and business activity from your dashboard.",
-    img: mob2Img,
-    alt: "DukaDesk mobile app orders screen",
+    n: "03",
+    t: "Run",
+    d: "Share your QR code and manage orders, customers, and payments in one dashboard.",
+    img: dashboardImg,
+    alt: "DukaDesk merchant dashboard",
   },
 ];
 
@@ -83,9 +75,9 @@ export function ProcessCarousel() {
               How it works
             </span>
             <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.8vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: INK, margin: "18px 0 28px" }}>
-              From nothing
+              Build it. Publish it.
               <br />
-              to open for business.
+              Run it.
             </h2>
 
             <div style={{ position: "relative", minHeight: 190 }}>

@@ -25,6 +25,8 @@ export const tint = (color, pct) =>
 export const sora = "'Sora', sans-serif";
 export const inter = "'Inter', sans-serif";
 
+export const DOCS_URL = import.meta.env.VITE_DOCS_URL || "https://docs.dukadesk.com";
+
 export const COLORS = {
   navy: {
     900: "#12121F",
