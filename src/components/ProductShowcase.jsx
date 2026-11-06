@@ -26,7 +26,7 @@ const LIFT = 30;
 const spring = { type: "spring", stiffness: 260, damping: 24 };
 const CAN_HOVER = typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
 
-export function ProductShowcase({ onWaitlist }) {
+export function ProductShowcase() {
   const [deck, setDeck] = useState(DECK);
   const [hovered, setHovered] = useState(null);
 
@@ -62,7 +62,7 @@ export function ProductShowcase({ onWaitlist }) {
             </h2>
             <div style={{ width: 64, height: 3, background: AMBER, margin: "24px 0 0" }} />
             <p style={{ fontFamily: inter, fontSize: 15.5, lineHeight: 1.75, color: CHAR, marginTop: 20, maxWidth: 340 }}>
-              Configure your business experience in the merchant dashboard and preview how customers see it in DukaDesk.
+              Build it in the dashboard. See exactly what customers see.
             </p>
           </Reveal>
         </div>
@@ -170,15 +170,6 @@ export function ProductShowcase({ onWaitlist }) {
 
             <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, textAlign: "center" }}>
               <span style={{ fontSize: 13, color: LGREY }}>Tap a card to bring it forward</span>
-              <div style={{ marginTop: 16 }}>
-                <button
-                  onClick={onWaitlist}
-                  className="btn-waitlist"
-                  style={{ fontFamily: sora, border: "none", borderRadius: 999, padding: "14px 28px", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer" }}
-                >
-                  Join the waitlist
-                </button>
-              </div>
             </div>
           </div>
 

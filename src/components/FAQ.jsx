@@ -2,19 +2,14 @@ import { useState } from "react";
 import { ISLAND, ISLAND_INK, ISLAND_MUTE, ISLAND_BORDER, AMBER, INK, sora, inter } from "../constants";
 
 const FAQS = [
-  { q: "What is DukaDesk?", a: "DukaDesk helps businesses create a branded experience inside the shared DukaDesk mobile app, then manage products, orders and other business tools from a merchant dashboard." },
-  { q: "Do customers need the DukaDesk app?", a: "Yes. Customers install DukaDesk, create one account, then browse businesses or scan a business QR code in the app." },
-  { q: "How does publishing work?", a: "After you configure and preview your app, submit it for review. It becomes available to customers after it has been approved. Review times can vary." },
-  { q: "Who is DukaDesk for?", a: "DukaDesk supports businesses in commerce, food and hospitality, and services. Available workflows depend on the business setup and plan." },
-  { q: "Which payment options can businesses use?", a: "Merchant setup currently documents Paystack, Flutterwave and bank transfer. The options a customer sees depend on what the business has configured." },
-  { q: "What can I manage from the merchant dashboard?", a: "The dashboard includes tools for products, orders, customers and inventory, with features such as bookings and analytics available according to plan and setup." },
-  { q: "How do customers find a business?", a: "Customers can explore businesses in DukaDesk, browse categories, or scan a QR code after the business app is approved." },
-  { q: "Can I update my business after publishing?", a: "You can make changes from the merchant dashboard. Updates to a published experience may need to be submitted for review before customers see them." },
+  { q: "What is DukaDesk?", a: "DukaDesk gives businesses a branded app experience inside one shared app, managed from a single dashboard." },
+  { q: "Do customers need the DukaDesk app?", a: "Yes. Customers install DukaDesk once, then browse businesses or scan a QR code in the app." },
+  { q: "How does publishing work?", a: "Configure and preview your app, then submit it for review. It goes live once approved." },
+  { q: "What can I manage from the dashboard?", a: "Products, orders, customers, inventory and payments, with more tools available by plan." },
   { q: "Where can I read about privacy?", a: <>Read how DukaDesk handles personal information in our <a href="/privacy" style={{ color: INK, fontWeight: 600 }}>Privacy Policy</a>.</> },
-  { q: "How do I join the waitlist?", a: "Use the waitlist form and DukaDesk can contact you with product and access updates." },
 ];
 
-export function FAQ({ onWaitlist }) {
+export function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
@@ -30,13 +25,6 @@ export function FAQ({ onWaitlist }) {
             plainly.
           </h2>
           <div style={{ width: 64, height: 3, background: AMBER, marginTop: 26 }} />
-          <button
-            onClick={onWaitlist}
-            className="btn-waitlist"
-            style={{ fontFamily: sora, border: "none", borderRadius: 999, padding: "14px 28px", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", marginTop: 28 }}
-          >
-            Join the waitlist
-          </button>
         </div>
 
         <div>

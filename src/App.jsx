@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense, useRef } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -11,6 +11,7 @@ import { Features } from "./components/Features";
 import { Privacy } from "./components/Privacy";
 import { Terms } from "./components/Terms";
 import { LegalLayout } from "./components/LegalLayout";
+import { GuidesHub } from "./components/GuidesHub";
 import { FAQ } from "./components/FAQ";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { MerchantSection } from "./components/MerchantSection";
@@ -43,12 +44,9 @@ function PageFooter({ onSignIn, onWaitlist }) {
 
 function HomePage({ onSignIn, onWaitlist }) {
   const [activeSection, setActiveSection] = useState(null);
-  const merchantRef = useRef(null);
-  const customerRef = useRef(null);
 
   const showSection = (type) => {
     setActiveSection(type);
-    // Smooth scroll to the revealed section on the next paint
     setTimeout(() => {
       const el = document.getElementById(type === "merchant" ? "section-merchant" : "section-customer");
       if (el) {
@@ -61,24 +59,20 @@ function HomePage({ onSignIn, onWaitlist }) {
     <>
       <Hero onSignIn={onSignIn} onWaitlist={onWaitlist} onShowSection={showSection} activeSection={activeSection} />
 
-      {/* Audience-specific sections — hidden until a card is clicked */}
       <MerchantSection
         active={activeSection === "merchant"}
         onWaitlist={onWaitlist}
-        onSignIn={onSignIn}
-        onSwitch={() => showSection("customer")}
       />
       <CustomerSection
         active={activeSection === "customer"}
         onWaitlist={onWaitlist}
-        onSwitch={() => showSection("merchant")}
       />
 
       <Ticker />
       <ProcessCarousel />
-      <WhyChoose onWaitlist={onWaitlist} />
-      <ProductShowcase onWaitlist={onWaitlist} />
-      <FAQ onWaitlist={onWaitlist} />
+      <WhyChoose />
+      <ProductShowcase />
+      <FAQ />
       <Suspense fallback={<SectionFallback />}>
         <CtaSection onWaitlist={onWaitlist} />
       </Suspense>
@@ -157,23 +151,9 @@ function ResourcesPage({ onSignIn, onWaitlist }) {
 }
 
 function GuidesPage({ onSignIn, onWaitlist }) {
-  const scrollToGuide = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <>
-      <MerchantSection
-        active
-        onWaitlist={onWaitlist}
-        onSignIn={onSignIn}
-        onSwitch={() => scrollToGuide("section-customer")}
-      />
-      <CustomerSection
-        active
-        onWaitlist={onWaitlist}
-        onSwitch={() => scrollToGuide("section-merchant")}
-      />
+      <GuidesHub />
       <PageFooter onSignIn={onSignIn} onWaitlist={onWaitlist} />
     </>
   );

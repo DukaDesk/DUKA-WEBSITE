@@ -1,31 +1,26 @@
 import { Reveal } from "./ui/Reveal";
-import { PenTool, LayoutDashboard, Smartphone, QrCode } from "lucide-react";
+import { PenTool, LayoutDashboard, QrCode } from "lucide-react";
 import { AMBER, CREAM, BORDER, CHAR, LGREY, INK, sora, inter, mix } from "../constants";
 
 const ROWS = [
   {
     icon: LayoutDashboard,
-    t: "Run the day-to-day from one dashboard",
-    d: "Manage products, orders, customers and inventory from the merchant portal, with analytics and other tools available by plan.",
-  },
-  {
-    icon: Smartphone,
-    t: "A branded experience inside DukaDesk",
-    d: "Configure the pages and look of your business experience in DukaDesk's shared mobile app. Customers use one DukaDesk account across businesses.",
-  },
-  {
-    icon: QrCode,
-    t: "Help customers find your business",
-    d: "After your app is approved, share its QR code. Customers can also explore businesses and categories in the DukaDesk app.",
+    t: "One dashboard for the day-to-day",
+    d: "Products, orders, customers and payments in one place.",
   },
   {
     icon: PenTool,
-    t: "Build with a visual editor",
-    d: "Choose a starting template, edit your branding and pages, preview your work, then submit it for review before it goes live.",
+    t: "Your brand, not a template",
+    d: "Your logo, colours and pages make the experience yours.",
+  },
+  {
+    icon: QrCode,
+    t: "Customers find you in one tap",
+    d: "Share a QR code or let them discover you in the DukaDesk app.",
   },
 ];
 
-export function WhyChoose({ onWaitlist }) {
+export function WhyChoose() {
   return (
     <section id="why" data-pad="wide" style={{ background: CREAM, padding: "104px 56px" }}>
       <div data-grid="why" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 380px) 1fr", gap: 64, maxWidth: 1080, margin: "0 auto", alignItems: "start" }}>
@@ -34,18 +29,11 @@ export function WhyChoose({ onWaitlist }) {
             Why DukaDesk
           </span>
           <h2 data-type="h2" style={{ fontFamily: sora, fontWeight: 800, fontSize: "clamp(32px,3.6vw,52px)", lineHeight: 1.02, letterSpacing: "-0.03em", color: INK, margin: "18px 0 0" }}>
-            Four reasons
+            Three reasons
             <br />
             merchants stay.
           </h2>
           <div style={{ width: 64, height: 3, background: AMBER, marginTop: 26 }} />
-          <button
-            onClick={onWaitlist}
-            className="btn-waitlist"
-            style={{ fontFamily: sora, border: "none", borderRadius: 999, padding: "14px 28px", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", marginTop: 28 }}
-          >
-            Join the waitlist
-          </button>
         </div>
 
         <div>

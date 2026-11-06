@@ -976,3 +976,32 @@ body {
     line-height: 1.15 !important;
   }
 }
+
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.story-flip .story-visual {
+  order: -1;
+}
+
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-flip .story-visual {
+    order: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-float {
+    display: none !important;
+  }
+}

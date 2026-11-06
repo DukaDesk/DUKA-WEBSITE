@@ -2,11 +2,11 @@ import { NAVY, AMBER, sora } from "../constants";
 
 const ITEMS = [
   "Business-branded experiences",
+  "One app for every business",
   "Product catalogues & orders",
   "QR code sharing",
-  "Bookings & forms",
+  "One account, every business",
   "Merchant dashboard",
-  "Paystack, Flutterwave & bank transfer",
 ];
 
 export function Ticker() {
